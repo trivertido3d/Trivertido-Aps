@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivertido - Ferramentas 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #16a34a;
+            --bg: #f3f4f6;
+            --card: #ffffff;
+            --text: #1f2937;
+            --res-bg: #f0fdf4;        
+            --res-border: #bbf7d0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos do Orçamento (Preservados) */
+        .container-app { max-width: 600px; margin: 20px auto; background: var(--card); border-radius: 20px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); overflow: hidden; }
+        .tabs-container { background-color: #e5e7eb; border-radius: 50px; padding: 5px; display: flex; margin: 0 20px 20px 20px; }
+        .tab { flex: 1; padding: 12px; text-align: center; cursor: pointer; font-weight: 700; color: #4b5563; border-radius: 40px; opacity: 0.5; transition: all 0.4s; font-size: 0.9em; }
+        .tab.active { background-color: white; color: var(--primary); opacity: 1; transform: scale(1.02); }
+        .hidden { display: none !important; }
+        .btn-whatsapp { background-color: #25D366; color: white; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; display: block; text-align: center; margin-top: 20px; }
+        .result-box { background: var(--res-bg); border: 2px solid var(--res-border); padding: 20px; border-radius: 15px; margin-top: 25px; }
+        
+        /* Menu de Navegação Superior */
+        .nav-menu { background: #1f2937; padding: 15px; display: flex; justify-content: center; gap: 10px; position: sticky; top: 0; z-index: 100; }
+        .nav-btn { padding: 8px 16px; border-radius: 8px; color: white; font-weight: 600; font-size: 0.9em; transition: 0.3s; }
+        .nav-btn.active { background: var(--primary); }
+        .nav-btn:not(.active) { background: #374151; }
+    </style>
+</head>
+<body>
+
+<nav class="nav-menu shadow-lg">
+    <button onclick="showPage('home')" id="btn-home" class="nav-btn">🏠 Início</button>
+    <button onclick="showPage('orcamento')" id="btn-orcamento" class="nav-btn">💰 Orçamento</button>
+    <button onclick="showPage('escala')" id="btn-escala" class="nav-btn">📏 Ver Tamanho</button>
+</nav>
+
+<div id="page-home" class="container-app p-8 text-center mt-10">
+    <h1 class="text-3xl font-black text-green-600 mb-2">TRIVERTIDO 💚</h1>
+    <p class="text-gray-500 mb-8 font-medium">Selecione a ferramenta desejada</p>
+    
+    <div class="grid gap-4">
+        <button onclick="showPage('orcamento')" class="p-6 bg-white border-2 border-green-500 rounded-2xl shadow-sm hover:bg-green-50 transition text-left flex items-center justify-between group">
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 group-hover:text-green-600">Fazer Orçamento</h3>
+                <p class="text-sm text-gray-500">Filamento, Resina, Pintura e Frete</p>
+            </div>
+            <span class="text-2xl">💰</span>
+        </button>
+
+        <button onclick="showPage('escala')" class="p-6 bg-white border-2 border-blue-500 rounded-2xl shadow-sm hover:bg-blue-50 transition text-left flex items-center justify-between group">
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600">Ver Tamanho (Escala)</h3>
+                <p class="text-sm text-gray-500">Cálculo de redução proporcional (%)</p>
+            </div>
+            <span class="text-2xl">📏</span>
+        </button>
+    </div>
+</div>
+
+<div id="page-orcamento" class="container-app hidden">
+    <div class="p-5">
+        <h2 class="text-center font-bold text-xl text-green-600 uppercase tracking-wide mb-4">Orçamento Trivertido</h2>
+        <div class="tabs-container">
+            <div class="tab active" onclick="switchTab('filamento', event)">Filamento (FDM)</div>
+            <div class="tab" onclick="switchTab('resina', event)">Resina (SLA)</div>
+        </div>
+        
+        <div id="form-orcamento-content">
+            <input type="text" id="nomeCliente" placeholder="Nome do Cliente" class="w-full p-3 mb-3 border rounded-lg">
+            <input type="text" id="nomeProjeto" placeholder="Nome do Projeto" class="w-full p-3 mb-3 border rounded-lg">
+            
+            <div class="section-title font-bold text-green-600 border-b mb-2 uppercase text-xs">Dados da Impressão</div>
+            <input type="number" id="tempo" placeholder="Tempo de Impressão (Horas)" oninput="calcular()" class="w-full p-3 mb-3 border rounded-lg">
+            
+            <div id="areaFilamentos">
+                <p class="text-xs font-bold mb-2 uppercase">Peso por Material (g)</p>
+                <input type="number" id="peso_padrao" placeholder="Padrão (PLA/ABS) em g" oninput="calcular()" class="w-full p-3 mb-2 border rounded-lg">
+            </div>
+
+            <div class="result-box">
+                <div class="flex justify-between font-bold text-lg text-green-700">
+                    <span>Total Pix:</span>
+                    <span id="resPrecoAvista">R$ 0,00</span>
+                </div>
+            </div>
+            <button class="btn-whatsapp" onclick="enviarWhatsapp()">Enviar no WhatsApp</button>
+        </div>
+    </div>
+</div>
+
+<div id="page-escala" class="container-app p-6 hidden">
+    <h2 class="text-2xl font-bold text-blue-600 mb-6 text-center">Calculadora de Escala</h2>
+    
+    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 mb-6">
+        <label class="block text-sm font-bold text-blue-800 mb-2 uppercase">Peças em MM:</label>
+        <div id="lista-pecas">
+            <input type="number" oninput="calcEscala()" placeholder="Peça 1 (mm)" class="peca-input w-full p-3 border rounded-lg mb-2">
+        </div>
+        <button onclick="addInputPeca()" class="w-full py-2 bg-blue-600 text-white rounded-lg font-bold shadow-md hover:bg-blue-700">+ Add Parte</button>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl border mb-6 shadow-sm">
+        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Altura Final Desejada (cm):</label>
+        <input type="number" id="alvoCm" oninput="calcEscala()" placeholder="Ex: 15" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+    </div>
+
+    <div id="resultadoEscala" class="hidden bg-blue-600 text-white p-6 rounded-2xl text-center shadow-xl">
+        <p class="text-xs uppercase opacity-80">Porcentagem no Fatiador:</p>
+        <h2 id="valorPorcentagem" class="text-5xl font-black my-1">0%</h2>
+        <p id="detalheEscala" class="text-[10px] opacity-70 italic"></p>
+    </div>
+</div>
+
+<script>
+    // SISTEMA DE NAVEGAÇÃO
+    function showPage(pageId) {
+        document.getElementById('page-home').classList.add('hidden');
+        document.getElementById('page-orcamento').classList.add('hidden');
+        document.getElementById('page-escala').classList.add('hidden');
+        
+        document.getElementById('btn-home').classList.remove('active');
+        document.getElementById('btn-orcamento').classList.remove('active');
+        document.getElementById('btn-escala').classList.remove('active');
+
+        document.getElementById('page-' + pageId).classList.remove('hidden');
+        document.getElementById('btn-' + pageId).classList.add('active');
+    }
+
+    // --- LÓGICA DO ESCALONADOR ---
+    function addInputPeca() {
+        const div = document.createElement('div');
+        div.className = 'flex gap-2 mb-2';
+        div.innerHTML = `
+            <input type="number" oninput="calcEscala()" placeholder="Peça mm" class="peca-input flex-1 p-3 border rounded-lg">
+            <button onclick="this.parentElement.remove(); calcEscala()" class="bg-red-100 text-red-600 px-4 rounded-lg font-bold">✕</button>
+        `;
+        document.getElementById('lista-pecas').appendChild(div);
+    }
+
+    function calcEscala() {
+        const inputs = document.querySelectorAll('.peca-input');
+        let somaMm = 0;
+        inputs.forEach(i => somaMm += (Number(i.value) || 0));
+        
+        const alvoMm = (Number(document.getElementById('alvoCm').value) || 0) * 10;
+        const resDiv = document.getElementById('resultadoEscala');
+        
+        if (somaMm > 0 && alvoMm > 0) {
+            const pct = ((alvoMm / somaMm) * 100).toFixed(2);
+            document.getElementById('valorPorcentagem').innerText = pct + "%";
+            document.getElementById('detalheEscala').innerText = `Total original: ${somaMm}mm | Alvo: ${alvoMm}mm`;
+            resDiv.classList.remove('hidden');
+        } else {
+            resDiv.classList.add('hidden');
+        }
+    }
+
+    // --- LÓGICA DO ORÇAMENTO (RESUMIDA PARA O EXEMPLO) ---
+    // [Aqui você mantém as funções switchTab, calcular e enviarWhatsapp do seu arquivo Orçamento.txt]
+    function switchTab(mode, e) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        e.target.classList.add('active');
+        // Adicione aqui a lógica de troca de campos que já estava no seu código
+    }
+
+    function calcular() {
+        // Insira aqui a lógica de cálculo original do Orçamento.txt
+        const peso = parseFloat(document.getElementById('peso_padrao').value) || 0;
+        const tempo = parseFloat(document.getElementById('tempo').value) || 0;
+        // Cálculo simplificado para demonstração
+        const total = (peso * 0.13) + (tempo * 2); 
+        document.getElementById('resPrecoAvista').innerText = "R$ " + total.toFixed(2).replace('.',',');
+    }
+
+    function enviarWhatsapp() {
+        // Lógica original de envio
+        alert("Enviando orçamento via WhatsApp...");
+    }
+</script>
+</body>
+</html>
