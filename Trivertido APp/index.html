@@ -11,46 +11,324 @@
             --bg: #f3f4f6;
             --card: #ffffff;
             --text: #1f2937;
-            --res-bg: #f0fdf4;        
+            --res-bg: #f0fdf4;
             --res-border: #bbf7d0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
             padding: 0;
         }
 
-        /* Estilos do Orçamento (Preservados) */
-        .container-app { max-width: 600px; margin: 20px auto; background: var(--card); border-radius: 20px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); overflow: hidden; }
-        .tabs-container { background-color: #e5e7eb; border-radius: 50px; padding: 5px; display: flex; margin: 0 20px 20px 20px; }
-        .tab { flex: 1; padding: 12px; text-align: center; cursor: pointer; font-weight: 700; color: #4b5563; border-radius: 40px; opacity: 0.5; transition: all 0.4s; font-size: 0.9em; }
-        .tab.active { background-color: white; color: var(--primary); opacity: 1; transform: scale(1.02); }
-        .hidden { display: none !important; }
-        .btn-whatsapp { background-color: #25D366; color: white; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; display: block; text-align: center; margin-top: 20px; }
-        .result-box { background: var(--res-bg); border: 2px solid var(--res-border); padding: 20px; border-radius: 15px; margin-top: 25px; }
-        
-        /* Menu de Navegação Superior */
-        .nav-menu { background: #1f2937; padding: 15px; display: flex; justify-content: center; gap: 10px; position: sticky; top: 0; z-index: 100; }
-        .nav-btn { padding: 8px 16px; border-radius: 8px; color: white; font-weight: 600; font-size: 0.9em; transition: 0.3s; }
+        /* Nav */
+        .nav-menu {
+            background: #1f2937;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .nav-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
         .nav-btn.active { background: var(--primary); }
         .nav-btn:not(.active) { background: #374151; }
+
+        /* Container */
+        .container-app {
+            max-width: 600px;
+            margin: 20px auto;
+            background: var(--card);
+            border-radius: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Tabs */
+        .tabs-container {
+            background-color: #e5e7eb;
+            border-radius: 50px;
+            padding: 5px;
+            display: flex;
+            margin: 0 20px 20px 20px;
+        }
+        .tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: #4b5563;
+            border-radius: 40px;
+            opacity: 0.5;
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tab:hover { opacity: 0.8; }
+        .tab.active {
+            background-color: white;
+            color: var(--primary);
+            opacity: 1;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transform: scale(1.02);
+        }
+
+        /* Forms */
+        .content { padding: 0 25px 25px 25px; }
+        .form-group { margin-bottom: 15px; }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: #4b5563;
+            text-transform: uppercase;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus { border-color: var(--primary); }
+
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--primary);
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 5px;
+        }
+
+        /* Materiais */
+        .material-list, .frete-box {
+            background: #f9fafb;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+        }
+        .material-item {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #e5e7eb;
+            padding-bottom: 10px;
+        }
+        .material-item:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+        .material-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: #4b5563;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+        .material-header input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+        .material-weight-input {
+            margin-top: 10px;
+            margin-left: 28px;
+            display: none;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+        .material-weight-input.open { display: block; }
+
+        .checkbox-group {
+            background: #f9fafb;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-weight: normal;
+            cursor: pointer;
+            font-size: 0.95em;
+            text-transform: none;
+            color: #1f2937;
+        }
+        .checkbox-item:last-child { margin-bottom: 0; }
+        .checkbox-item input {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            accent-color: var(--primary);
+        }
+
+        /* Resultado */
+        .result-box {
+            background: var(--res-bg);
+            border: 2px solid var(--res-border);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            transition: all 0.3s;
+        }
+        .result-total {
+            border-top: 1px solid var(--res-border);
+            margin-top: 15px;
+            padding-top: 15px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+        }
+        .result-sub {
+            font-size: 1em;
+            color: #4b5563;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .internal-profit {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 2px dashed #9ca3af;
+            font-size: 0.95em;
+            color: #4b5563;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 8px;
+        }
+        .destaque-avista { color: #16a34a; font-weight: bold; }
+
+        /* Botões */
+        .btn-whatsapp {
+            display: block;
+            width: 100%;
+            background-color: #25D366;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: transform 0.2s, background-color 0.3s;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(37,211,102,0.2);
+        }
+        .btn-whatsapp:hover { background-color: #1da851; transform: translateY(-2px); }
+
+        .btn-outline {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        .btn-outline.active { background: var(--primary); color: white; }
+
+        .btn-auto-calc {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .btn-auto-calc:disabled { background: #93c5fd; cursor: not-allowed; }
+
+        .btn-map-small {
+            background: transparent;
+            color: #2563eb;
+            border: none;
+            font-size: 0.85em;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .btn-config {
+            display: block;
+            width: 100%;
+            background-color: #e5e7eb;
+            color: #374151;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .hidden { display: none !important; }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 5px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
-<nav class="nav-menu shadow-lg">
-    <button onclick="showPage('home')" id="btn-home" class="nav-btn">🏠 Início</button>
+<nav class="nav-menu">
+    <button onclick="showPage('home')" id="btn-home" class="nav-btn active">🏠 Início</button>
     <button onclick="showPage('orcamento')" id="btn-orcamento" class="nav-btn">💰 Orçamento</button>
     <button onclick="showPage('escala')" id="btn-escala" class="nav-btn">📏 Ver Tamanho</button>
 </nav>
 
-<div id="page-home" class="container-app p-8 text-center mt-10">
+<!-- HOME -->
+<div id="page-home" class="container-app p-8 text-center mt-6">
     <h1 class="text-3xl font-black text-green-600 mb-2">TRIVERTIDO 💚</h1>
     <p class="text-gray-500 mb-8 font-medium">Selecione a ferramenta desejada</p>
-    
     <div class="grid gap-4">
         <button onclick="showPage('orcamento')" class="p-6 bg-white border-2 border-green-500 rounded-2xl shadow-sm hover:bg-green-50 transition text-left flex items-center justify-between group">
             <div>
@@ -59,7 +337,6 @@
             </div>
             <span class="text-2xl">💰</span>
         </button>
-
         <button onclick="showPage('escala')" class="p-6 bg-white border-2 border-blue-500 rounded-2xl shadow-sm hover:bg-blue-50 transition text-left flex items-center justify-between group">
             <div>
                 <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600">Ver Tamanho (Escala)</h3>
@@ -70,40 +347,203 @@
     </div>
 </div>
 
+<!-- ORÇAMENTO -->
 <div id="page-orcamento" class="container-app hidden">
-    <div class="p-5">
-        <h2 class="text-center font-bold text-xl text-green-600 uppercase tracking-wide mb-4">Orçamento Trivertido</h2>
+    <div class="content" style="padding-top:20px;">
+        <div style="text-align:center; margin-bottom:15px;">
+            <h2 style="color:var(--primary); font-size:1.5em; text-transform:uppercase; letter-spacing:1px; margin:0;">Orçamento Trivertido💚</h2>
+        </div>
+
         <div class="tabs-container">
             <div class="tab active" onclick="switchTab('filamento', event)">Filamento (FDM)</div>
             <div class="tab" onclick="switchTab('resina', event)">Resina (SLA)</div>
         </div>
-        
-        <div id="form-orcamento-content">
-            <input type="text" id="nomeCliente" placeholder="Nome do Cliente" class="w-full p-3 mb-3 border rounded-lg">
-            <input type="text" id="nomeProjeto" placeholder="Nome do Projeto" class="w-full p-3 mb-3 border rounded-lg">
-            
-            <div class="section-title font-bold text-green-600 border-b mb-2 uppercase text-xs">Dados da Impressão</div>
-            <input type="number" id="tempo" placeholder="Tempo de Impressão (Horas)" oninput="calcular()" class="w-full p-3 mb-3 border rounded-lg">
-            
-            <div id="areaFilamentos">
-                <p class="text-xs font-bold mb-2 uppercase">Peso por Material (g)</p>
-                <input type="number" id="peso_padrao" placeholder="Padrão (PLA/ABS) em g" oninput="calcular()" class="w-full p-3 mb-2 border rounded-lg">
-            </div>
 
-            <div class="result-box">
-                <div class="flex justify-between font-bold text-lg text-green-700">
-                    <span>Total Pix:</span>
-                    <span id="resPrecoAvista">R$ 0,00</span>
+        <div class="section-title" style="margin-top:0">Identificação</div>
+        <div class="form-group">
+            <label>Nome do Cliente</label>
+            <input type="text" id="nomeCliente" placeholder="Ex: João">
+        </div>
+        <div class="form-group">
+            <label>Nome do Projeto</label>
+            <input type="text" id="nomeProjeto" placeholder="Ex: Peça Mecânica">
+        </div>
+        <div class="form-group">
+            <label>Tamanho</label>
+            <input type="text" id="tamanhoPeca" placeholder="Ex: 15x10cm">
+        </div>
+
+        <div class="section-title">Dados da Impressão</div>
+
+        <div class="form-group">
+            <button class="btn-outline" id="btn3d" onclick="toggle3d()">+ Incluir Modelo 3D (Compra)</button>
+            <div id="input3d" class="hidden" style="margin-top:10px;">
+                <label>Custo do Modelo (R$)</label>
+                <input type="number" id="custoModelo3d" placeholder="0,00" oninput="calcular()">
+                <small style="color:#666">Esse valor não aparece na mensagem.</small>
+            </div>
+        </div>
+
+        <div id="areaFilamentos" class="form-group">
+            <label>Selecione os Materiais e informe o peso (g)</label>
+            <div class="material-list">
+                <div class="material-item">
+                    <label class="material-header"><input type="checkbox" id="check_padrao" onchange="toggleInputFilamento('padrao')"> Padrão (PLA/ABS)</label>
+                    <div id="input_padrao_wrapper" class="material-weight-input"><input type="number" id="peso_padrao" placeholder="Peso Padrão (g)" oninput="calcular()"></div>
+                </div>
+                <div class="material-item">
+                    <label class="material-header"><input type="checkbox" id="check_petg" onchange="toggleInputFilamento('petg')"> PETG</label>
+                    <div id="input_petg_wrapper" class="material-weight-input"><input type="number" id="peso_petg" placeholder="Peso PETG (g)" oninput="calcular()"></div>
+                </div>
+                <div class="material-item">
+                    <label class="material-header"><input type="checkbox" id="check_tpu" onchange="toggleInputFilamento('tpu')"> TPU</label>
+                    <div id="input_tpu_wrapper" class="material-weight-input"><input type="number" id="peso_tpu" placeholder="Peso TPU (g)" oninput="calcular()"></div>
+                </div>
+                <div class="material-item">
+                    <label class="material-header"><input type="checkbox" id="check_silk" onchange="toggleInputFilamento('silk')"> TPU Silk</label>
+                    <div id="input_silk_wrapper" class="material-weight-input"><input type="number" id="peso_silk" placeholder="Peso Silk (g)" oninput="calcular()"></div>
                 </div>
             </div>
-            <button class="btn-whatsapp" onclick="enviarWhatsapp()">Enviar no WhatsApp</button>
         </div>
+
+        <div id="areaResina" class="hidden">
+            <div class="form-group">
+                <label>Peso Resina Padrão (g)</label>
+                <input type="number" id="pesoResina" placeholder="Ex: 150" oninput="calcular()">
+            </div>
+            <div class="form-group">
+                <button class="btn-outline" id="btnTranslucida" onclick="toggleTranslucida()">+ Incluir Resina Translúcida</button>
+                <div id="inputTranslucida" class="hidden" style="margin-top:10px; padding:10px; background:#f9fafb; border-radius:10px; border:1px solid #e5e7eb;">
+                    <label>Quantidade Resina Translúcida (g)</label>
+                    <input type="number" id="pesoTranslucida" placeholder="Ex: 50" oninput="calcular()">
+                    <div style="font-size:0.8em; color:#16a34a; margin-top:5px;">Preço: R$ 200,00/kg</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Tempo de Impressão (horas)</label>
+            <input type="number" id="tempo" placeholder="Ex: 5.5" oninput="calcular()">
+        </div>
+
+        <div class="form-group">
+            <label>Embalagem</label>
+            <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" class="embalagem-check" value="6.45" onchange="calcular()"> Caixa Pequena (R$ 6,45)</label>
+                <label class="checkbox-item"><input type="checkbox" class="embalagem-check" value="3.15" onchange="calcular()"> Caixa Grande (R$ 3,15)</label>
+                <label class="checkbox-item"><input type="checkbox" class="embalagem-check" value="1.50" onchange="calcular()"> Plástico Bolha (R$ 1,50)</label>
+            </div>
+        </div>
+
+        <div class="section-title">Acabamento</div>
+        <div class="checkbox-group">
+            <label class="checkbox-item">
+                <input type="checkbox" id="comPintura" onchange="togglePintura()"> Incluir Pintura
+            </label>
+        </div>
+        <div id="pinturaInputs" class="hidden" style="margin-top:10px;">
+            <div class="form-group">
+                <label>Custo Tinta/Insumos (R$)</label>
+                <input type="number" id="custoTinta" value="0" oninput="calcular()">
+            </div>
+            <div class="form-group">
+                <label>Mão de Obra (R$)</label>
+                <input type="number" id="maoDeObra" value="0" oninput="calcular()">
+            </div>
+        </div>
+
+        <div class="section-title">Frete / Entrega</div>
+        <div class="form-group">
+            <button class="btn-outline" id="btnFrete" onclick="toggleFrete()">Calcular Frete</button>
+            <div id="areaFrete" class="hidden frete-box" style="margin-top:10px;">
+                <div class="form-group">
+                    <label>Endereço do Cliente</label>
+                    <input type="text" id="enderecoCliente" placeholder="Ex: Av. Independência, 1000, Piracicaba">
+                    <button class="btn-auto-calc" id="btnAutoCalc" onclick="calcularDistanciaAutomatica()">🔄 Calcular Distância Automática</button>
+                    <button class="btn-map-small" onclick="abrirMaps()">(Ou ver rota no Google Maps manualmente)</button>
+                </div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                    <div class="form-group">
+                        <label>Distância (Km) - Ida</label>
+                        <input type="number" id="distanciaKm" placeholder="0.0" oninput="calcular()">
+                    </div>
+                    <div class="form-group">
+                        <label>Veículo</label>
+                        <select id="tipoVeiculo" onchange="calcular()">
+                            <option value="moto">Moto (23km/L)</option>
+                            <option value="carro">Carro (7km/L)</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="text-align:right; font-weight:bold; color:var(--primary)">
+                    Custo Frete (Ida e Volta): <span id="resFrete">R$ 0,00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">Pagamento</div>
+        <div class="form-group">
+            <select id="parcelasSelect" onchange="calcular()">
+                <option value="1">À Vista no Cartão - Taxa 3,09%</option>
+                <option value="2">2x - Taxa 5,79%</option>
+                <option value="3">3x - Taxa 6,09%</option>
+                <option value="4">4x - Taxa 7,99%</option>
+            </select>
+        </div>
+
+        <button class="btn-config" onclick="toggleConfig()">Editar Preços e Taxas</button>
+        <div id="configInputs" class="hidden">
+            <div class="form-group"><label>Margem Lucro (%)</label><input type="number" id="margemLucro" value="200" oninput="calcular()"></div>
+            <div class="form-group"><label>Preço Combustível (R$/L)</label><input type="number" id="precoCombustivel" value="6.00" oninput="calcular()"></div>
+            <h4 style="color:var(--primary)">Preços Materiais (R$/kg)</h4>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <div><label>Padrão</label><input type="number" id="precoKg" value="130" oninput="calcular()"></div>
+                <div><label>PETG</label><input type="number" id="precoPetg" value="100" oninput="calcular()"></div>
+                <div><label>TPU</label><input type="number" id="precoTpu" value="170" oninput="calcular()"></div>
+                <div><label>Silk</label><input type="number" id="precoTpuSilk" value="236" oninput="calcular()"></div>
+                <div><label>Resina Std</label><input type="number" id="precoResinaKg" value="169.9" oninput="calcular()"></div>
+                <div><label>R. Translúcida</label><input type="number" id="precoResinaTranslucida" value="200" oninput="calcular()"></div>
+            </div>
+            <input type="hidden" id="taxa1x" value="3.09">
+            <input type="hidden" id="taxa2x" value="5.79">
+            <input type="hidden" id="taxa3x" value="6.09">
+            <input type="hidden" id="taxa4x" value="7.99">
+            <input type="hidden" id="watts" value="100">
+            <input type="hidden" id="tarifaEnergia" value="2.30">
+            <input type="hidden" id="precoAlcool" value="25">
+            <input type="hidden" id="fatorAlcool" value="2.0">
+        </div>
+
+        <div class="result-box">
+            <div class="result-sub">
+                <span>Preço Base (s/ taxas):</span>
+                <span id="resPrecoBase">R$ 0,00</span>
+            </div>
+            <hr style="border:0; border-top:1px dashed #ccc; margin:10px 0;">
+            <div class="result-sub">
+                <span>À Vista (Desconto no Pix):</span>
+                <span class="destaque-avista" id="resPrecoAvista">R$ 0,00</span>
+            </div>
+            <div class="result-total">
+                <span id="labelParcelado">À Vista no Cartão:</span>
+                <span id="resPrecoParcelado">R$ 0,00</span>
+            </div>
+            <div style="text-align:right; font-size:0.85em; color:var(--primary); font-weight:600;">
+                <span id="resDetalheParcelas"></span>
+            </div>
+            <div class="internal-profit">
+                <span>Lucro Líquido Estimado (Interno):</span>
+                <span id="resLucro" style="color:#059669; font-weight:bold;">R$ 0,00</span>
+            </div>
+        </div>
+
+        <button class="btn-whatsapp" onclick="enviarWhatsapp()">Enviar no WhatsApp</button>
     </div>
 </div>
 
+<!-- ESCALA -->
 <div id="page-escala" class="container-app p-6 hidden">
     <h2 class="text-2xl font-bold text-blue-600 mb-6 text-center">Calculadora de Escala</h2>
-    
     <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 mb-6">
         <label class="block text-sm font-bold text-blue-800 mb-2 uppercase">Peças em MM:</label>
         <div id="lista-pecas">
@@ -111,12 +551,10 @@
         </div>
         <button onclick="addInputPeca()" class="w-full py-2 bg-blue-600 text-white rounded-lg font-bold shadow-md hover:bg-blue-700">+ Add Parte</button>
     </div>
-
     <div class="bg-white p-4 rounded-xl border mb-6 shadow-sm">
         <label class="block text-sm font-bold text-gray-700 mb-2 uppercase">Altura Final Desejada (cm):</label>
         <input type="number" id="alvoCm" oninput="calcEscala()" placeholder="Ex: 15" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
     </div>
-
     <div id="resultadoEscala" class="hidden bg-blue-600 text-white p-6 rounded-2xl text-center shadow-xl">
         <p class="text-xs uppercase opacity-80">Porcentagem no Fatiador:</p>
         <h2 id="valorPorcentagem" class="text-5xl font-black my-1">0%</h2>
@@ -125,21 +563,17 @@
 </div>
 
 <script>
-    // SISTEMA DE NAVEGAÇÃO
+    // ====== NAVEGAÇÃO ======
     function showPage(pageId) {
-        document.getElementById('page-home').classList.add('hidden');
-        document.getElementById('page-orcamento').classList.add('hidden');
-        document.getElementById('page-escala').classList.add('hidden');
-        
-        document.getElementById('btn-home').classList.remove('active');
-        document.getElementById('btn-orcamento').classList.remove('active');
-        document.getElementById('btn-escala').classList.remove('active');
-
+        ['home','orcamento','escala'].forEach(p => {
+            document.getElementById('page-' + p).classList.add('hidden');
+            document.getElementById('btn-' + p).classList.remove('active');
+        });
         document.getElementById('page-' + pageId).classList.remove('hidden');
         document.getElementById('btn-' + pageId).classList.add('active');
     }
 
-    // --- LÓGICA DO ESCALONADOR ---
+    // ====== ESCALA ======
     function addInputPeca() {
         const div = document.createElement('div');
         div.className = 'flex gap-2 mb-2';
@@ -154,10 +588,8 @@
         const inputs = document.querySelectorAll('.peca-input');
         let somaMm = 0;
         inputs.forEach(i => somaMm += (Number(i.value) || 0));
-        
         const alvoMm = (Number(document.getElementById('alvoCm').value) || 0) * 10;
         const resDiv = document.getElementById('resultadoEscala');
-        
         if (somaMm > 0 && alvoMm > 0) {
             const pct = ((alvoMm / somaMm) * 100).toFixed(2);
             document.getElementById('valorPorcentagem').innerText = pct + "%";
@@ -168,26 +600,338 @@
         }
     }
 
-    // --- LÓGICA DO ORÇAMENTO (RESUMIDA PARA O EXEMPLO) ---
-    // [Aqui você mantém as funções switchTab, calcular e enviarWhatsapp do seu arquivo Orçamento.txt]
+    // ====== ORÇAMENTO ======
+    let currentMode = 'filamento';
+    let isTranslucidaActive = false;
+    let is3dActive = false;
+    let isFreteActive = false;
+
+    const origemLat = -22.7335;
+    const origemLon = -47.6478;
+
+    let whatsappData = {
+        avista: 0, parceladoTotal: 0, parcelaValor: 0, numParcelas: 1,
+        pesoTotal: 0, tipoResina: "Resina", frete: 0, veiculo: ""
+    };
+
+    const defaults = {
+        filamento: {
+            watts: 100, tarifa: 2.3, lucro: 200,
+            theme: { primary: '#16a34a', resBg: '#f0fdf4', resBorder: '#bbf7d0' }
+        },
+        resina: {
+            watts: 250, tarifa: 4.3, lucro: 150,
+            theme: { primary: '#4b5563', resBg: '#f3f4f6', resBorder: '#d1d5db' }
+        }
+    };
+
     function switchTab(mode, e) {
+        currentMode = mode;
+        const config = defaults[mode];
+        const r = document.documentElement;
+        r.style.setProperty('--primary', config.theme.primary);
+        r.style.setProperty('--res-bg', config.theme.resBg);
+        r.style.setProperty('--res-border', config.theme.resBorder);
+
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         e.target.classList.add('active');
-        // Adicione aqui a lógica de troca de campos que já estava no seu código
+
+        document.getElementById('watts').value = config.watts;
+        document.getElementById('tarifaEnergia').value = config.tarifa;
+        document.getElementById('margemLucro').value = config.lucro;
+
+        if (mode === 'resina') {
+            document.getElementById('areaFilamentos').classList.add('hidden');
+            document.getElementById('areaResina').classList.remove('hidden');
+        } else {
+            document.getElementById('areaFilamentos').classList.remove('hidden');
+            document.getElementById('areaResina').classList.add('hidden');
+        }
+        calcular();
+    }
+
+    function toggleInputFilamento(tipo) {
+        const checkbox = document.getElementById('check_' + tipo);
+        const wrapper = document.getElementById('input_' + tipo + '_wrapper');
+        const input = document.getElementById('peso_' + tipo);
+        if (checkbox.checked) {
+            wrapper.classList.add('open');
+        } else {
+            wrapper.classList.remove('open');
+            input.value = "";
+        }
+        calcular();
+    }
+
+    function toggleTranslucida() {
+        isTranslucidaActive = !isTranslucidaActive;
+        const btn = document.getElementById('btnTranslucida');
+        const area = document.getElementById('inputTranslucida');
+        const input = document.getElementById('pesoTranslucida');
+        if (isTranslucidaActive) {
+            btn.classList.add('active');
+            btn.innerText = "- Remover Resina Translúcida";
+            area.classList.remove('hidden');
+        } else {
+            btn.classList.remove('active');
+            btn.innerText = "+ Incluir Resina Translúcida";
+            area.classList.add('hidden');
+            input.value = "";
+        }
+        calcular();
+    }
+
+    function toggle3d() {
+        is3dActive = !is3dActive;
+        const btn = document.getElementById('btn3d');
+        const area = document.getElementById('input3d');
+        const input = document.getElementById('custoModelo3d');
+        if (is3dActive) {
+            btn.classList.add('active');
+            btn.innerText = "- Remover Modelo 3D";
+            area.classList.remove('hidden');
+        } else {
+            btn.classList.remove('active');
+            btn.innerText = "+ Incluir Modelo 3D (Compra)";
+            area.classList.add('hidden');
+            input.value = "";
+        }
+        calcular();
+    }
+
+    function toggleFrete() {
+        isFreteActive = !isFreteActive;
+        const btn = document.getElementById('btnFrete');
+        const area = document.getElementById('areaFrete');
+        if (isFreteActive) {
+            btn.classList.add('active');
+            area.classList.remove('hidden');
+        } else {
+            btn.classList.remove('active');
+            area.classList.add('hidden');
+            document.getElementById('distanciaKm').value = "";
+        }
+        calcular();
+    }
+
+    function togglePintura() {
+        const check = document.getElementById('comPintura');
+        const inputs = document.getElementById('pinturaInputs');
+        if (check.checked) {
+            inputs.classList.remove('hidden');
+        } else {
+            inputs.classList.add('hidden');
+            document.getElementById('custoTinta').value = 0;
+            document.getElementById('maoDeObra').value = 0;
+        }
+        calcular();
+    }
+
+    function toggleConfig() {
+        document.getElementById('configInputs').classList.toggle('hidden');
+    }
+
+    function abrirMaps() {
+        const origem = "Rua Nossa Senhora do Carmo, 505, Piracicaba";
+        const destino = document.getElementById('enderecoCliente').value;
+        if (!destino) { alert("Por favor, digite o endereço do cliente."); return; }
+        const url = `https://www.google.com/maps/dir/${encodeURIComponent(origem)}/${encodeURIComponent(destino)}`;
+        window.open(url, '_blank');
+    }
+
+    async function calcularDistanciaAutomatica() {
+        const endereco = document.getElementById('enderecoCliente').value;
+        const btn = document.getElementById('btnAutoCalc');
+        if (!endereco) { alert("Digite o endereço completo do cliente."); return; }
+
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner"></span> Calculando...';
+
+        try {
+            const query = encodeURIComponent(endereco);
+            const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${query}&limit=1`);
+            const geoData = await geoRes.json();
+            if (!geoData || geoData.length === 0) throw new Error("Endereço não encontrado.");
+
+            const destLat = geoData[0].lat;
+            const destLon = geoData[0].lon;
+
+            const routeRes = await fetch(`http://router.project-osrm.org/route/v1/driving/${origemLon},${origemLat};${destLon},${destLat}?overview=false`);
+            const routeData = await routeRes.json();
+            if (routeData.code !== 'Ok' || !routeData.routes || routeData.routes.length === 0) throw new Error("Erro ao calcular rota.");
+
+            const distanciaKm = (routeData.routes[0].distance / 1000).toFixed(1);
+            document.getElementById('distanciaKm').value = distanciaKm;
+            calcular();
+
+            btn.innerHTML = `✅ Distância: ${distanciaKm} km`;
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = '🔄 Calcular Distância Automática';
+            }, 3000);
+        } catch (error) {
+            alert("Erro: " + error.message + "\nTente usar o botão de mapa manual.");
+            btn.disabled = false;
+            btn.innerHTML = '🔄 Calcular Distância Automática';
+        }
+    }
+
+    function formatCurrency(val) {
+        return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
 
     function calcular() {
-        // Insira aqui a lógica de cálculo original do Orçamento.txt
-        const peso = parseFloat(document.getElementById('peso_padrao').value) || 0;
-        const tempo = parseFloat(document.getElementById('tempo').value) || 0;
-        // Cálculo simplificado para demonstração
-        const total = (peso * 0.13) + (tempo * 2); 
-        document.getElementById('resPrecoAvista').innerText = "R$ " + total.toFixed(2).replace('.',',');
+        const tempoH = parseFloat(document.getElementById('tempo').value) || 0;
+        const watts = parseFloat(document.getElementById('watts').value) || 0;
+        const tarifa = parseFloat(document.getElementById('tarifaEnergia').value) || 0;
+        const margemPct = parseFloat(document.getElementById('margemLucro').value) || 0;
+        const numParcelas = parseInt(document.getElementById('parcelasSelect').value);
+
+        let custoEmbalagem = 0;
+        document.querySelectorAll('.embalagem-check:checked').forEach(c => custoEmbalagem += parseFloat(c.value));
+
+        const custoTinta = parseFloat(document.getElementById('custoTinta').value) || 0;
+        const maoDeObra = parseFloat(document.getElementById('maoDeObra').value) || 0;
+        const custoModelo3d = parseFloat(document.getElementById('custoModelo3d').value) || 0;
+
+        let custoMaterialTotal = 0;
+        let pesoTotalCalc = 0;
+        let resinType = "Resina";
+
+        if (currentMode === 'filamento') {
+            const tipos = [
+                { id: 'padrao', precoId: 'precoKg' },
+                { id: 'petg', precoId: 'precoPetg' },
+                { id: 'tpu', precoId: 'precoTpu' },
+                { id: 'silk', precoId: 'precoTpuSilk' }
+            ];
+            tipos.forEach(tipo => {
+                if (document.getElementById('check_' + tipo.id).checked) {
+                    const peso = parseFloat(document.getElementById('peso_' + tipo.id).value) || 0;
+                    const preco = parseFloat(document.getElementById(tipo.precoId).value) || 0;
+                    custoMaterialTotal += (peso / 1000) * preco;
+                    pesoTotalCalc += peso;
+                }
+            });
+        } else {
+            const precoStd = parseFloat(document.getElementById('precoResinaKg').value);
+            const pesoStd = parseFloat(document.getElementById('pesoResina').value) || 0;
+            custoMaterialTotal += (pesoStd / 1000) * precoStd;
+            pesoTotalCalc += pesoStd;
+
+            let temStd = pesoStd > 0;
+            let temTrans = false;
+            if (isTranslucidaActive) {
+                const precoTrans = parseFloat(document.getElementById('precoResinaTranslucida').value);
+                const pesoTrans = parseFloat(document.getElementById('pesoTranslucida').value) || 0;
+                custoMaterialTotal += (pesoTrans / 1000) * precoTrans;
+                pesoTotalCalc += pesoTrans;
+                if (pesoTrans > 0) temTrans = true;
+            }
+            if (temStd && temTrans) resinType = "Resina + Translúcida";
+            else if (temTrans) resinType = "Resina Translúcida";
+        }
+
+        const consumoKwh = (watts * tempoH) / 1000;
+        const custoEnergia = consumoKwh * tarifa;
+        let custoAlcool = 0;
+        if (currentMode === 'resina') {
+            const precoAlcool = parseFloat(document.getElementById('precoAlcool').value) || 0;
+            const fatorAlcool = parseFloat(document.getElementById('fatorAlcool').value) || 0;
+            const volAlcoolL = (pesoTotalCalc * fatorAlcool) / 1000;
+            custoAlcool = volAlcoolL * precoAlcool;
+        }
+
+        let custoFrete = 0;
+        let nomeVeiculo = "";
+        if (isFreteActive) {
+            const dist = parseFloat(document.getElementById('distanciaKm').value) || 0;
+            const veiculo = document.getElementById('tipoVeiculo').value;
+            const precoGas = parseFloat(document.getElementById('precoCombustivel').value) || 6.00;
+            const consumoVeiculo = veiculo === 'moto' ? 23 : 7;
+            nomeVeiculo = veiculo === 'moto' ? "Moto" : "Carro";
+            custoFrete = ((dist * 2) / consumoVeiculo) * precoGas;
+        }
+        document.getElementById('resFrete').innerText = formatCurrency(custoFrete);
+
+        const custoProducao = custoMaterialTotal + custoEnergia + custoAlcool + custoEmbalagem + custoTinta + maoDeObra + custoModelo3d;
+        const multiplicador = 1 + (margemPct / 100);
+        const precoBase = custoProducao * multiplicador;
+        const precoAvista = precoBase + custoFrete;
+
+        let taxaJuros = 0;
+        if (numParcelas === 1) taxaJuros = parseFloat(document.getElementById('taxa1x').value);
+        if (numParcelas === 2) taxaJuros = parseFloat(document.getElementById('taxa2x').value);
+        if (numParcelas === 3) taxaJuros = parseFloat(document.getElementById('taxa3x').value);
+        if (numParcelas === 4) taxaJuros = parseFloat(document.getElementById('taxa4x').value);
+
+        const taxaDecimal = taxaJuros / 100;
+        const precoParceladoTotal = precoAvista / (1 - taxaDecimal);
+        const valorParcela = precoParceladoTotal / numParcelas;
+        const lucroLiquido = (precoAvista - custoFrete) - custoProducao;
+
+        document.getElementById('resPrecoBase').innerText = formatCurrency(precoBase);
+        document.getElementById('resPrecoAvista').innerText = formatCurrency(precoAvista);
+        document.getElementById('resLucro').innerText = formatCurrency(lucroLiquido);
+
+        if (numParcelas === 1) {
+            document.getElementById('labelParcelado').innerText = "À Vista no Cartão:";
+            document.getElementById('resDetalheParcelas').innerText = "(1x sem juros)";
+        } else {
+            document.getElementById('labelParcelado').innerText = `${numParcelas}x Parcelado:`;
+            document.getElementById('resDetalheParcelas').innerText = `(${numParcelas}x de ${formatCurrency(valorParcela)})`;
+        }
+        document.getElementById('resPrecoParcelado').innerText = formatCurrency(precoParceladoTotal);
+
+        whatsappData.avista = precoAvista;
+        whatsappData.parceladoTotal = precoParceladoTotal;
+        whatsappData.parcelaValor = valorParcela;
+        whatsappData.numParcelas = numParcelas;
+        whatsappData.pesoTotal = pesoTotalCalc;
+        whatsappData.tipoResina = resinType;
+        whatsappData.frete = custoFrete;
+        whatsappData.veiculo = nomeVeiculo;
     }
 
     function enviarWhatsapp() {
-        // Lógica original de envio
-        alert("Enviando orçamento via WhatsApp...");
+        const numeroDestino = "5519996054671";
+        const nome = document.getElementById('nomeCliente').value || "Cliente";
+        const projeto = document.getElementById('nomeProjeto').value || "Projeto";
+        const tamanho = document.getElementById('tamanhoPeca').value || "N/A";
+
+        let pesoTexto = whatsappData.pesoTotal > 1000
+            ? (whatsappData.pesoTotal / 1000).toFixed(2).replace('.', ',') + "kg"
+            : whatsappData.pesoTotal + "g";
+
+        let materialString = currentMode === 'filamento' ? "Filamento" : whatsappData.tipoResina;
+
+        let textoParcelado = "";
+        if (whatsappData.numParcelas === 1) {
+            textoParcelado = `*À Vista no Cartão:* ${formatCurrency(whatsappData.parceladoTotal)}`;
+        } else {
+            textoParcelado = `*Parcelado:* ${whatsappData.numParcelas}x de ${formatCurrency(whatsappData.parcelaValor)}\n(Total Parcelado: ${formatCurrency(whatsappData.parceladoTotal)})`;
+        }
+
+        let textoFrete = "";
+        if (whatsappData.frete > 0) {
+            textoFrete = `*Frete (${whatsappData.veiculo}):* ${formatCurrency(whatsappData.frete)}\n`;
+        }
+
+        let texto = `*Orçamento Trivertido*\n\n`;
+        texto += `*Nome:* ${nome}\n`;
+        texto += `*Projeto:* ${projeto}\n`;
+        texto += `*Material:* ${materialString}\n`;
+        texto += `*Peso Total:* ${pesoTexto}\n`;
+        texto += `*Tamanho:* ${tamanho}\n`;
+        texto += `--------------------------------\n`;
+        texto += textoFrete;
+        texto += `*À Vista (Desconto no Pix):* ${formatCurrency(whatsappData.avista)}\n`;
+        texto += `Opção: Integral ou 50% de entrada + restante na entrega.\n`;
+        texto += `--------------------------------\n`;
+        texto += textoParcelado;
+
+        const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(texto)}`;
+        window.open(url, '_blank');
     }
 </script>
 </body>
