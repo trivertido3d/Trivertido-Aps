@@ -553,6 +553,211 @@
         .badge-res { background: #ede9fe; color: #7c3aed; }
         .badge-pin { background: #fee2e2; color: #dc2626; }
         .badge-mat { background: #fef3c7; color: #d97706; }
+
+        /* ===== URGENTE ===== */
+        .nav-btn-urgente { background: #dc2626 !important; }
+        .nav-btn-urgente.active { background: #b91c1c !important; }
+
+        .urgente-page { max-width: 600px; margin: 20px auto; padding: 0 12px; }
+
+        .urgente-header {
+            background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%);
+            border-radius: 20px;
+            padding: 28px 24px 22px;
+            margin-bottom: 16px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .urgente-header::before {
+            content: '🚨';
+            position: absolute;
+            right: 20px; top: 50%;
+            transform: translateY(-50%);
+            font-size: 4em;
+            opacity: 0.15;
+        }
+        .urgente-header h1 {
+            font-size: 1.6em;
+            font-weight: 900;
+            margin: 0 0 4px;
+            letter-spacing: 0.5px;
+        }
+        .urgente-header p { margin: 0; opacity: 0.75; font-size: 0.85em; }
+
+        .urgente-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1.5px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 12px;
+        }
+        .urgente-card h3 {
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6b7280;
+            margin: 0 0 14px;
+        }
+
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+        .input-group { margin-bottom: 14px; }
+        .input-group label {
+            display: block;
+            font-size: 0.78em;
+            font-weight: 600;
+            color: #4b5563;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
+        }
+        .input-hint {
+            font-size: 0.72em;
+            color: #9ca3af;
+            margin-top: 4px;
+        }
+
+        .btn-calcular-urgente {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.05em;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 4px;
+            letter-spacing: 0.3px;
+        }
+        .btn-calcular-urgente:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(220,38,38,0.35); }
+        .btn-calcular-urgente:active { transform: translateY(0); }
+
+        .urgente-resultado {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            border-radius: 20px;
+            padding: 28px 24px;
+            color: white;
+            margin-bottom: 12px;
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .urgente-resultado.show { display: block; }
+
+        .resultado-principal {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .resultado-principal .label {
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.6;
+            margin-bottom: 8px;
+        }
+        .resultado-principal .valor {
+            font-size: 4em;
+            font-weight: 900;
+            line-height: 1;
+            color: #f87171;
+        }
+        .resultado-principal .unidade {
+            font-size: 1.2em;
+            font-weight: 600;
+            opacity: 0.7;
+            margin-left: 4px;
+        }
+        .resultado-principal .sublabel {
+            font-size: 0.8em;
+            opacity: 0.55;
+            margin-top: 6px;
+        }
+
+        .resultado-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .res-mini {
+            background: rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+        .res-mini .rm-label { font-size: 0.68em; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+        .res-mini .rm-val { font-size: 1.3em; font-weight: 800; }
+
+        .instrucoes {
+            background: rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 16px;
+            border-left: 3px solid #f87171;
+        }
+        .instrucoes h4 {
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f87171;
+            margin: 0 0 12px;
+        }
+        .passo {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.85em;
+            line-height: 1.4;
+            opacity: 0.85;
+        }
+        .passo:last-child { margin-bottom: 0; }
+        .passo-num {
+            background: #f87171;
+            color: white;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            font-size: 0.7em;
+            font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .alerta-margem {
+            background: rgba(251,191,36,0.15);
+            border: 1px solid rgba(251,191,36,0.3);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-top: 14px;
+            font-size: 0.82em;
+            color: #fbbf24;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
     </style>
 </head>
 <body>
@@ -562,6 +767,7 @@
     <button onclick="showPage('orcamento')" id="btn-orcamento" class="nav-btn">💰 Orçamento</button>
     <button onclick="showPage('escala')" id="btn-escala" class="nav-btn">📏 Escala</button>
     <button onclick="showPage('estoque')" id="btn-estoque" class="nav-btn">📦 Estoque</button>
+    <button onclick="showPage('urgente')" id="btn-urgente" class="nav-btn nav-btn-urgente">🚨 Urgente</button>
 </nav>
 
 <!-- ===== HOME ===== -->
@@ -589,6 +795,13 @@
                 <p class="text-sm text-gray-500">Filamento, Resina, Pintura e Materiais</p>
             </div>
             <span class="text-2xl">📦</span>
+        </button>
+        <button onclick="showPage('urgente')" class="p-6 bg-white border-2 border-red-500 rounded-2xl shadow-sm hover:bg-red-50 transition text-left flex items-center justify-between group">
+            <div>
+                <h3 style="font-family:'Inter',sans-serif;" class="text-xl font-bold text-gray-800 group-hover:text-red-600">Impressão Urgente</h3>
+                <p class="text-sm text-gray-500">Calcular onde cortar para retomar impressão</p>
+            </div>
+            <span class="text-2xl">🚨</span>
         </button>
     </div>
 </div>
@@ -937,7 +1150,7 @@
 <script>
 // =================== NAVEGAÇÃO ===================
 function showPage(pageId) {
-    ['home','orcamento','escala','estoque'].forEach(p => {
+    ['home','orcamento','escala','estoque','urgente'].forEach(p => {
         document.getElementById('page-' + p).classList.add('hidden');
         document.getElementById('btn-' + p).classList.remove('active');
     });
@@ -1305,6 +1518,159 @@ function renderEstoque() {
     html += '</div>';
     container.innerHTML = html;
 }
+// =================== URGENTE ===================
+function calcularUrgente() {
+    const alturaTotal = parseFloat(document.getElementById('urg-altura-total').value);
+    const pctMaterial = parseFloat(document.getElementById('urg-pct-material').value);
+    const pesoTotal = parseFloat(document.getElementById('urg-peso-total').value);
+    const margemExtra = parseFloat(document.getElementById('urg-margem').value) || 0;
+    const alturaUnit = document.getElementById('urg-unidade').value;
+
+    if (!alturaTotal || !pctMaterial || !pesoTotal) {
+        alert('Preencha todos os campos obrigatórios!');
+        return;
+    }
+    if (pctMaterial <= 0 || pctMaterial >= 100) {
+        alert('A porcentagem deve ser entre 1 e 99%.');
+        return;
+    }
+
+    // % do material usado = % da impressão concluída em altura
+    const pctConcluida = pctMaterial / 100;
+
+    // Altura onde parou
+    let alturaPausa = alturaTotal * pctConcluida;
+
+    // Converter para mm se necessário
+    let alturaTotalMm = alturaUnit === 'cm' ? alturaTotal * 10 : alturaTotal;
+    let alturaPausaMm = alturaUnit === 'cm' ? alturaPausa * 10 : alturaPausa;
+
+    // Altura de corte = altura onde parou + margem de segurança
+    const alturaCorte = alturaPausaMm + margemExtra;
+    const alturaFaltando = alturaTotalMm - alturaPausaMm;
+
+    // Peso restante estimado
+    const pesoRestante = pesoTotal * (1 - pctConcluida);
+
+    // Mostrar resultado
+    const res = document.getElementById('urgente-resultado');
+    document.getElementById('urg-res-corte').innerText = alturaCorte.toFixed(1);
+    document.getElementById('urg-res-pausa').innerText = alturaPausaMm.toFixed(1) + ' mm';
+    document.getElementById('urg-res-falta').innerText = alturaFaltando.toFixed(1) + ' mm';
+    document.getElementById('urg-res-peso').innerText = pesoRestante.toFixed(1) + ' g';
+
+    // Instrução dinâmica de corte
+    const instrCorte = document.getElementById('urg-instr-corte');
+    instrCorte.innerText = `No Bambu Studio, abra o modelo original → Cut → insira ${alturaCorte.toFixed(1)} mm como altura de corte → mantenha apenas a parte superior.`;
+
+    // Alerta de margem
+    const alertaMargem = document.getElementById('urg-alerta-margem');
+    if (margemExtra === 0) {
+        alertaMargem.style.display = 'flex';
+    } else {
+        alertaMargem.style.display = 'none';
+    }
+
+    res.classList.add('show');
+    res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
 </script>
+
+<!-- ===== URGENTE PAGE ===== -->
+<div id="page-urgente" class="urgente-page hidden">
+
+    <div class="urgente-header">
+        <h1>🚨 IMPRESSÃO URGENTE</h1>
+        <p>Calcule onde cortar o modelo para retomar a impressão</p>
+    </div>
+
+    <div class="urgente-card">
+        <h3>📐 Dados da peça</h3>
+        <div class="input-row">
+            <div class="input-group">
+                <label>Altura total da peça</label>
+                <input type="number" id="urg-altura-total" placeholder="Ex: 120">
+                <div class="input-hint">Altura completa do modelo</div>
+            </div>
+            <div class="input-group">
+                <label>Unidade</label>
+                <select id="urg-unidade">
+                    <option value="mm">mm</option>
+                    <option value="cm">cm</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <label>Peso total estimado (g)</label>
+            <input type="number" id="urg-peso-total" placeholder="Ex: 85">
+            <div class="input-hint">Visto no Bambu Studio antes de imprimir</div>
+        </div>
+    </div>
+
+    <div class="urgente-card">
+        <h3>⏸️ Dados quando parou</h3>
+        <div class="input-group">
+            <label>% do material usado quando parou</label>
+            <input type="number" id="urg-pct-material" placeholder="Ex: 62" min="1" max="99">
+            <div class="input-hint">Porcentagem que o Bambu Studio mostrava de material consumido</div>
+        </div>
+    </div>
+
+    <div class="urgente-card">
+        <h3>⚙️ Ajuste de precisão</h3>
+        <div class="input-group">
+            <label>Margem de segurança (mm)</label>
+            <input type="number" id="urg-margem" placeholder="Ex: 0.4" value="0.4" step="0.1" min="0">
+            <div class="input-hint">Sobreposição extra para garantir aderência entre as partes (recomendado: 0.2 a 0.8mm)</div>
+        </div>
+    </div>
+
+    <button class="btn-calcular-urgente" onclick="calcularUrgente()">⚡ CALCULAR ALTURA DE CORTE</button>
+
+    <!-- RESULTADO -->
+    <div class="urgente-resultado" id="urgente-resultado">
+        <div class="resultado-principal">
+            <div class="label">Cortar o modelo em</div>
+            <div>
+                <span class="valor" id="urg-res-corte">—</span>
+                <span class="unidade">mm</span>
+            </div>
+            <div class="sublabel">Insira esse valor no campo "Cut" do Bambu Studio</div>
+        </div>
+
+        <div class="resultado-grid">
+            <div class="res-mini">
+                <div class="rm-label">Altura onde parou</div>
+                <div class="rm-val" id="urg-res-pausa">—</div>
+            </div>
+            <div class="res-mini">
+                <div class="rm-label">Altura que falta</div>
+                <div class="rm-val" id="urg-res-falta">—</div>
+            </div>
+            <div class="res-mini">
+                <div class="rm-label">Peso restante est.</div>
+                <div class="rm-val" id="urg-res-peso">—</div>
+            </div>
+            <div class="res-mini">
+                <div class="rm-label">Diâmetro filamento</div>
+                <div class="rm-val">1.75 mm</div>
+            </div>
+        </div>
+
+        <div class="instrucoes">
+            <h4>📋 Passo a passo no Bambu Studio</h4>
+            <div class="passo"><div class="passo-num">1</div><div id="urg-instr-corte">Calcule primeiro para ver a instrução.</div></div>
+            <div class="passo"><div class="passo-num">2</div><div>Selecione <strong>apenas a parte superior</strong> do corte e exporte como novo arquivo STL.</div></div>
+            <div class="passo"><div class="passo-num">3</div><div>Fatie o novo arquivo normalmente. O peso estimado restante é mostrado acima para conferir.</div></div>
+            <div class="passo"><div class="passo-num">4</div><div>Coloque a peça impressa de volta na mesa exatamente na mesma posição e imprima a parte de cima sobre ela.</div></div>
+        </div>
+
+        <div class="alerta-margem" id="urg-alerta-margem">
+            <span>⚠️</span>
+            <span>Você definiu margem 0. Recomendamos pelo menos <strong>0.2mm</strong> de sobreposição para garantir que as partes colem bem na junção.</span>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
