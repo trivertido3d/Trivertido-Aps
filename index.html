@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivertido - Ferramentas 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -15,38 +16,44 @@
             --res-border: #bbf7d0;
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
             padding: 0;
+            padding-bottom: 40px;
         }
 
         /* Nav */
         .nav-menu {
-            background: #1f2937;
-            padding: 15px;
+            background: #111827;
+            padding: 12px 10px;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 6px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+            flex-wrap: wrap;
         }
         .nav-btn {
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 8px;
             color: white;
             font-weight: 600;
-            font-size: 0.9em;
-            transition: 0.3s;
+            font-size: 0.82em;
+            transition: 0.2s;
             border: none;
             cursor: pointer;
+            font-family: 'Inter', sans-serif;
         }
         .nav-btn.active { background: var(--primary); }
-        .nav-btn:not(.active) { background: #374151; }
+        .nav-btn:not(.active) { background: #1f2937; }
+        .nav-btn:hover:not(.active) { background: #374151; }
 
         /* Container */
         .container-app {
@@ -54,7 +61,7 @@
             margin: 20px auto;
             background: var(--card);
             border-radius: 20px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
         }
 
@@ -79,6 +86,7 @@
             font-size: 0.9em;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
         }
         .tab:hover { opacity: 0.8; }
         .tab.active {
@@ -89,40 +97,43 @@
             transform: scale(1.02);
         }
 
-        /* Forms */
         .content { padding: 0 25px 25px 25px; }
         .form-group { margin-bottom: 15px; }
         label {
             display: block;
             margin-bottom: 6px;
             font-weight: 600;
-            font-size: 0.85em;
+            font-size: 0.82em;
             color: #4b5563;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        input[type="text"], input[type="number"], select {
+        input[type="text"], input[type="number"], select, textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #d1d5db;
             border-radius: 10px;
             box-sizing: border-box;
-            font-size: 16px;
+            font-size: 15px;
             outline: none;
             transition: border-color 0.3s;
+            font-family: 'Inter', sans-serif;
         }
-        input:focus, select:focus { border-color: var(--primary); }
+        input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(22,163,74,0.1); }
 
         .section-title {
             margin-top: 30px;
             margin-bottom: 12px;
-            font-size: 1.1em;
-            font-weight: bold;
+            font-size: 1em;
+            font-weight: 700;
             color: var(--primary);
             border-bottom: 2px solid #f3f4f6;
             padding-bottom: 5px;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Materiais */
         .material-list, .frete-box {
             background: #f9fafb;
             padding: 15px;
@@ -140,14 +151,13 @@
             align-items: center;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.85em;
+            font-size: 0.82em;
             color: #4b5563;
             text-transform: uppercase;
             margin-bottom: 0;
         }
         .material-header input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 18px; height: 18px;
             margin-right: 10px;
             accent-color: var(--primary);
             cursor: pointer;
@@ -177,14 +187,8 @@
             color: #1f2937;
         }
         .checkbox-item:last-child { margin-bottom: 0; }
-        .checkbox-item input {
-            width: 18px;
-            height: 18px;
-            margin-right: 10px;
-            accent-color: var(--primary);
-        }
+        .checkbox-item input { width: 18px; height: 18px; margin-right: 10px; accent-color: var(--primary); }
 
-        /* Resultado */
         .result-box {
             background: var(--res-bg);
             border: 2px solid var(--res-border);
@@ -195,106 +199,67 @@
         }
         .result-total {
             border-top: 1px solid var(--res-border);
-            margin-top: 15px;
-            padding-top: 15px;
-            font-size: 1.3em;
-            font-weight: bold;
+            margin-top: 15px; padding-top: 15px;
+            font-size: 1.3em; font-weight: bold;
             color: var(--primary);
-            display: flex;
-            justify-content: space-between;
+            display: flex; justify-content: space-between;
         }
         .result-sub {
-            font-size: 1em;
-            color: #4b5563;
+            font-size: 1em; color: #4b5563;
             margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
+            display: flex; justify-content: space-between;
             padding: 5px 0;
         }
         .internal-profit {
-            margin-top: 20px;
-            padding: 10px;
+            margin-top: 20px; padding: 10px;
             border-top: 2px dashed #9ca3af;
-            font-size: 0.95em;
-            color: #4b5563;
-            display: flex;
-            justify-content: space-between;
+            font-size: 0.95em; color: #4b5563;
+            display: flex; justify-content: space-between;
             background-color: rgba(255,255,255,0.5);
             border-radius: 8px;
         }
         .destaque-avista { color: #16a34a; font-weight: bold; }
 
-        /* Botões */
         .btn-whatsapp {
-            display: block;
-            width: 100%;
-            background-color: #25D366;
-            color: white;
-            padding: 16px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 25px;
-            transition: transform 0.2s, background-color 0.3s;
+            display: block; width: 100%;
+            background-color: #25D366; color: white;
+            padding: 16px; border: none; border-radius: 12px;
+            font-size: 1.1em; font-weight: bold; cursor: pointer;
+            margin-top: 25px; transition: transform 0.2s, background-color 0.3s;
             text-align: center;
             box-shadow: 0 4px 6px rgba(37,211,102,0.2);
+            font-family: 'Inter', sans-serif;
         }
         .btn-whatsapp:hover { background-color: #1da851; transform: translateY(-2px); }
 
         .btn-outline {
-            background: white;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: 600;
-            margin-bottom: 10px;
-            transition: all 0.3s;
+            background: white; border: 2px solid var(--primary);
+            color: var(--primary); padding: 10px; border-radius: 8px;
+            cursor: pointer; width: 100%; font-weight: 600;
+            margin-bottom: 10px; transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
         }
         .btn-outline.active { background: var(--primary); color: white; }
 
         .btn-auto-calc {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 5px;
-            margin-bottom: 5px;
+            background: #2563eb; color: white; border: none;
+            padding: 10px; border-radius: 8px; font-weight: 600;
+            cursor: pointer; width: 100%; margin-top: 5px; margin-bottom: 5px;
+            font-family: 'Inter', sans-serif;
         }
         .btn-auto-calc:disabled { background: #93c5fd; cursor: not-allowed; }
 
         .btn-map-small {
-            background: transparent;
-            color: #2563eb;
-            border: none;
-            font-size: 0.85em;
-            text-decoration: underline;
-            cursor: pointer;
-            margin-top: 5px;
+            background: transparent; color: #2563eb; border: none;
+            font-size: 0.85em; text-decoration: underline; cursor: pointer; margin-top: 5px;
         }
 
         .btn-config {
-            display: block;
-            width: 100%;
-            background-color: #e5e7eb;
-            color: #374151;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
+            display: block; width: 100%; background-color: #e5e7eb;
+            color: #374151; padding: 12px; border: none; border-radius: 8px;
+            font-size: 1em; font-weight: 600; cursor: pointer;
+            margin-top: 30px; margin-bottom: 10px; transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         .hidden { display: none !important; }
@@ -303,18 +268,291 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         .spinner {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
+            display: inline-block; width: 12px; height: 12px;
             border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 5px;
+            border-radius: 50%; border-top-color: white;
+            animation: spin 1s ease-in-out infinite; margin-right: 5px;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ===== ESTOQUE ===== */
+        .estoque-page { max-width: 600px; margin: 20px auto; }
+
+        .estoque-header {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            border-radius: 20px;
+            padding: 28px 24px 20px;
+            margin-bottom: 16px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .estoque-header::before {
+            content: '';
+            position: absolute;
+            top: -30px; right: -30px;
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            background: rgba(22,163,74,0.15);
+        }
+        .estoque-header h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8em;
+            margin: 0 0 4px;
+            letter-spacing: 1px;
+        }
+        .estoque-header p { margin: 0; opacity: 0.6; font-size: 0.9em; }
+
+        .estoque-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+        .estoque-tab {
+            flex-shrink: 0;
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            font-weight: 700;
+            font-size: 0.82em;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Inter', sans-serif;
+            color: #6b7280;
+        }
+        .estoque-tab.active {
+            border-color: transparent;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .estoque-tab.fil.active { background: linear-gradient(135deg, #16a34a, #15803d); }
+        .estoque-tab.res.active { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        .estoque-tab.pin.active { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .estoque-tab.mat.active { background: linear-gradient(135deg, #d97706, #b45309); }
+
+        .estoque-view-toggle {
+            display: flex;
+            background: #f3f4f6;
+            border-radius: 10px;
+            padding: 4px;
+            margin-bottom: 16px;
+            gap: 4px;
+        }
+        .view-btn {
+            flex: 1;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            font-size: 0.82em;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: #6b7280;
+        }
+        .view-btn.active {
+            background: white;
+            color: #111827;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Cards de visualização */
+        .stock-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .stock-card {
+            background: white;
+            border-radius: 14px;
+            padding: 14px;
+            border: 1.5px solid #f3f4f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            animation: fadeIn 0.3s ease both;
+            position: relative;
+            overflow: hidden;
+        }
+        .stock-card:hover { border-color: #d1d5db; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+        .stock-card-color {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid rgba(255,255,255,0.8);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+        .stock-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .stock-card-name {
+            font-weight: 700; font-size: 0.9em;
+            color: #111827;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.2;
+        }
+        .stock-card-sub { font-size: 0.78em; color: #6b7280; margin-top: 2px; }
+        .stock-card-qty {
+            font-size: 1.3em;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            margin-top: 4px;
+        }
+        .stock-card-qty span { font-size: 0.55em; font-weight: 500; color: #6b7280; }
+        .stock-card-obs {
+            font-size: 0.75em;
+            color: #9ca3af;
+            margin-top: 6px;
+            font-style: italic;
+            border-top: 1px dashed #f3f4f6;
+            padding-top: 6px;
+        }
+        .stock-delete-btn {
+            position: absolute;
+            top: 8px; right: 8px;
+            background: #fee2e2;
+            border: none;
+            border-radius: 6px;
+            width: 24px; height: 24px;
+            cursor: pointer;
+            font-size: 0.75em;
+            color: #dc2626;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .stock-card:hover .stock-delete-btn { opacity: 1; }
+
+        /* Low stock badge */
+        .low-stock {
+            position: absolute;
+            bottom: 8px; right: 8px;
+            background: #fef3c7;
+            color: #d97706;
+            font-size: 0.65em;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 20px;
+            border: 1px solid #fde68a;
+        }
+
+        /* Formulário de cadastro */
+        .cadastro-form {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1.5px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .cadastro-form h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            margin: 0 0 16px;
+            color: #111827;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .color-picker-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .color-picker-row input[type="color"] {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            border: 3px solid #e5e7eb;
+            padding: 2px;
+            cursor: pointer;
+            background: none;
+        }
+        .color-preview {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            border: 3px solid #e5e7eb;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.2s;
+        }
+
+        .btn-add-item {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: white;
+        }
+        .btn-add-item:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+        .btn-add-fil { background: linear-gradient(135deg, #16a34a, #15803d); }
+        .btn-add-res { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        .btn-add-pin { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .btn-add-mat { background: linear-gradient(135deg, #d97706, #b45309); }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #9ca3af;
+        }
+        .empty-state .emoji { font-size: 2.5em; margin-bottom: 8px; }
+        .empty-state p { margin: 0; font-size: 0.9em; }
+
+        .stock-summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .summary-card {
+            border-radius: 12px;
+            padding: 12px 8px;
+            text-align: center;
+            color: white;
+        }
+        .summary-card .num {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4em;
+            font-weight: 800;
+            display: block;
+        }
+        .summary-card .lbl { font-size: 0.65em; opacity: 0.85; font-weight: 600; text-transform: uppercase; }
+        .sc-fil { background: linear-gradient(135deg, #16a34a, #15803d); }
+        .sc-res { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        .sc-pin { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .sc-mat { background: linear-gradient(135deg, #d97706, #b45309); }
+
+        /* Categoria badge */
+        .cat-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .badge-fil { background: #dcfce7; color: #16a34a; }
+        .badge-res { background: #ede9fe; color: #7c3aed; }
+        .badge-pin { background: #fee2e2; color: #dc2626; }
+        .badge-mat { background: #fef3c7; color: #d97706; }
     </style>
 </head>
 <body>
@@ -322,36 +560,44 @@
 <nav class="nav-menu">
     <button onclick="showPage('home')" id="btn-home" class="nav-btn active">🏠 Início</button>
     <button onclick="showPage('orcamento')" id="btn-orcamento" class="nav-btn">💰 Orçamento</button>
-    <button onclick="showPage('escala')" id="btn-escala" class="nav-btn">📏 Ver Tamanho</button>
+    <button onclick="showPage('escala')" id="btn-escala" class="nav-btn">📏 Escala</button>
+    <button onclick="showPage('estoque')" id="btn-estoque" class="nav-btn">📦 Estoque</button>
 </nav>
 
-<!-- HOME -->
+<!-- ===== HOME ===== -->
 <div id="page-home" class="container-app p-8 text-center mt-6">
-    <h1 class="text-3xl font-black text-green-600 mb-2">TRIVERTIDO 💚</h1>
+    <h1 style="font-family:'Inter',sans-serif;" class="text-3xl font-black text-green-600 mb-2">TRIVERTIDO 💚</h1>
     <p class="text-gray-500 mb-8 font-medium">Selecione a ferramenta desejada</p>
     <div class="grid gap-4">
         <button onclick="showPage('orcamento')" class="p-6 bg-white border-2 border-green-500 rounded-2xl shadow-sm hover:bg-green-50 transition text-left flex items-center justify-between group">
             <div>
-                <h3 class="text-xl font-bold text-gray-800 group-hover:text-green-600">Fazer Orçamento</h3>
+                <h3 style="font-family:'Inter',sans-serif;" class="text-xl font-bold text-gray-800 group-hover:text-green-600">Fazer Orçamento</h3>
                 <p class="text-sm text-gray-500">Filamento, Resina, Pintura e Frete</p>
             </div>
             <span class="text-2xl">💰</span>
         </button>
         <button onclick="showPage('escala')" class="p-6 bg-white border-2 border-blue-500 rounded-2xl shadow-sm hover:bg-blue-50 transition text-left flex items-center justify-between group">
             <div>
-                <h3 class="text-xl font-bold text-gray-800 group-hover:text-blue-600">Ver Tamanho (Escala)</h3>
+                <h3 style="font-family:'Inter',sans-serif;" class="text-xl font-bold text-gray-800 group-hover:text-blue-600">Ver Tamanho (Escala)</h3>
                 <p class="text-sm text-gray-500">Cálculo de redução proporcional (%)</p>
             </div>
             <span class="text-2xl">📏</span>
         </button>
+        <button onclick="showPage('estoque')" class="p-6 bg-white border-2 border-orange-400 rounded-2xl shadow-sm hover:bg-orange-50 transition text-left flex items-center justify-between group">
+            <div>
+                <h3 style="font-family:'Inter',sans-serif;" class="text-xl font-bold text-gray-800 group-hover:text-orange-500">Gerenciar Estoque</h3>
+                <p class="text-sm text-gray-500">Filamento, Resina, Pintura e Materiais</p>
+            </div>
+            <span class="text-2xl">📦</span>
+        </button>
     </div>
 </div>
 
-<!-- ORÇAMENTO -->
+<!-- ===== ORÇAMENTO ===== -->
 <div id="page-orcamento" class="container-app hidden">
     <div class="content" style="padding-top:20px;">
         <div style="text-align:center; margin-bottom:15px;">
-            <h2 style="color:var(--primary); font-size:1.5em; text-transform:uppercase; letter-spacing:1px; margin:0;">Orçamento Trivertido💚</h2>
+            <h2 style="font-family:'Inter',sans-serif; color:var(--primary); font-size:1.5em; text-transform:uppercase; letter-spacing:1px; margin:0;">Orçamento Trivertido💚</h2>
         </div>
 
         <div class="tabs-container">
@@ -360,21 +606,11 @@
         </div>
 
         <div class="section-title" style="margin-top:0">Identificação</div>
-        <div class="form-group">
-            <label>Nome do Cliente</label>
-            <input type="text" id="nomeCliente" placeholder="Ex: João">
-        </div>
-        <div class="form-group">
-            <label>Nome do Projeto</label>
-            <input type="text" id="nomeProjeto" placeholder="Ex: Peça Mecânica">
-        </div>
-        <div class="form-group">
-            <label>Tamanho</label>
-            <input type="text" id="tamanhoPeca" placeholder="Ex: 15x10cm">
-        </div>
+        <div class="form-group"><label>Nome do Cliente</label><input type="text" id="nomeCliente" placeholder="Ex: João"></div>
+        <div class="form-group"><label>Nome do Projeto</label><input type="text" id="nomeProjeto" placeholder="Ex: Peça Mecânica"></div>
+        <div class="form-group"><label>Tamanho</label><input type="text" id="tamanhoPeca" placeholder="Ex: 15x10cm"></div>
 
         <div class="section-title">Dados da Impressão</div>
-
         <div class="form-group">
             <button class="btn-outline" id="btn3d" onclick="toggle3d()">+ Incluir Modelo 3D (Compra)</button>
             <div id="input3d" class="hidden" style="margin-top:10px;">
@@ -437,19 +673,11 @@
 
         <div class="section-title">Acabamento</div>
         <div class="checkbox-group">
-            <label class="checkbox-item">
-                <input type="checkbox" id="comPintura" onchange="togglePintura()"> Incluir Pintura
-            </label>
+            <label class="checkbox-item"><input type="checkbox" id="comPintura" onchange="togglePintura()"> Incluir Pintura</label>
         </div>
         <div id="pinturaInputs" class="hidden" style="margin-top:10px;">
-            <div class="form-group">
-                <label>Custo Tinta/Insumos (R$)</label>
-                <input type="number" id="custoTinta" value="0" oninput="calcular()">
-            </div>
-            <div class="form-group">
-                <label>Mão de Obra (R$)</label>
-                <input type="number" id="maoDeObra" value="0" oninput="calcular()">
-            </div>
+            <div class="form-group"><label>Custo Tinta/Insumos (R$)</label><input type="number" id="custoTinta" value="0" oninput="calcular()"></div>
+            <div class="form-group"><label>Mão de Obra (R$)</label><input type="number" id="maoDeObra" value="0" oninput="calcular()"></div>
         </div>
 
         <div class="section-title">Frete / Entrega</div>
@@ -463,21 +691,15 @@
                     <button class="btn-map-small" onclick="abrirMaps()">(Ou ver rota no Google Maps manualmente)</button>
                 </div>
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-                    <div class="form-group">
-                        <label>Distância (Km) - Ida</label>
-                        <input type="number" id="distanciaKm" placeholder="0.0" oninput="calcular()">
-                    </div>
-                    <div class="form-group">
-                        <label>Veículo</label>
+                    <div class="form-group"><label>Distância (Km) - Ida</label><input type="number" id="distanciaKm" placeholder="0.0" oninput="calcular()"></div>
+                    <div class="form-group"><label>Veículo</label>
                         <select id="tipoVeiculo" onchange="calcular()">
                             <option value="moto">Moto (23km/L)</option>
                             <option value="carro">Carro (7km/L)</option>
                         </select>
                     </div>
                 </div>
-                <div style="text-align:right; font-weight:bold; color:var(--primary)">
-                    Custo Frete (Ida e Volta): <span id="resFrete">R$ 0,00</span>
-                </div>
+                <div style="text-align:right; font-weight:bold; color:var(--primary)">Custo Frete (Ida e Volta): <span id="resFrete">R$ 0,00</span></div>
             </div>
         </div>
 
@@ -491,11 +713,11 @@
             </select>
         </div>
 
-        <button class="btn-config" onclick="toggleConfig()">Editar Preços e Taxas</button>
+        <button class="btn-config" onclick="toggleConfig()">⚙️ Editar Preços e Taxas</button>
         <div id="configInputs" class="hidden">
             <div class="form-group"><label>Margem Lucro (%)</label><input type="number" id="margemLucro" value="200" oninput="calcular()"></div>
             <div class="form-group"><label>Preço Combustível (R$/L)</label><input type="number" id="precoCombustivel" value="6.00" oninput="calcular()"></div>
-            <h4 style="color:var(--primary)">Preços Materiais (R$/kg)</h4>
+            <h4 style="color:var(--primary); font-family:'Inter',sans-serif;">Preços Materiais (R$/kg)</h4>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
                 <div><label>Padrão</label><input type="number" id="precoKg" value="130" oninput="calcular()"></div>
                 <div><label>PETG</label><input type="number" id="precoPetg" value="100" oninput="calcular()"></div>
@@ -515,35 +737,20 @@
         </div>
 
         <div class="result-box">
-            <div class="result-sub">
-                <span>Preço Base (s/ taxas):</span>
-                <span id="resPrecoBase">R$ 0,00</span>
-            </div>
+            <div class="result-sub"><span>Preço Base (s/ taxas):</span><span id="resPrecoBase">R$ 0,00</span></div>
             <hr style="border:0; border-top:1px dashed #ccc; margin:10px 0;">
-            <div class="result-sub">
-                <span>À Vista (Desconto no Pix):</span>
-                <span class="destaque-avista" id="resPrecoAvista">R$ 0,00</span>
-            </div>
-            <div class="result-total">
-                <span id="labelParcelado">À Vista no Cartão:</span>
-                <span id="resPrecoParcelado">R$ 0,00</span>
-            </div>
-            <div style="text-align:right; font-size:0.85em; color:var(--primary); font-weight:600;">
-                <span id="resDetalheParcelas"></span>
-            </div>
-            <div class="internal-profit">
-                <span>Lucro Líquido Estimado (Interno):</span>
-                <span id="resLucro" style="color:#059669; font-weight:bold;">R$ 0,00</span>
-            </div>
+            <div class="result-sub"><span>À Vista (Desconto no Pix):</span><span class="destaque-avista" id="resPrecoAvista">R$ 0,00</span></div>
+            <div class="result-total"><span id="labelParcelado">À Vista no Cartão:</span><span id="resPrecoParcelado">R$ 0,00</span></div>
+            <div style="text-align:right; font-size:0.85em; color:var(--primary); font-weight:600;"><span id="resDetalheParcelas"></span></div>
+            <div class="internal-profit"><span>Lucro Líquido Estimado (Interno):</span><span id="resLucro" style="color:#059669; font-weight:bold;">R$ 0,00</span></div>
         </div>
-
-        <button class="btn-whatsapp" onclick="enviarWhatsapp()">Enviar no WhatsApp</button>
+        <button class="btn-whatsapp" onclick="enviarWhatsapp()">📲 Enviar no WhatsApp</button>
     </div>
 </div>
 
-<!-- ESCALA -->
+<!-- ===== ESCALA ===== -->
 <div id="page-escala" class="container-app p-6 hidden">
-    <h2 class="text-2xl font-bold text-blue-600 mb-6 text-center">Calculadora de Escala</h2>
+    <h2 style="font-family:'Inter',sans-serif;" class="text-2xl font-bold text-blue-600 mb-6 text-center">Calculadora de Escala</h2>
     <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 mb-6">
         <label class="block text-sm font-bold text-blue-800 mb-2 uppercase">Peças em MM:</label>
         <div id="lista-pecas">
@@ -557,382 +764,547 @@
     </div>
     <div id="resultadoEscala" class="hidden bg-blue-600 text-white p-6 rounded-2xl text-center shadow-xl">
         <p class="text-xs uppercase opacity-80">Porcentagem no Fatiador:</p>
-        <h2 id="valorPorcentagem" class="text-5xl font-black my-1">0%</h2>
+        <h2 id="valorPorcentagem" style="font-family:'Inter',sans-serif;" class="text-5xl font-black my-1">0%</h2>
         <p id="detalheEscala" class="text-[10px] opacity-70 italic"></p>
     </div>
 </div>
 
+<!-- ===== ESTOQUE ===== -->
+<div id="page-estoque" class="estoque-page hidden" style="padding: 0 12px;">
+
+    <div class="estoque-header">
+        <h1>📦 ESTOQUE</h1>
+        <p>Gerencie seus materiais</p>
+    </div>
+
+    <!-- Resumo -->
+    <div class="stock-summary">
+        <div class="summary-card sc-fil"><span class="num" id="count-fil">0</span><span class="lbl">🧵 Filamentos</span></div>
+        <div class="summary-card sc-res"><span class="num" id="count-res">0</span><span class="lbl">🧪 Resinas</span></div>
+        <div class="summary-card sc-pin"><span class="num" id="count-pin">0</span><span class="lbl">🎨 Pinturas</span></div>
+        <div class="summary-card sc-mat"><span class="num" id="count-mat">0</span><span class="lbl">🔧 Materiais</span></div>
+    </div>
+
+    <!-- Tabs de categoria -->
+    <div class="estoque-tabs">
+        <button class="estoque-tab fil active" onclick="switchEstoqueTab('fil', this)">🧵 Filamento</button>
+        <button class="estoque-tab res" onclick="switchEstoqueTab('res', this)">🧪 Resina</button>
+        <button class="estoque-tab pin" onclick="switchEstoqueTab('pin', this)">🎨 Pintura</button>
+        <button class="estoque-tab mat" onclick="switchEstoqueTab('mat', this)">🔧 Materiais</button>
+    </div>
+
+    <!-- Toggle Visualizar / Cadastrar -->
+    <div class="estoque-view-toggle">
+        <button class="view-btn active" id="vbtn-ver" onclick="switchView('ver')">👁 Visualizar</button>
+        <button class="view-btn" id="vbtn-cadastrar" onclick="switchView('cadastrar')">➕ Cadastrar</button>
+    </div>
+
+    <!-- VIEW: Visualizar -->
+    <div id="view-ver">
+        <div id="stock-list-container">
+            <!-- Renderizado via JS -->
+        </div>
+    </div>
+
+    <!-- VIEW: Cadastrar -->
+    <div id="view-cadastrar" class="hidden">
+
+        <!-- FILAMENTO -->
+        <div id="form-fil" class="cadastro-form">
+            <h3>🧵 Novo Filamento</h3>
+            <div class="form-group">
+                <label>Tipo</label>
+                <select id="fil-tipo">
+                    <option>PLA</option>
+                    <option>ABS</option>
+                    <option>PETG</option>
+                    <option>TPU</option>
+                    <option>TPU Silk</option>
+                    <option>ASA</option>
+                    <option>Outro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Cor</label>
+                <div class="color-picker-row">
+                    <input type="color" id="fil-cor" value="#16a34a" oninput="updateColorPreview('fil')">
+                    <div class="color-preview" id="fil-cor-preview" style="background:#16a34a;"></div>
+                    <input type="text" id="fil-cor-nome" placeholder="Nome da cor (ex: Verde Militar)" style="flex:1;">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Quantidade em estoque (g)</label>
+                <input type="number" id="fil-qty" placeholder="Ex: 850">
+            </div>
+            <div class="form-group">
+                <label>Observação</label>
+                <textarea id="fil-obs" placeholder="Ex: Rolo quase acabando, pedir mais..." rows="2" style="resize:none;"></textarea>
+            </div>
+            <button class="btn-add-item btn-add-fil" onclick="addItem('fil')">+ Adicionar ao Estoque</button>
+        </div>
+
+        <!-- RESINA -->
+        <div id="form-res" class="cadastro-form hidden">
+            <h3>🧪 Nova Resina</h3>
+            <div class="form-group">
+                <label>Tipo</label>
+                <select id="res-tipo">
+                    <option>Padrão</option>
+                    <option>Translúcida</option>
+                    <option>Flexível</option>
+                    <option>ABS-Like</option>
+                    <option>Outro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Marca</label>
+                <input type="text" id="res-marca" placeholder="Ex: Elegoo, Anycubic...">
+            </div>
+            <div class="form-group">
+                <label>Cor</label>
+                <div class="color-picker-row">
+                    <input type="color" id="res-cor" value="#7c3aed" oninput="updateColorPreview('res')">
+                    <div class="color-preview" id="res-cor-preview" style="background:#7c3aed;"></div>
+                    <input type="text" id="res-cor-nome" placeholder="Nome da cor (ex: Cinza)">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Quantidade (ml)</label>
+                <input type="number" id="res-qty" placeholder="Ex: 500">
+            </div>
+            <div class="form-group">
+                <label>Observação</label>
+                <textarea id="res-obs" placeholder="Ex: Aberta em 01/03..." rows="2" style="resize:none;"></textarea>
+            </div>
+            <button class="btn-add-item btn-add-res" onclick="addItem('res')">+ Adicionar ao Estoque</button>
+        </div>
+
+        <!-- PINTURA -->
+        <div id="form-pin" class="cadastro-form hidden">
+            <h3>🎨 Nova Tinta / Insumo</h3>
+            <div class="form-group">
+                <label>Nome do produto</label>
+                <input type="text" id="pin-nome" placeholder="Ex: Tinta Spray Preto Fosco">
+            </div>
+            <div class="form-group">
+                <label>Cor</label>
+                <div class="color-picker-row">
+                    <input type="color" id="pin-cor" value="#dc2626" oninput="updateColorPreview('pin')">
+                    <div class="color-preview" id="pin-cor-preview" style="background:#dc2626;"></div>
+                    <input type="text" id="pin-cor-nome" placeholder="Nome da cor">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Quantidade</label>
+                <input type="text" id="pin-qty" placeholder="Ex: 2 latas, 300ml...">
+            </div>
+            <div class="form-group">
+                <label>Observação</label>
+                <textarea id="pin-obs" placeholder="Ex: Marca, onde comprar..." rows="2" style="resize:none;"></textarea>
+            </div>
+            <button class="btn-add-item btn-add-pin" onclick="addItem('pin')">+ Adicionar ao Estoque</button>
+        </div>
+
+        <!-- MATERIAIS -->
+        <div id="form-mat" class="cadastro-form hidden">
+            <h3>🔧 Novo Material</h3>
+            <div class="form-group">
+                <label>Nome do item</label>
+                <input type="text" id="mat-nome" placeholder="Ex: Lixa 400, Primer, Resina UV...">
+            </div>
+            <div class="form-group">
+                <label>Cor (se aplicável)</label>
+                <div class="color-picker-row">
+                    <input type="color" id="mat-cor" value="#d97706" oninput="updateColorPreview('mat')">
+                    <div class="color-preview" id="mat-cor-preview" style="background:#d97706;"></div>
+                    <input type="text" id="mat-cor-nome" placeholder="Cor ou N/A">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Quantidade</label>
+                <input type="text" id="mat-qty" placeholder="Ex: 5 folhas, 1 frasco...">
+            </div>
+            <div class="form-group">
+                <label>Observação</label>
+                <textarea id="mat-obs" placeholder="Ex: Onde comprar, validade..." rows="2" style="resize:none;"></textarea>
+            </div>
+            <button class="btn-add-item btn-add-mat" onclick="addItem('mat')">+ Adicionar ao Estoque</button>
+        </div>
+
+    </div>
+</div>
+
 <script>
-    // ====== NAVEGAÇÃO ======
-    function showPage(pageId) {
-        ['home','orcamento','escala'].forEach(p => {
-            document.getElementById('page-' + p).classList.add('hidden');
-            document.getElementById('btn-' + p).classList.remove('active');
-        });
-        document.getElementById('page-' + pageId).classList.remove('hidden');
-        document.getElementById('btn-' + pageId).classList.add('active');
+// =================== NAVEGAÇÃO ===================
+function showPage(pageId) {
+    ['home','orcamento','escala','estoque'].forEach(p => {
+        document.getElementById('page-' + p).classList.add('hidden');
+        document.getElementById('btn-' + p).classList.remove('active');
+    });
+    document.getElementById('page-' + pageId).classList.remove('hidden');
+    document.getElementById('btn-' + pageId).classList.add('active');
+    if (pageId === 'estoque') renderEstoque();
+}
+
+// =================== ESCALA ===================
+function addInputPeca() {
+    const div = document.createElement('div');
+    div.className = 'flex gap-2 mb-2';
+    div.innerHTML = `<input type="number" oninput="calcEscala()" placeholder="Peça mm" class="peca-input flex-1 p-3 border rounded-lg"><button onclick="this.parentElement.remove(); calcEscala()" class="bg-red-100 text-red-600 px-4 rounded-lg font-bold">✕</button>`;
+    document.getElementById('lista-pecas').appendChild(div);
+}
+function calcEscala() {
+    const inputs = document.querySelectorAll('.peca-input');
+    let somaMm = 0;
+    inputs.forEach(i => somaMm += (Number(i.value) || 0));
+    const alvoMm = (Number(document.getElementById('alvoCm').value) || 0) * 10;
+    const resDiv = document.getElementById('resultadoEscala');
+    if (somaMm > 0 && alvoMm > 0) {
+        const pct = ((alvoMm / somaMm) * 100).toFixed(2);
+        document.getElementById('valorPorcentagem').innerText = pct + "%";
+        document.getElementById('detalheEscala').innerText = `Total original: ${somaMm}mm | Alvo: ${alvoMm}mm`;
+        resDiv.classList.remove('hidden');
+    } else { resDiv.classList.add('hidden'); }
+}
+
+// =================== ORÇAMENTO ===================
+let currentMode = 'filamento';
+let isTranslucidaActive = false;
+let is3dActive = false;
+let isFreteActive = false;
+const origemLat = -22.7335;
+const origemLon = -47.6478;
+let whatsappData = { avista:0, parceladoTotal:0, parcelaValor:0, numParcelas:1, pesoTotal:0, tipoResina:"Resina", frete:0, veiculo:"" };
+const defaults = {
+    filamento: { watts:100, tarifa:2.3, lucro:200, theme:{primary:'#16a34a', resBg:'#f0fdf4', resBorder:'#bbf7d0'} },
+    resina: { watts:250, tarifa:4.3, lucro:150, theme:{primary:'#4b5563', resBg:'#f3f4f6', resBorder:'#d1d5db'} }
+};
+
+function switchTab(mode, e) {
+    currentMode = mode;
+    const config = defaults[mode];
+    const r = document.documentElement;
+    r.style.setProperty('--primary', config.theme.primary);
+    r.style.setProperty('--res-bg', config.theme.resBg);
+    r.style.setProperty('--res-border', config.theme.resBorder);
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    document.getElementById('watts').value = config.watts;
+    document.getElementById('tarifaEnergia').value = config.tarifa;
+    document.getElementById('margemLucro').value = config.lucro;
+    if (mode === 'resina') {
+        document.getElementById('areaFilamentos').classList.add('hidden');
+        document.getElementById('areaResina').classList.remove('hidden');
+    } else {
+        document.getElementById('areaFilamentos').classList.remove('hidden');
+        document.getElementById('areaResina').classList.add('hidden');
     }
+    calcular();
+}
 
-    // ====== ESCALA ======
-    function addInputPeca() {
-        const div = document.createElement('div');
-        div.className = 'flex gap-2 mb-2';
-        div.innerHTML = `
-            <input type="number" oninput="calcEscala()" placeholder="Peça mm" class="peca-input flex-1 p-3 border rounded-lg">
-            <button onclick="this.parentElement.remove(); calcEscala()" class="bg-red-100 text-red-600 px-4 rounded-lg font-bold">✕</button>
-        `;
-        document.getElementById('lista-pecas').appendChild(div);
-    }
-
-    function calcEscala() {
-        const inputs = document.querySelectorAll('.peca-input');
-        let somaMm = 0;
-        inputs.forEach(i => somaMm += (Number(i.value) || 0));
-        const alvoMm = (Number(document.getElementById('alvoCm').value) || 0) * 10;
-        const resDiv = document.getElementById('resultadoEscala');
-        if (somaMm > 0 && alvoMm > 0) {
-            const pct = ((alvoMm / somaMm) * 100).toFixed(2);
-            document.getElementById('valorPorcentagem').innerText = pct + "%";
-            document.getElementById('detalheEscala').innerText = `Total original: ${somaMm}mm | Alvo: ${alvoMm}mm`;
-            resDiv.classList.remove('hidden');
-        } else {
-            resDiv.classList.add('hidden');
-        }
-    }
-
-    // ====== ORÇAMENTO ======
-    let currentMode = 'filamento';
-    let isTranslucidaActive = false;
-    let is3dActive = false;
-    let isFreteActive = false;
-
-    const origemLat = -22.7335;
-    const origemLon = -47.6478;
-
-    let whatsappData = {
-        avista: 0, parceladoTotal: 0, parcelaValor: 0, numParcelas: 1,
-        pesoTotal: 0, tipoResina: "Resina", frete: 0, veiculo: ""
-    };
-
-    const defaults = {
-        filamento: {
-            watts: 100, tarifa: 2.3, lucro: 200,
-            theme: { primary: '#16a34a', resBg: '#f0fdf4', resBorder: '#bbf7d0' }
-        },
-        resina: {
-            watts: 250, tarifa: 4.3, lucro: 150,
-            theme: { primary: '#4b5563', resBg: '#f3f4f6', resBorder: '#d1d5db' }
-        }
-    };
-
-    function switchTab(mode, e) {
-        currentMode = mode;
-        const config = defaults[mode];
-        const r = document.documentElement;
-        r.style.setProperty('--primary', config.theme.primary);
-        r.style.setProperty('--res-bg', config.theme.resBg);
-        r.style.setProperty('--res-border', config.theme.resBorder);
-
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        e.target.classList.add('active');
-
-        document.getElementById('watts').value = config.watts;
-        document.getElementById('tarifaEnergia').value = config.tarifa;
-        document.getElementById('margemLucro').value = config.lucro;
-
-        if (mode === 'resina') {
-            document.getElementById('areaFilamentos').classList.add('hidden');
-            document.getElementById('areaResina').classList.remove('hidden');
-        } else {
-            document.getElementById('areaFilamentos').classList.remove('hidden');
-            document.getElementById('areaResina').classList.add('hidden');
-        }
+function toggleInputFilamento(tipo) {
+    const checkbox = document.getElementById('check_' + tipo);
+    const wrapper = document.getElementById('input_' + tipo + '_wrapper');
+    const input = document.getElementById('peso_' + tipo);
+    if (checkbox.checked) { wrapper.classList.add('open'); }
+    else { wrapper.classList.remove('open'); input.value = ""; }
+    calcular();
+}
+function toggleTranslucida() {
+    isTranslucidaActive = !isTranslucidaActive;
+    const btn = document.getElementById('btnTranslucida');
+    const area = document.getElementById('inputTranslucida');
+    const input = document.getElementById('pesoTranslucida');
+    if (isTranslucidaActive) { btn.classList.add('active'); btn.innerText = "- Remover Resina Translúcida"; area.classList.remove('hidden'); }
+    else { btn.classList.remove('active'); btn.innerText = "+ Incluir Resina Translúcida"; area.classList.add('hidden'); input.value = ""; }
+    calcular();
+}
+function toggle3d() {
+    is3dActive = !is3dActive;
+    const btn = document.getElementById('btn3d');
+    const area = document.getElementById('input3d');
+    const input = document.getElementById('custoModelo3d');
+    if (is3dActive) { btn.classList.add('active'); btn.innerText = "- Remover Modelo 3D"; area.classList.remove('hidden'); }
+    else { btn.classList.remove('active'); btn.innerText = "+ Incluir Modelo 3D (Compra)"; area.classList.add('hidden'); input.value = ""; }
+    calcular();
+}
+function toggleFrete() {
+    isFreteActive = !isFreteActive;
+    const btn = document.getElementById('btnFrete');
+    const area = document.getElementById('areaFrete');
+    if (isFreteActive) { btn.classList.add('active'); area.classList.remove('hidden'); }
+    else { btn.classList.remove('active'); area.classList.add('hidden'); document.getElementById('distanciaKm').value = ""; }
+    calcular();
+}
+function togglePintura() {
+    const check = document.getElementById('comPintura');
+    const inputs = document.getElementById('pinturaInputs');
+    if (check.checked) { inputs.classList.remove('hidden'); }
+    else { inputs.classList.add('hidden'); document.getElementById('custoTinta').value = 0; document.getElementById('maoDeObra').value = 0; }
+    calcular();
+}
+function toggleConfig() { document.getElementById('configInputs').classList.toggle('hidden'); }
+function abrirMaps() {
+    const origem = "Rua Nossa Senhora do Carmo, 505, Piracicaba";
+    const destino = document.getElementById('enderecoCliente').value;
+    if (!destino) { alert("Por favor, digite o endereço do cliente."); return; }
+    window.open(`https://www.google.com/maps/dir/${encodeURIComponent(origem)}/${encodeURIComponent(destino)}`, '_blank');
+}
+async function calcularDistanciaAutomatica() {
+    const endereco = document.getElementById('enderecoCliente').value;
+    const btn = document.getElementById('btnAutoCalc');
+    if (!endereco) { alert("Digite o endereço completo do cliente."); return; }
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Calculando...';
+    try {
+        const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(endereco)}&limit=1`);
+        const geoData = await geoRes.json();
+        if (!geoData || geoData.length === 0) throw new Error("Endereço não encontrado.");
+        const routeRes = await fetch(`http://router.project-osrm.org/route/v1/driving/${origemLon},${origemLat};${geoData[0].lon},${geoData[0].lat}?overview=false`);
+        const routeData = await routeRes.json();
+        if (routeData.code !== 'Ok') throw new Error("Erro ao calcular rota.");
+        const distanciaKm = (routeData.routes[0].distance / 1000).toFixed(1);
+        document.getElementById('distanciaKm').value = distanciaKm;
         calcular();
+        btn.innerHTML = `✅ Distância: ${distanciaKm} km`;
+        setTimeout(() => { btn.disabled = false; btn.innerHTML = '🔄 Calcular Distância Automática'; }, 3000);
+    } catch (error) {
+        alert("Erro: " + error.message);
+        btn.disabled = false;
+        btn.innerHTML = '🔄 Calcular Distância Automática';
     }
-
-    function toggleInputFilamento(tipo) {
-        const checkbox = document.getElementById('check_' + tipo);
-        const wrapper = document.getElementById('input_' + tipo + '_wrapper');
-        const input = document.getElementById('peso_' + tipo);
-        if (checkbox.checked) {
-            wrapper.classList.add('open');
-        } else {
-            wrapper.classList.remove('open');
-            input.value = "";
-        }
-        calcular();
-    }
-
-    function toggleTranslucida() {
-        isTranslucidaActive = !isTranslucidaActive;
-        const btn = document.getElementById('btnTranslucida');
-        const area = document.getElementById('inputTranslucida');
-        const input = document.getElementById('pesoTranslucida');
-        if (isTranslucidaActive) {
-            btn.classList.add('active');
-            btn.innerText = "- Remover Resina Translúcida";
-            area.classList.remove('hidden');
-        } else {
-            btn.classList.remove('active');
-            btn.innerText = "+ Incluir Resina Translúcida";
-            area.classList.add('hidden');
-            input.value = "";
-        }
-        calcular();
-    }
-
-    function toggle3d() {
-        is3dActive = !is3dActive;
-        const btn = document.getElementById('btn3d');
-        const area = document.getElementById('input3d');
-        const input = document.getElementById('custoModelo3d');
-        if (is3dActive) {
-            btn.classList.add('active');
-            btn.innerText = "- Remover Modelo 3D";
-            area.classList.remove('hidden');
-        } else {
-            btn.classList.remove('active');
-            btn.innerText = "+ Incluir Modelo 3D (Compra)";
-            area.classList.add('hidden');
-            input.value = "";
-        }
-        calcular();
-    }
-
-    function toggleFrete() {
-        isFreteActive = !isFreteActive;
-        const btn = document.getElementById('btnFrete');
-        const area = document.getElementById('areaFrete');
-        if (isFreteActive) {
-            btn.classList.add('active');
-            area.classList.remove('hidden');
-        } else {
-            btn.classList.remove('active');
-            area.classList.add('hidden');
-            document.getElementById('distanciaKm').value = "";
-        }
-        calcular();
-    }
-
-    function togglePintura() {
-        const check = document.getElementById('comPintura');
-        const inputs = document.getElementById('pinturaInputs');
-        if (check.checked) {
-            inputs.classList.remove('hidden');
-        } else {
-            inputs.classList.add('hidden');
-            document.getElementById('custoTinta').value = 0;
-            document.getElementById('maoDeObra').value = 0;
-        }
-        calcular();
-    }
-
-    function toggleConfig() {
-        document.getElementById('configInputs').classList.toggle('hidden');
-    }
-
-    function abrirMaps() {
-        const origem = "Rua Nossa Senhora do Carmo, 505, Piracicaba";
-        const destino = document.getElementById('enderecoCliente').value;
-        if (!destino) { alert("Por favor, digite o endereço do cliente."); return; }
-        const url = `https://www.google.com/maps/dir/${encodeURIComponent(origem)}/${encodeURIComponent(destino)}`;
-        window.open(url, '_blank');
-    }
-
-    async function calcularDistanciaAutomatica() {
-        const endereco = document.getElementById('enderecoCliente').value;
-        const btn = document.getElementById('btnAutoCalc');
-        if (!endereco) { alert("Digite o endereço completo do cliente."); return; }
-
-        btn.disabled = true;
-        btn.innerHTML = '<span class="spinner"></span> Calculando...';
-
-        try {
-            const query = encodeURIComponent(endereco);
-            const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${query}&limit=1`);
-            const geoData = await geoRes.json();
-            if (!geoData || geoData.length === 0) throw new Error("Endereço não encontrado.");
-
-            const destLat = geoData[0].lat;
-            const destLon = geoData[0].lon;
-
-            const routeRes = await fetch(`http://router.project-osrm.org/route/v1/driving/${origemLon},${origemLat};${destLon},${destLat}?overview=false`);
-            const routeData = await routeRes.json();
-            if (routeData.code !== 'Ok' || !routeData.routes || routeData.routes.length === 0) throw new Error("Erro ao calcular rota.");
-
-            const distanciaKm = (routeData.routes[0].distance / 1000).toFixed(1);
-            document.getElementById('distanciaKm').value = distanciaKm;
-            calcular();
-
-            btn.innerHTML = `✅ Distância: ${distanciaKm} km`;
-            setTimeout(() => {
-                btn.disabled = false;
-                btn.innerHTML = '🔄 Calcular Distância Automática';
-            }, 3000);
-        } catch (error) {
-            alert("Erro: " + error.message + "\nTente usar o botão de mapa manual.");
-            btn.disabled = false;
-            btn.innerHTML = '🔄 Calcular Distância Automática';
-        }
-    }
-
-    function formatCurrency(val) {
-        return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    }
-
-    function calcular() {
-        const tempoH = parseFloat(document.getElementById('tempo').value) || 0;
-        const watts = parseFloat(document.getElementById('watts').value) || 0;
-        const tarifa = parseFloat(document.getElementById('tarifaEnergia').value) || 0;
-        const margemPct = parseFloat(document.getElementById('margemLucro').value) || 0;
-        const numParcelas = parseInt(document.getElementById('parcelasSelect').value);
-
-        let custoEmbalagem = 0;
-        document.querySelectorAll('.embalagem-check:checked').forEach(c => custoEmbalagem += parseFloat(c.value));
-
-        const custoTinta = parseFloat(document.getElementById('custoTinta').value) || 0;
-        const maoDeObra = parseFloat(document.getElementById('maoDeObra').value) || 0;
-        const custoModelo3d = parseFloat(document.getElementById('custoModelo3d').value) || 0;
-
-        let custoMaterialTotal = 0;
-        let pesoTotalCalc = 0;
-        let resinType = "Resina";
-
-        if (currentMode === 'filamento') {
-            const tipos = [
-                { id: 'padrao', precoId: 'precoKg' },
-                { id: 'petg', precoId: 'precoPetg' },
-                { id: 'tpu', precoId: 'precoTpu' },
-                { id: 'silk', precoId: 'precoTpuSilk' }
-            ];
-            tipos.forEach(tipo => {
-                if (document.getElementById('check_' + tipo.id).checked) {
-                    const peso = parseFloat(document.getElementById('peso_' + tipo.id).value) || 0;
-                    const preco = parseFloat(document.getElementById(tipo.precoId).value) || 0;
-                    custoMaterialTotal += (peso / 1000) * preco;
-                    pesoTotalCalc += peso;
-                }
-            });
-        } else {
-            const precoStd = parseFloat(document.getElementById('precoResinaKg').value);
-            const pesoStd = parseFloat(document.getElementById('pesoResina').value) || 0;
-            custoMaterialTotal += (pesoStd / 1000) * precoStd;
-            pesoTotalCalc += pesoStd;
-
-            let temStd = pesoStd > 0;
-            let temTrans = false;
-            if (isTranslucidaActive) {
-                const precoTrans = parseFloat(document.getElementById('precoResinaTranslucida').value);
-                const pesoTrans = parseFloat(document.getElementById('pesoTranslucida').value) || 0;
-                custoMaterialTotal += (pesoTrans / 1000) * precoTrans;
-                pesoTotalCalc += pesoTrans;
-                if (pesoTrans > 0) temTrans = true;
+}
+function formatCurrency(val) { return val.toLocaleString('pt-BR', {style:'currency', currency:'BRL'}); }
+function calcular() {
+    const tempoH = parseFloat(document.getElementById('tempo').value) || 0;
+    const watts = parseFloat(document.getElementById('watts').value) || 0;
+    const tarifa = parseFloat(document.getElementById('tarifaEnergia').value) || 0;
+    const margemPct = parseFloat(document.getElementById('margemLucro').value) || 0;
+    const numParcelas = parseInt(document.getElementById('parcelasSelect').value);
+    let custoEmbalagem = 0;
+    document.querySelectorAll('.embalagem-check:checked').forEach(c => custoEmbalagem += parseFloat(c.value));
+    const custoTinta = parseFloat(document.getElementById('custoTinta').value) || 0;
+    const maoDeObra = parseFloat(document.getElementById('maoDeObra').value) || 0;
+    const custoModelo3d = parseFloat(document.getElementById('custoModelo3d').value) || 0;
+    let custoMaterialTotal = 0, pesoTotalCalc = 0, resinType = "Resina";
+    if (currentMode === 'filamento') {
+        [{ id:'padrao', precoId:'precoKg' },{ id:'petg', precoId:'precoPetg' },{ id:'tpu', precoId:'precoTpu' },{ id:'silk', precoId:'precoTpuSilk' }].forEach(tipo => {
+            if (document.getElementById('check_' + tipo.id).checked) {
+                const peso = parseFloat(document.getElementById('peso_' + tipo.id).value) || 0;
+                const preco = parseFloat(document.getElementById(tipo.precoId).value) || 0;
+                custoMaterialTotal += (peso / 1000) * preco;
+                pesoTotalCalc += peso;
             }
-            if (temStd && temTrans) resinType = "Resina + Translúcida";
-            else if (temTrans) resinType = "Resina Translúcida";
+        });
+    } else {
+        const pesoStd = parseFloat(document.getElementById('pesoResina').value) || 0;
+        custoMaterialTotal += (pesoStd / 1000) * parseFloat(document.getElementById('precoResinaKg').value);
+        pesoTotalCalc += pesoStd;
+        let temStd = pesoStd > 0, temTrans = false;
+        if (isTranslucidaActive) {
+            const pesoTrans = parseFloat(document.getElementById('pesoTranslucida').value) || 0;
+            custoMaterialTotal += (pesoTrans / 1000) * parseFloat(document.getElementById('precoResinaTranslucida').value);
+            pesoTotalCalc += pesoTrans;
+            if (pesoTrans > 0) temTrans = true;
         }
+        if (temStd && temTrans) resinType = "Resina + Translúcida";
+        else if (temTrans) resinType = "Resina Translúcida";
+    }
+    const custoEnergia = ((watts * tempoH) / 1000) * tarifa;
+    let custoAlcool = 0;
+    if (currentMode === 'resina') custoAlcool = ((pesoTotalCalc * (parseFloat(document.getElementById('fatorAlcool').value) || 0)) / 1000) * (parseFloat(document.getElementById('precoAlcool').value) || 0);
+    let custoFrete = 0, nomeVeiculo = "";
+    if (isFreteActive) {
+        const dist = parseFloat(document.getElementById('distanciaKm').value) || 0;
+        const veiculo = document.getElementById('tipoVeiculo').value;
+        nomeVeiculo = veiculo === 'moto' ? "Moto" : "Carro";
+        custoFrete = ((dist * 2) / (veiculo === 'moto' ? 23 : 7)) * (parseFloat(document.getElementById('precoCombustivel').value) || 6);
+    }
+    document.getElementById('resFrete').innerText = formatCurrency(custoFrete);
+    const custoProducao = custoMaterialTotal + custoEnergia + custoAlcool + custoEmbalagem + custoTinta + maoDeObra + custoModelo3d;
+    const precoBase = custoProducao * (1 + margemPct / 100);
+    const precoAvista = precoBase + custoFrete;
+    const taxas = [0,parseFloat(document.getElementById('taxa1x').value),parseFloat(document.getElementById('taxa2x').value),parseFloat(document.getElementById('taxa3x').value),parseFloat(document.getElementById('taxa4x').value)];
+    const precoParceladoTotal = precoAvista / (1 - taxas[numParcelas] / 100);
+    const valorParcela = precoParceladoTotal / numParcelas;
+    document.getElementById('resPrecoBase').innerText = formatCurrency(precoBase);
+    document.getElementById('resPrecoAvista').innerText = formatCurrency(precoAvista);
+    document.getElementById('resLucro').innerText = formatCurrency((precoAvista - custoFrete) - custoProducao);
+    if (numParcelas === 1) { document.getElementById('labelParcelado').innerText = "À Vista no Cartão:"; document.getElementById('resDetalheParcelas').innerText = "(1x sem juros)"; }
+    else { document.getElementById('labelParcelado').innerText = `${numParcelas}x Parcelado:`; document.getElementById('resDetalheParcelas').innerText = `(${numParcelas}x de ${formatCurrency(valorParcela)})`; }
+    document.getElementById('resPrecoParcelado').innerText = formatCurrency(precoParceladoTotal);
+    whatsappData = { avista:precoAvista, parceladoTotal:precoParceladoTotal, parcelaValor:valorParcela, numParcelas, pesoTotal:pesoTotalCalc, tipoResina:resinType, frete:custoFrete, veiculo:nomeVeiculo };
+}
+function enviarWhatsapp() {
+    const nome = document.getElementById('nomeCliente').value || "Cliente";
+    const projeto = document.getElementById('nomeProjeto').value || "Projeto";
+    const tamanho = document.getElementById('tamanhoPeca').value || "N/A";
+    let pesoTexto = whatsappData.pesoTotal > 1000 ? (whatsappData.pesoTotal/1000).toFixed(2).replace('.',',')+' kg' : whatsappData.pesoTotal+'g';
+    let textoParcelado = whatsappData.numParcelas === 1 ? `*À Vista no Cartão:* ${formatCurrency(whatsappData.parceladoTotal)}` : `*Parcelado:* ${whatsappData.numParcelas}x de ${formatCurrency(whatsappData.parcelaValor)}\n(Total: ${formatCurrency(whatsappData.parceladoTotal)})`;
+    let textoFrete = whatsappData.frete > 0 ? `*Frete (${whatsappData.veiculo}):* ${formatCurrency(whatsappData.frete)}\n` : "";
+    let texto = `*Orçamento Trivertido*\n\n*Nome:* ${nome}\n*Projeto:* ${projeto}\n*Material:* ${currentMode === 'filamento' ? 'Filamento' : whatsappData.tipoResina}\n*Peso Total:* ${pesoTexto}\n*Tamanho:* ${tamanho}\n--------------------------------\n${textoFrete}*À Vista (Pix):* ${formatCurrency(whatsappData.avista)}\nOpção: Integral ou 50% entrada + restante na entrega.\n--------------------------------\n${textoParcelado}`;
+    window.open(`https://wa.me/5519996054671?text=${encodeURIComponent(texto)}`, '_blank');
+}
 
-        const consumoKwh = (watts * tempoH) / 1000;
-        const custoEnergia = consumoKwh * tarifa;
-        let custoAlcool = 0;
-        if (currentMode === 'resina') {
-            const precoAlcool = parseFloat(document.getElementById('precoAlcool').value) || 0;
-            const fatorAlcool = parseFloat(document.getElementById('fatorAlcool').value) || 0;
-            const volAlcoolL = (pesoTotalCalc * fatorAlcool) / 1000;
-            custoAlcool = volAlcoolL * precoAlcool;
-        }
+// =================== ESTOQUE ===================
+let currentEstoqueTab = 'fil';
+let currentView = 'ver';
 
-        let custoFrete = 0;
-        let nomeVeiculo = "";
-        if (isFreteActive) {
-            const dist = parseFloat(document.getElementById('distanciaKm').value) || 0;
-            const veiculo = document.getElementById('tipoVeiculo').value;
-            const precoGas = parseFloat(document.getElementById('precoCombustivel').value) || 6.00;
-            const consumoVeiculo = veiculo === 'moto' ? 23 : 7;
-            nomeVeiculo = veiculo === 'moto' ? "Moto" : "Carro";
-            custoFrete = ((dist * 2) / consumoVeiculo) * precoGas;
-        }
-        document.getElementById('resFrete').innerText = formatCurrency(custoFrete);
+function getStock() {
+    try { return JSON.parse(localStorage.getItem('trivertido_stock') || '{"fil":[],"res":[],"pin":[],"mat":[]}'); }
+    catch { return { fil:[], res:[], pin:[], mat:[] }; }
+}
+function saveStock(data) { localStorage.setItem('trivertido_stock', JSON.stringify(data)); }
 
-        const custoProducao = custoMaterialTotal + custoEnergia + custoAlcool + custoEmbalagem + custoTinta + maoDeObra + custoModelo3d;
-        const multiplicador = 1 + (margemPct / 100);
-        const precoBase = custoProducao * multiplicador;
-        const precoAvista = precoBase + custoFrete;
+function switchEstoqueTab(tab, el) {
+    currentEstoqueTab = tab;
+    document.querySelectorAll('.estoque-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    renderEstoque();
+    if (currentView === 'cadastrar') {
+        ['fil','res','pin','mat'].forEach(t => {
+            const f = document.getElementById('form-' + t);
+            if (f) f.classList.toggle('hidden', t !== tab);
+        });
+    }
+}
 
-        let taxaJuros = 0;
-        if (numParcelas === 1) taxaJuros = parseFloat(document.getElementById('taxa1x').value);
-        if (numParcelas === 2) taxaJuros = parseFloat(document.getElementById('taxa2x').value);
-        if (numParcelas === 3) taxaJuros = parseFloat(document.getElementById('taxa3x').value);
-        if (numParcelas === 4) taxaJuros = parseFloat(document.getElementById('taxa4x').value);
+function switchView(view) {
+    currentView = view;
+    document.getElementById('vbtn-ver').classList.toggle('active', view === 'ver');
+    document.getElementById('vbtn-cadastrar').classList.toggle('active', view === 'cadastrar');
+    document.getElementById('view-ver').classList.toggle('hidden', view !== 'ver');
+    document.getElementById('view-cadastrar').classList.toggle('hidden', view !== 'cadastrar');
+    if (view === 'cadastrar') {
+        ['fil','res','pin','mat'].forEach(t => {
+            const f = document.getElementById('form-' + t);
+            if (f) f.classList.toggle('hidden', t !== currentEstoqueTab);
+        });
+    }
+}
 
-        const taxaDecimal = taxaJuros / 100;
-        const precoParceladoTotal = precoAvista / (1 - taxaDecimal);
-        const valorParcela = precoParceladoTotal / numParcelas;
-        const lucroLiquido = (precoAvista - custoFrete) - custoProducao;
+function updateColorPreview(cat) {
+    const val = document.getElementById(cat + '-cor').value;
+    document.getElementById(cat + '-cor-preview').style.background = val;
+}
 
-        document.getElementById('resPrecoBase').innerText = formatCurrency(precoBase);
-        document.getElementById('resPrecoAvista').innerText = formatCurrency(precoAvista);
-        document.getElementById('resLucro').innerText = formatCurrency(lucroLiquido);
+function addItem(cat) {
+    const stock = getStock();
+    let item = { id: Date.now(), cor: '', corNome: '', qty: '', obs: '' };
 
-        if (numParcelas === 1) {
-            document.getElementById('labelParcelado').innerText = "À Vista no Cartão:";
-            document.getElementById('resDetalheParcelas').innerText = "(1x sem juros)";
-        } else {
-            document.getElementById('labelParcelado').innerText = `${numParcelas}x Parcelado:`;
-            document.getElementById('resDetalheParcelas').innerText = `(${numParcelas}x de ${formatCurrency(valorParcela)})`;
-        }
-        document.getElementById('resPrecoParcelado').innerText = formatCurrency(precoParceladoTotal);
-
-        whatsappData.avista = precoAvista;
-        whatsappData.parceladoTotal = precoParceladoTotal;
-        whatsappData.parcelaValor = valorParcela;
-        whatsappData.numParcelas = numParcelas;
-        whatsappData.pesoTotal = pesoTotalCalc;
-        whatsappData.tipoResina = resinType;
-        whatsappData.frete = custoFrete;
-        whatsappData.veiculo = nomeVeiculo;
+    if (cat === 'fil') {
+        item.tipo = document.getElementById('fil-tipo').value;
+        item.cor = document.getElementById('fil-cor').value;
+        item.corNome = document.getElementById('fil-cor-nome').value || 'Sem nome';
+        item.qty = document.getElementById('fil-qty').value;
+        item.obs = document.getElementById('fil-obs').value;
+        if (!item.qty) { alert('Informe a quantidade!'); return; }
+        // Reset
+        document.getElementById('fil-cor-nome').value = '';
+        document.getElementById('fil-qty').value = '';
+        document.getElementById('fil-obs').value = '';
+    } else if (cat === 'res') {
+        item.tipo = document.getElementById('res-tipo').value;
+        item.marca = document.getElementById('res-marca').value || '-';
+        item.cor = document.getElementById('res-cor').value;
+        item.corNome = document.getElementById('res-cor-nome').value || 'Sem nome';
+        item.qty = document.getElementById('res-qty').value;
+        item.obs = document.getElementById('res-obs').value;
+        if (!item.qty) { alert('Informe a quantidade!'); return; }
+        document.getElementById('res-marca').value = '';
+        document.getElementById('res-cor-nome').value = '';
+        document.getElementById('res-qty').value = '';
+        document.getElementById('res-obs').value = '';
+    } else if (cat === 'pin') {
+        item.nome = document.getElementById('pin-nome').value;
+        item.cor = document.getElementById('pin-cor').value;
+        item.corNome = document.getElementById('pin-cor-nome').value || 'Sem nome';
+        item.qty = document.getElementById('pin-qty').value;
+        item.obs = document.getElementById('pin-obs').value;
+        if (!item.nome) { alert('Informe o nome do produto!'); return; }
+        document.getElementById('pin-nome').value = '';
+        document.getElementById('pin-cor-nome').value = '';
+        document.getElementById('pin-qty').value = '';
+        document.getElementById('pin-obs').value = '';
+    } else if (cat === 'mat') {
+        item.nome = document.getElementById('mat-nome').value;
+        item.cor = document.getElementById('mat-cor').value;
+        item.corNome = document.getElementById('mat-cor-nome').value || '-';
+        item.qty = document.getElementById('mat-qty').value;
+        item.obs = document.getElementById('mat-obs').value;
+        if (!item.nome) { alert('Informe o nome do item!'); return; }
+        document.getElementById('mat-nome').value = '';
+        document.getElementById('mat-cor-nome').value = '';
+        document.getElementById('mat-qty').value = '';
+        document.getElementById('mat-obs').value = '';
     }
 
-    function enviarWhatsapp() {
-        const numeroDestino = "5519996054671";
-        const nome = document.getElementById('nomeCliente').value || "Cliente";
-        const projeto = document.getElementById('nomeProjeto').value || "Projeto";
-        const tamanho = document.getElementById('tamanhoPeca').value || "N/A";
+    stock[cat].push(item);
+    saveStock(stock);
+    updateSummaryCounts(stock);
+    switchView('ver');
+    renderEstoque();
+}
 
-        let pesoTexto = whatsappData.pesoTotal > 1000
-            ? (whatsappData.pesoTotal / 1000).toFixed(2).replace('.', ',') + "kg"
-            : whatsappData.pesoTotal + "g";
+function deleteItem(cat, id) {
+    const stock = getStock();
+    stock[cat] = stock[cat].filter(i => i.id !== id);
+    saveStock(stock);
+    updateSummaryCounts(stock);
+    renderEstoque();
+}
 
-        let materialString = currentMode === 'filamento' ? "Filamento" : whatsappData.tipoResina;
+function updateSummaryCounts(stock) {
+    document.getElementById('count-fil').innerText = stock.fil.length;
+    document.getElementById('count-res').innerText = stock.res.length;
+    document.getElementById('count-pin').innerText = stock.pin.length;
+    document.getElementById('count-mat').innerText = stock.mat.length;
+}
 
-        let textoParcelado = "";
-        if (whatsappData.numParcelas === 1) {
-            textoParcelado = `*À Vista no Cartão:* ${formatCurrency(whatsappData.parceladoTotal)}`;
-        } else {
-            textoParcelado = `*Parcelado:* ${whatsappData.numParcelas}x de ${formatCurrency(whatsappData.parcelaValor)}\n(Total Parcelado: ${formatCurrency(whatsappData.parceladoTotal)})`;
-        }
+const catLabels = { fil:'Filamento', res:'Resina', pin:'Pintura', mat:'Material' };
+const catBadge = { fil:'badge-fil', res:'badge-res', pin:'badge-pin', mat:'badge-mat' };
+const catColors = { fil:'#16a34a', res:'#7c3aed', pin:'#dc2626', mat:'#d97706' };
 
-        let textoFrete = "";
-        if (whatsappData.frete > 0) {
-            textoFrete = `*Frete (${whatsappData.veiculo}):* ${formatCurrency(whatsappData.frete)}\n`;
-        }
+function renderEstoque() {
+    const stock = getStock();
+    updateSummaryCounts(stock);
+    const items = stock[currentEstoqueTab];
+    const container = document.getElementById('stock-list-container');
 
-        let texto = `*Orçamento Trivertido*\n\n`;
-        texto += `*Nome:* ${nome}\n`;
-        texto += `*Projeto:* ${projeto}\n`;
-        texto += `*Material:* ${materialString}\n`;
-        texto += `*Peso Total:* ${pesoTexto}\n`;
-        texto += `*Tamanho:* ${tamanho}\n`;
-        texto += `--------------------------------\n`;
-        texto += textoFrete;
-        texto += `*À Vista (Desconto no Pix):* ${formatCurrency(whatsappData.avista)}\n`;
-        texto += `Opção: Integral ou 50% de entrada + restante na entrega.\n`;
-        texto += `--------------------------------\n`;
-        texto += textoParcelado;
-
-        const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(texto)}`;
-        window.open(url, '_blank');
+    if (items.length === 0) {
+        container.innerHTML = `<div class="empty-state"><div class="emoji">📭</div><p>Nenhum item cadastrado ainda.<br>Clique em <strong>Cadastrar</strong> para adicionar.</p></div>`;
+        return;
     }
+
+    let html = '<div class="stock-grid">';
+    items.forEach((item, idx) => {
+        const name = item.tipo || item.nome || '-';
+        const sub = item.marca ? item.marca : (item.tipo && item.corNome ? item.corNome : '');
+        const qty = item.qty || '-';
+        const unit = currentEstoqueTab === 'fil' ? 'g' : currentEstoqueTab === 'res' ? 'ml' : '';
+        const cor = item.cor || catColors[currentEstoqueTab];
+        const obs = item.obs || '';
+        const lowStock = currentEstoqueTab === 'fil' && parseFloat(qty) < 200;
+
+        html += `
+        <div class="stock-card" style="animation-delay:${idx * 0.05}s">
+            <button class="stock-delete-btn" onclick="deleteItem('${currentEstoqueTab}', ${item.id})">✕</button>
+            <div class="stock-card-top">
+                <div class="stock-card-color" style="background:${cor};"></div>
+                <div>
+                    <div class="cat-badge ${catBadge[currentEstoqueTab]}">${catLabels[currentEstoqueTab]}</div>
+                    <div class="stock-card-name">${name}</div>
+                    ${sub ? `<div class="stock-card-sub">${sub}</div>` : ''}
+                </div>
+            </div>
+            <div class="stock-card-qty" style="color:${cor}">${qty}${unit ? ' ' : ''}<span>${unit}</span></div>
+            ${obs ? `<div class="stock-card-obs">${obs}</div>` : ''}
+            ${lowStock ? `<div class="low-stock">⚠️ Baixo</div>` : ''}
+        </div>`;
+    });
+    html += '</div>';
+    container.innerHTML = html;
+}
 </script>
 </body>
 </html>
