@@ -15,9 +15,7 @@
             --res-bg: #f0fdf4;
             --res-border: #bbf7d0;
         }
-
         * { box-sizing: border-box; }
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
@@ -26,8 +24,6 @@
             padding: 0;
             padding-bottom: 40px;
         }
-
-        /* Nav */
         .nav-menu {
             background: #111827;
             padding: 12px 10px;
@@ -54,8 +50,6 @@
         .nav-btn.active { background: var(--primary); }
         .nav-btn:not(.active) { background: #1f2937; }
         .nav-btn:hover:not(.active) { background: #374151; }
-
-        /* Container */
         .container-app {
             max-width: 600px;
             margin: 20px auto;
@@ -64,8 +58,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
         }
-
-        /* Tabs */
         .tabs-container {
             background-color: #e5e7eb;
             border-radius: 50px;
@@ -96,7 +88,6 @@
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             transform: scale(1.02);
         }
-
         .content { padding: 0 25px 25px 25px; }
         .form-group { margin-bottom: 15px; }
         label {
@@ -120,7 +111,6 @@
             font-family: 'Inter', sans-serif;
         }
         input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(22,163,74,0.1); }
-
         .section-title {
             margin-top: 30px;
             margin-bottom: 12px;
@@ -133,7 +123,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .material-list, .frete-box {
             background: #f9fafb;
             padding: 15px;
@@ -169,7 +158,6 @@
             animation: slideDown 0.3s ease-out forwards;
         }
         .material-weight-input.open { display: block; }
-
         .checkbox-group {
             background: #f9fafb;
             padding: 12px;
@@ -188,7 +176,6 @@
         }
         .checkbox-item:last-child { margin-bottom: 0; }
         .checkbox-item input { width: 18px; height: 18px; margin-right: 10px; accent-color: var(--primary); }
-
         .result-box {
             background: var(--res-bg);
             border: 2px solid var(--res-border);
@@ -219,7 +206,6 @@
             border-radius: 8px;
         }
         .destaque-avista { color: #16a34a; font-weight: bold; }
-
         .btn-whatsapp {
             display: block; width: 100%;
             background-color: #25D366; color: white;
@@ -231,7 +217,6 @@
             font-family: 'Inter', sans-serif;
         }
         .btn-whatsapp:hover { background-color: #1da851; transform: translateY(-2px); }
-
         .btn-outline {
             background: white; border: 2px solid var(--primary);
             color: var(--primary); padding: 10px; border-radius: 8px;
@@ -240,7 +225,6 @@
             font-family: 'Inter', sans-serif;
         }
         .btn-outline.active { background: var(--primary); color: white; }
-
         .btn-auto-calc {
             background: #2563eb; color: white; border: none;
             padding: 10px; border-radius: 8px; font-weight: 600;
@@ -248,12 +232,10 @@
             font-family: 'Inter', sans-serif;
         }
         .btn-auto-calc:disabled { background: #93c5fd; cursor: not-allowed; }
-
         .btn-map-small {
             background: transparent; color: #2563eb; border: none;
             font-size: 0.85em; text-decoration: underline; cursor: pointer; margin-top: 5px;
         }
-
         .btn-config {
             display: block; width: 100%; background-color: #e5e7eb;
             color: #374151; padding: 12px; border: none; border-radius: 8px;
@@ -261,9 +243,7 @@
             margin-top: 30px; margin-bottom: 10px; transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
         }
-
         .hidden { display: none !important; }
-
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -272,7 +252,6 @@
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .spinner {
             display: inline-block; width: 12px; height: 12px;
             border: 2px solid rgba(255,255,255,0.3);
@@ -283,7 +262,6 @@
 
         /* ===== ESTOQUE ===== */
         .estoque-page { max-width: 600px; margin: 20px auto; }
-
         .estoque-header {
             background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
             border-radius: 20px;
@@ -301,14 +279,8 @@
             border-radius: 50%;
             background: rgba(22,163,74,0.15);
         }
-        .estoque-header h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.8em;
-            margin: 0 0 4px;
-            letter-spacing: 1px;
-        }
+        .estoque-header h1 { font-family: 'Inter', sans-serif; font-size: 1.8em; margin: 0 0 4px; letter-spacing: 1px; }
         .estoque-header p { margin: 0; opacity: 0.6; font-size: 0.9em; }
-
         .estoque-tabs {
             display: flex;
             gap: 8px;
@@ -332,17 +304,11 @@
             font-family: 'Inter', sans-serif;
             color: #6b7280;
         }
-        .estoque-tab.active {
-            border-color: transparent;
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
+        .estoque-tab.active { border-color: transparent; color: white; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .estoque-tab.fil.active { background: linear-gradient(135deg, #16a34a, #15803d); }
         .estoque-tab.res.active { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
         .estoque-tab.pin.active { background: linear-gradient(135deg, #dc2626, #b91c1c); }
         .estoque-tab.mat.active { background: linear-gradient(135deg, #d97706, #b45309); }
-
         .estoque-view-toggle {
             display: flex;
             background: #f3f4f6;
@@ -364,18 +330,8 @@
             font-family: 'Inter', sans-serif;
             color: #6b7280;
         }
-        .view-btn.active {
-            background: white;
-            color: #111827;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Cards de visualização */
-        .stock-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
+        .view-btn.active { background: white; color: #111827; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .stock-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .stock-card {
             background: white;
             border-radius: 14px;
@@ -387,168 +343,45 @@
             overflow: hidden;
         }
         .stock-card:hover { border-color: #d1d5db; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-
-        .stock-card-color {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            border: 3px solid rgba(255,255,255,0.8);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            flex-shrink: 0;
-        }
+        .stock-card-color { width: 36px; height: 36px; border-radius: 50%; margin-bottom: 10px; border: 3px solid rgba(255,255,255,0.8); box-shadow: 0 2px 8px rgba(0,0,0,0.2); flex-shrink: 0; }
         .stock-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .stock-card-name {
-            font-weight: 700; font-size: 0.9em;
-            color: #111827;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.2;
-        }
+        .stock-card-name { font-weight: 700; font-size: 0.9em; color: #111827; font-family: 'Inter', sans-serif; line-height: 1.2; }
         .stock-card-sub { font-size: 0.78em; color: #6b7280; margin-top: 2px; }
-        .stock-card-qty {
-            font-size: 1.3em;
-            font-weight: 800;
-            font-family: 'Inter', sans-serif;
-            margin-top: 4px;
-        }
+        .stock-card-qty { font-size: 1.3em; font-weight: 800; font-family: 'Inter', sans-serif; margin-top: 4px; }
         .stock-card-qty span { font-size: 0.55em; font-weight: 500; color: #6b7280; }
-        .stock-card-obs {
-            font-size: 0.75em;
-            color: #9ca3af;
-            margin-top: 6px;
-            font-style: italic;
-            border-top: 1px dashed #f3f4f6;
-            padding-top: 6px;
-        }
+        .stock-card-obs { font-size: 0.75em; color: #9ca3af; margin-top: 6px; font-style: italic; border-top: 1px dashed #f3f4f6; padding-top: 6px; }
         .stock-delete-btn {
-            position: absolute;
-            top: 8px; right: 8px;
-            background: #fee2e2;
-            border: none;
-            border-radius: 6px;
-            width: 24px; height: 24px;
-            cursor: pointer;
-            font-size: 0.75em;
-            color: #dc2626;
+            position: absolute; top: 8px; right: 8px;
+            background: #fee2e2; border: none; border-radius: 6px;
+            width: 24px; height: 24px; cursor: pointer; font-size: 0.75em; color: #dc2626;
             display: flex; align-items: center; justify-content: center;
-            opacity: 0;
-            transition: opacity 0.2s;
+            opacity: 0; transition: opacity 0.2s;
         }
         .stock-card:hover .stock-delete-btn { opacity: 1; }
-
-        /* Low stock badge */
-        .low-stock {
-            position: absolute;
-            bottom: 8px; right: 8px;
-            background: #fef3c7;
-            color: #d97706;
-            font-size: 0.65em;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 20px;
-            border: 1px solid #fde68a;
-        }
-
-        /* Formulário de cadastro */
-        .cadastro-form {
-            background: white;
-            border-radius: 16px;
-            padding: 20px;
-            border: 1.5px solid #e5e7eb;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .cadastro-form h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1em;
-            margin: 0 0 16px;
-            color: #111827;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .color-picker-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .color-picker-row input[type="color"] {
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            border: 3px solid #e5e7eb;
-            padding: 2px;
-            cursor: pointer;
-            background: none;
-        }
-        .color-preview {
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            border: 3px solid #e5e7eb;
-            flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            transition: background 0.2s;
-        }
-
-        .btn-add-item {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 12px;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-            color: white;
-        }
+        .low-stock { position: absolute; bottom: 8px; right: 8px; background: #fef3c7; color: #d97706; font-size: 0.65em; font-weight: 700; padding: 2px 6px; border-radius: 20px; border: 1px solid #fde68a; }
+        .cadastro-form { background: white; border-radius: 16px; padding: 20px; border: 1.5px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .cadastro-form h3 { font-family: 'Inter', sans-serif; font-size: 1em; margin: 0 0 16px; color: #111827; text-transform: uppercase; letter-spacing: 1px; }
+        .color-picker-row { display: flex; align-items: center; gap: 10px; }
+        .color-picker-row input[type="color"] { width: 48px; height: 48px; border-radius: 50%; border: 3px solid #e5e7eb; padding: 2px; cursor: pointer; background: none; }
+        .color-preview { width: 48px; height: 48px; border-radius: 50%; border: 3px solid #e5e7eb; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: background 0.2s; }
+        .btn-add-item { width: 100%; padding: 14px; border: none; border-radius: 12px; font-weight: 700; font-size: 1em; cursor: pointer; margin-top: 12px; transition: all 0.2s; font-family: 'Inter', sans-serif; color: white; }
         .btn-add-item:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
         .btn-add-fil { background: linear-gradient(135deg, #16a34a, #15803d); }
         .btn-add-res { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
         .btn-add-pin { background: linear-gradient(135deg, #dc2626, #b91c1c); }
         .btn-add-mat { background: linear-gradient(135deg, #d97706, #b45309); }
-
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: #9ca3af;
-        }
+        .empty-state { text-align: center; padding: 40px 20px; color: #9ca3af; }
         .empty-state .emoji { font-size: 2.5em; margin-bottom: 8px; }
         .empty-state p { margin: 0; font-size: 0.9em; }
-
-        .stock-summary {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-        .summary-card {
-            border-radius: 12px;
-            padding: 12px 8px;
-            text-align: center;
-            color: white;
-        }
-        .summary-card .num {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.4em;
-            font-weight: 800;
-            display: block;
-        }
+        .stock-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+        .summary-card { border-radius: 12px; padding: 12px 8px; text-align: center; color: white; }
+        .summary-card .num { font-family: 'Inter', sans-serif; font-size: 1.4em; font-weight: 800; display: block; }
         .summary-card .lbl { font-size: 0.65em; opacity: 0.85; font-weight: 600; text-transform: uppercase; }
         .sc-fil { background: linear-gradient(135deg, #16a34a, #15803d); }
         .sc-res { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
         .sc-pin { background: linear-gradient(135deg, #dc2626, #b91c1c); }
         .sc-mat { background: linear-gradient(135deg, #d97706, #b45309); }
-
-        /* Categoria badge */
-        .cat-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.7em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
+        .cat-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
         .badge-fil { background: #dcfce7; color: #16a34a; }
         .badge-res { background: #ede9fe; color: #7c3aed; }
         .badge-pin { background: #fee2e2; color: #dc2626; }
@@ -557,206 +390,519 @@
         /* ===== URGENTE ===== */
         .nav-btn-urgente { background: #dc2626 !important; }
         .nav-btn-urgente.active { background: #b91c1c !important; }
-
         .urgente-page { max-width: 600px; margin: 20px auto; padding: 0 12px; }
+        .urgente-header { background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%); border-radius: 20px; padding: 28px 24px 22px; margin-bottom: 16px; color: white; position: relative; overflow: hidden; }
+        .urgente-header::before { content: '🚨'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 4em; opacity: 0.15; }
+        .urgente-header h1 { font-size: 1.6em; font-weight: 900; margin: 0 0 4px; letter-spacing: 0.5px; }
+        .urgente-header p { margin: 0; opacity: 0.75; font-size: 0.85em; }
+        .urgente-card { background: white; border-radius: 16px; padding: 20px; border: 1.5px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 12px; }
+        .urgente-card h3 { font-size: 0.75em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; margin: 0 0 14px; }
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .input-group { margin-bottom: 14px; }
+        .input-group label { display: block; font-size: 0.78em; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 14px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 15px; font-family: 'Inter', sans-serif; font-weight: 500; outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+        .input-group input:focus, .input-group select:focus { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.1); }
+        .input-hint { font-size: 0.72em; color: #9ca3af; margin-top: 4px; }
+        .btn-calcular-urgente { width: 100%; padding: 16px; background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; border: none; border-radius: 14px; font-size: 1.05em; font-weight: 800; font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.2s; margin-top: 4px; letter-spacing: 0.3px; }
+        .btn-calcular-urgente:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(220,38,38,0.35); }
+        .urgente-resultado { background: linear-gradient(135deg, #111827, #1f2937); border-radius: 20px; padding: 28px 24px; color: white; margin-bottom: 12px; display: none; animation: fadeIn 0.4s ease; }
+        .urgente-resultado.show { display: block; }
+        .resultado-principal { text-align: center; margin-bottom: 24px; }
+        .resultado-principal .label { font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.6; margin-bottom: 8px; }
+        .resultado-principal .valor { font-size: 4em; font-weight: 900; line-height: 1; color: #f87171; }
+        .resultado-principal .unidade { font-size: 1.2em; font-weight: 600; opacity: 0.7; margin-left: 4px; }
+        .resultado-principal .sublabel { font-size: 0.8em; opacity: 0.55; margin-top: 6px; }
+        .resultado-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .res-mini { background: rgba(255,255,255,0.07); border-radius: 12px; padding: 14px; text-align: center; }
+        .res-mini .rm-label { font-size: 0.68em; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+        .res-mini .rm-val { font-size: 1.3em; font-weight: 800; }
+        .instrucoes { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; border-left: 3px solid #f87171; }
+        .instrucoes h4 { font-size: 0.75em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #f87171; margin: 0 0 12px; }
+        .passo { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 0.85em; line-height: 1.4; opacity: 0.85; }
+        .passo:last-child { margin-bottom: 0; }
+        .passo-num { background: #f87171; color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 0.7em; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+        .alerta-margem { background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.3); border-radius: 10px; padding: 12px 14px; margin-top: 14px; font-size: 0.82em; color: #fbbf24; display: flex; gap: 8px; align-items: flex-start; }
 
-        .urgente-header {
-            background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%);
+        /* ===== KANBAN ===== */
+        .kanban-page { max-width: 100%; margin: 0; padding: 16px 12px; }
+        .kanban-header {
+            background: linear-gradient(135deg, #111827, #1e3a5f);
             border-radius: 20px;
-            padding: 28px 24px 22px;
+            padding: 24px 22px 18px;
             margin-bottom: 16px;
             color: white;
             position: relative;
             overflow: hidden;
         }
-        .urgente-header::before {
-            content: '🚨';
+        .kanban-header::after {
+            content: '📋';
             position: absolute;
-            right: 20px; top: 50%;
+            right: 22px; top: 50%;
             transform: translateY(-50%);
-            font-size: 4em;
-            opacity: 0.15;
+            font-size: 3.5em;
+            opacity: 0.12;
         }
-        .urgente-header h1 {
-            font-size: 1.6em;
-            font-weight: 900;
-            margin: 0 0 4px;
-            letter-spacing: 0.5px;
-        }
-        .urgente-header p { margin: 0; opacity: 0.75; font-size: 0.85em; }
+        .kanban-header h1 { font-size: 1.6em; font-weight: 900; margin: 0 0 4px; }
+        .kanban-header p { margin: 0; opacity: 0.65; font-size: 0.85em; }
 
-        .urgente-card {
+        .kanban-add-btn {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95em;
+            cursor: pointer;
+            margin-bottom: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+        .kanban-add-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(22,163,74,0.3); }
+
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        @media (max-width: 500px) {
+            .kanban-board { grid-template-columns: 1fr; }
+        }
+
+        .kanban-col {
             background: white;
             border-radius: 16px;
-            padding: 20px;
+            padding: 14px;
             border: 1.5px solid #e5e7eb;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            min-height: 180px;
+        }
+        .kanban-col-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 12px;
         }
-        .urgente-card h3 {
+        .kanban-col-title {
             font-size: 0.75em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .kanban-col-count {
+            font-size: 0.7em;
             font-weight: 700;
+            background: #f3f4f6;
+            color: #6b7280;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+        .col-cotacao .kanban-col-title { color: #7c3aed; }
+        .col-cotacao { border-top: 3px solid #7c3aed; }
+        .col-afazer .kanban-col-title { color: #d97706; }
+        .col-afazer { border-top: 3px solid #d97706; }
+        .col-fazendo .kanban-col-title { color: #2563eb; }
+        .col-fazendo { border-top: 3px solid #2563eb; }
+        .col-feito .kanban-col-title { color: #16a34a; }
+        .col-feito { border-top: 3px solid #16a34a; }
+
+        .kanban-card {
+            background: #f9fafb;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            border: 1.5px solid #f0f0f0;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .kanban-card:hover { border-color: #d1d5db; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transform: translateY(-1px); }
+        .kanban-card-title { font-weight: 700; font-size: 0.88em; color: #111827; margin-bottom: 4px; }
+        .kanban-card-client { font-size: 0.75em; color: #6b7280; margin-bottom: 6px; }
+        .kanban-card-footer { display: flex; align-items: center; justify-content: space-between; }
+        .kanban-card-progress {
+            font-size: 0.7em;
+            font-weight: 600;
+            color: #9ca3af;
+        }
+        .kanban-card-progress.has-tasks { color: #16a34a; }
+        .kanban-card-del {
+            background: #fee2e2;
+            border: none;
+            border-radius: 6px;
+            width: 22px; height: 22px;
+            cursor: pointer;
+            font-size: 0.7em;
+            color: #dc2626;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+            flex-shrink: 0;
+        }
+        .kanban-card:hover .kanban-card-del { opacity: 1; }
+
+        .kanban-move-select {
+            font-size: 0.7em;
+            font-weight: 600;
+            padding: 3px 6px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            cursor: pointer;
+            color: #374151;
+            font-family: 'Inter', sans-serif;
+            max-width: 90px;
+        }
+
+        /* ===== MODAL TAREFA ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 1000;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            animation: fadeOverlay 0.25s ease;
+        }
+        @keyframes fadeOverlay { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal-sheet {
+            background: white;
+            border-radius: 24px 24px 0 0;
+            width: 100%;
+            max-width: 600px;
+            max-height: 92vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s cubic-bezier(0.4,0,0.2,1);
+            padding-bottom: 40px;
+        }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+        .modal-handle {
+            width: 40px; height: 4px;
+            background: #d1d5db;
+            border-radius: 2px;
+            margin: 14px auto 0;
+        }
+        .modal-header {
+            padding: 16px 20px 12px;
+            border-bottom: 1px solid #f3f4f6;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .modal-title { font-weight: 800; font-size: 1.15em; color: #111827; margin: 0 0 2px; }
+        .modal-client { font-size: 0.82em; color: #6b7280; }
+        .modal-close {
+            background: #f3f4f6;
+            border: none;
+            border-radius: 50%;
+            width: 32px; height: 32px;
+            cursor: pointer;
+            font-size: 1em;
+            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .modal-body { padding: 16px 20px; }
+
+        .modal-section-title {
+            font-size: 0.72em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9ca3af;
+            margin: 20px 0 10px;
+        }
+        .modal-section-title:first-child { margin-top: 0; }
+
+        /* Upload de imagem */
+        .upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fafafa;
+        }
+        .upload-area:hover { border-color: #16a34a; background: #f0fdf4; }
+        .upload-area .emoji { font-size: 2em; margin-bottom: 8px; }
+        .upload-area p { margin: 0; font-size: 0.85em; color: #6b7280; }
+        .upload-area strong { color: #16a34a; }
+        .upload-preview {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-ia {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.92em;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+            margin-top: 8px;
+        }
+        .btn-ia:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(124,58,237,0.3); }
+        .btn-ia:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        /* ===== CHECKLIST POR PEÇA ===== */
+
+        /* Bloco de cada peça */
+        .peca-bloco {
+            border: 1.5px solid #e5e7eb;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .peca-bloco.all-done { border-color: #bbf7d0; }
+
+        .peca-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 14px;
+            cursor: pointer;
+            background: #f9fafb;
+            user-select: none;
+            transition: background 0.15s;
+        }
+        .peca-bloco.all-done .peca-header { background: #f0fdf4; }
+        .peca-header:hover { background: #f3f4f6; }
+
+        .peca-icon {
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+        .peca-name {
+            flex: 1;
+            font-weight: 700;
+            font-size: 0.9em;
+            color: #111827;
+        }
+        .peca-progress-pill {
+            font-size: 0.7em;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            background: #e5e7eb;
+            color: #6b7280;
+            flex-shrink: 0;
+        }
+        .peca-bloco.all-done .peca-progress-pill { background: #dcfce7; color: #16a34a; }
+        .peca-chevron {
+            font-size: 0.75em;
+            color: #9ca3af;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+        .peca-chevron.open { transform: rotate(180deg); }
+
+        .peca-del-btn {
+            background: none; border: none;
+            color: #d1d5db; font-size: 0.9em;
+            cursor: pointer; padding: 4px;
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+        .peca-del-btn:hover { color: #dc2626; }
+
+        .peca-steps {
+            padding: 8px 12px 12px;
+            border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+        .peca-steps.open { display: block; }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            transition: background 0.15s;
+        }
+        .step-item:hover { background: #f9fafb; }
+        .step-item.done { opacity: 0.55; }
+        .step-item.done .step-label { text-decoration: line-through; color: #9ca3af; }
+
+        .step-check {
+            width: 18px; height: 18px;
+            accent-color: #16a34a;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .step-label {
+            flex: 1;
+            font-size: 0.85em;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        /* Etapas finais (Embalar / Entregar) */
+        .final-steps-section {
+            margin-top: 14px;
+            background: #fafafa;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .final-steps-title {
+            padding: 10px 14px;
+            font-size: 0.72em;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #6b7280;
-            margin: 0 0 14px;
+            border-bottom: 1px solid #f0f0f0;
+            background: #f9fafb;
         }
+        .final-steps-body { padding: 8px 12px 12px; }
 
-        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-        .input-group { margin-bottom: 14px; }
-        .input-group label {
-            display: block;
-            font-size: 0.78em;
-            font-weight: 600;
-            color: #4b5563;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-        .input-group input, .input-group select {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid #e5e7eb;
-            border-radius: 10px;
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            box-sizing: border-box;
-        }
-        .input-group input:focus, .input-group select:focus {
-            border-color: #dc2626;
-            box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
-        }
-        .input-hint {
-            font-size: 0.72em;
-            color: #9ca3af;
-            margin-top: 4px;
-        }
-
-        .btn-calcular-urgente {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white;
-            border: none;
-            border-radius: 14px;
-            font-size: 1.05em;
-            font-weight: 800;
-            font-family: 'Inter', sans-serif;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-top: 4px;
-            letter-spacing: 0.3px;
-        }
-        .btn-calcular-urgente:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(220,38,38,0.35); }
-        .btn-calcular-urgente:active { transform: translateY(0); }
-
-        .urgente-resultado {
-            background: linear-gradient(135deg, #111827, #1f2937);
-            border-radius: 20px;
-            padding: 28px 24px;
-            color: white;
-            margin-bottom: 12px;
-            display: none;
-            animation: fadeIn 0.4s ease;
-        }
-        .urgente-resultado.show { display: block; }
-
-        .resultado-principal {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        .resultado-principal .label {
-            font-size: 0.75em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            opacity: 0.6;
-            margin-bottom: 8px;
-        }
-        .resultado-principal .valor {
-            font-size: 4em;
-            font-weight: 900;
-            line-height: 1;
-            color: #f87171;
-        }
-        .resultado-principal .unidade {
-            font-size: 1.2em;
-            font-weight: 600;
-            opacity: 0.7;
-            margin-left: 4px;
-        }
-        .resultado-principal .sublabel {
-            font-size: 0.8em;
-            opacity: 0.55;
-            margin-top: 6px;
-        }
-
-        .resultado-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .res-mini {
-            background: rgba(255,255,255,0.07);
-            border-radius: 12px;
-            padding: 14px;
-            text-align: center;
-        }
-        .res-mini .rm-label { font-size: 0.68em; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
-        .res-mini .rm-val { font-size: 1.3em; font-weight: 800; }
-
-        .instrucoes {
-            background: rgba(255,255,255,0.06);
-            border-radius: 14px;
-            padding: 16px;
-            border-left: 3px solid #f87171;
-        }
-        .instrucoes h4 {
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #f87171;
-            margin: 0 0 12px;
-        }
-        .passo {
+        .final-step-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
-            font-size: 0.85em;
-            line-height: 1.4;
-            opacity: 0.85;
+            padding: 8px 10px;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            transition: background 0.15s;
         }
-        .passo:last-child { margin-bottom: 0; }
-        .passo-num {
-            background: #f87171;
-            color: white;
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            font-size: 0.7em;
-            font-weight: 800;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
+        .final-step-item:hover { background: #f3f4f6; }
+        .final-step-item.done { opacity: 0.55; }
+        .final-step-item.done .step-label { text-decoration: line-through; color: #9ca3af; }
 
-        .alerta-margem {
-            background: rgba(251,191,36,0.15);
-            border: 1px solid rgba(251,191,36,0.3);
-            border-radius: 10px;
-            padding: 12px 14px;
-            margin-top: 14px;
-            font-size: 0.82em;
-            color: #fbbf24;
+        /* Adicionar peça manual */
+        .add-peca-row {
             display: flex;
             gap: 8px;
-            align-items: flex-start;
+            margin-top: 12px;
+        }
+        .add-peca-row input {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 0.88em;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+        .add-peca-row input:focus { border-color: #16a34a; }
+        .add-peca-row button {
+            padding: 10px 14px;
+            background: #16a34a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+            font-size: 0.85em;
+        }
+
+        /* Compat — kept for custom task input below final steps */
+        .add-custom-task {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .add-custom-task input {
+            flex: 1;
+            padding: 9px 12px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 0.85em;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+        .add-custom-task input:focus { border-color: #16a34a; }
+        .add-custom-task button {
+            padding: 9px 14px;
+            background: #16a34a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+            font-size: 0.85em;
+        }
+
+        /* Status mover */
+        .status-mover {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-top: 8px;
+        }
+        .status-btn {
+            padding: 8px 4px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            background: white;
+            font-size: 0.7em;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: #374151;
+        }
+        .status-btn.active-cotacao { background: #ede9fe; border-color: #7c3aed; color: #7c3aed; }
+        .status-btn.active-afazer { background: #fef3c7; border-color: #d97706; color: #d97706; }
+        .status-btn.active-fazendo { background: #dbeafe; border-color: #2563eb; color: #2563eb; }
+        .status-btn.active-feito { background: #dcfce7; border-color: #16a34a; color: #16a34a; }
+
+        /* Modal de criar tarefa */
+        .new-task-modal { padding: 0 20px 20px; }
+        .new-task-modal h3 { font-size: 0.75em; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; margin: 0 0 14px; }
+
+        .progress-bar-wrap {
+            background: #f3f4f6;
+            border-radius: 20px;
+            height: 6px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #16a34a, #22c55e);
+            border-radius: 20px;
+            transition: width 0.4s ease;
+        }
+
+        .ia-loading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #ede9fe;
+            padding: 14px 16px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+        .ia-loading p { margin: 0; font-size: 0.85em; color: #7c3aed; font-weight: 600; }
+        .ia-spinner {
+            width: 18px; height: 18px;
+            border: 2px solid #c4b5fd;
+            border-top-color: #7c3aed;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            flex-shrink: 0;
         }
     </style>
 </head>
@@ -764,6 +910,7 @@
 
 <nav class="nav-menu">
     <button onclick="showPage('home')" id="btn-home" class="nav-btn active">🏠 Início</button>
+    <button onclick="showPage('tarefas')" id="btn-tarefas" class="nav-btn">📋 Tarefas</button>
     <button onclick="showPage('orcamento')" id="btn-orcamento" class="nav-btn">💰 Orçamento</button>
     <button onclick="showPage('escala')" id="btn-escala" class="nav-btn">📏 Escala</button>
     <button onclick="showPage('estoque')" id="btn-estoque" class="nav-btn">📦 Estoque</button>
@@ -775,6 +922,13 @@
     <h1 style="font-family:'Inter',sans-serif;" class="text-3xl font-black text-green-600 mb-2">TRIVERTIDO 💚</h1>
     <p class="text-gray-500 mb-8 font-medium">Selecione a ferramenta desejada</p>
     <div class="grid gap-4">
+        <button onclick="showPage('tarefas')" class="p-6 bg-white border-2 border-indigo-500 rounded-2xl shadow-sm hover:bg-indigo-50 transition text-left flex items-center justify-between group">
+            <div>
+                <h3 style="font-family:'Inter',sans-serif;" class="text-xl font-bold text-gray-800 group-hover:text-indigo-600">Gerenciar Tarefas</h3>
+                <p class="text-sm text-gray-500">Kanban: Cotação → A Fazer → Fazendo → Feito</p>
+            </div>
+            <span class="text-2xl">📋</span>
+        </button>
         <button onclick="showPage('orcamento')" class="p-6 bg-white border-2 border-green-500 rounded-2xl shadow-sm hover:bg-green-50 transition text-left flex items-center justify-between group">
             <div>
                 <h3 style="font-family:'Inter',sans-serif;" class="text-xl font-bold text-gray-800 group-hover:text-green-600">Fazer Orçamento</h3>
@@ -806,23 +960,32 @@
     </div>
 </div>
 
+<!-- ===== TAREFAS KANBAN ===== -->
+<div id="page-tarefas" class="kanban-page hidden">
+    <div class="kanban-header">
+        <h1>📋 TAREFAS</h1>
+        <p>Gerencie seus pedidos do início ao fim</p>
+    </div>
+    <button class="kanban-add-btn" onclick="openNewTaskModal()">+ Nova Tarefa</button>
+    <div class="kanban-board" id="kanban-board">
+        <!-- Renderizado via JS -->
+    </div>
+</div>
+
 <!-- ===== ORÇAMENTO ===== -->
 <div id="page-orcamento" class="container-app hidden">
     <div class="content" style="padding-top:20px;">
         <div style="text-align:center; margin-bottom:15px;">
             <h2 style="font-family:'Inter',sans-serif; color:var(--primary); font-size:1.5em; text-transform:uppercase; letter-spacing:1px; margin:0;">Orçamento Trivertido💚</h2>
         </div>
-
         <div class="tabs-container">
             <div class="tab active" onclick="switchTab('filamento', event)">Filamento (FDM)</div>
             <div class="tab" onclick="switchTab('resina', event)">Resina (SLA)</div>
         </div>
-
         <div class="section-title" style="margin-top:0">Identificação</div>
         <div class="form-group"><label>Nome do Cliente</label><input type="text" id="nomeCliente" placeholder="Ex: João"></div>
         <div class="form-group"><label>Nome do Projeto</label><input type="text" id="nomeProjeto" placeholder="Ex: Peça Mecânica"></div>
         <div class="form-group"><label>Tamanho</label><input type="text" id="tamanhoPeca" placeholder="Ex: 15x10cm"></div>
-
         <div class="section-title">Dados da Impressão</div>
         <div class="form-group">
             <button class="btn-outline" id="btn3d" onclick="toggle3d()">+ Incluir Modelo 3D (Compra)</button>
@@ -832,7 +995,6 @@
                 <small style="color:#666">Esse valor não aparece na mensagem.</small>
             </div>
         </div>
-
         <div id="areaFilamentos" class="form-group">
             <label>Selecione os Materiais e informe o peso (g)</label>
             <div class="material-list">
@@ -854,7 +1016,6 @@
                 </div>
             </div>
         </div>
-
         <div id="areaResina" class="hidden">
             <div class="form-group">
                 <label>Peso Resina Padrão (g)</label>
@@ -869,12 +1030,10 @@
                 </div>
             </div>
         </div>
-
         <div class="form-group">
             <label>Tempo de Impressão (horas)</label>
             <input type="number" id="tempo" placeholder="Ex: 5.5" oninput="calcular()">
         </div>
-
         <div class="form-group">
             <label>Embalagem</label>
             <div class="checkbox-group">
@@ -883,7 +1042,6 @@
                 <label class="checkbox-item"><input type="checkbox" class="embalagem-check" value="1.50" onchange="calcular()"> Plástico Bolha (R$ 1,50)</label>
             </div>
         </div>
-
         <div class="section-title">Acabamento</div>
         <div class="checkbox-group">
             <label class="checkbox-item"><input type="checkbox" id="comPintura" onchange="togglePintura()"> Incluir Pintura</label>
@@ -892,7 +1050,6 @@
             <div class="form-group"><label>Custo Tinta/Insumos (R$)</label><input type="number" id="custoTinta" value="0" oninput="calcular()"></div>
             <div class="form-group"><label>Mão de Obra (R$)</label><input type="number" id="maoDeObra" value="0" oninput="calcular()"></div>
         </div>
-
         <div class="section-title">Frete / Entrega</div>
         <div class="form-group">
             <button class="btn-outline" id="btnFrete" onclick="toggleFrete()">Calcular Frete</button>
@@ -915,7 +1072,6 @@
                 <div style="text-align:right; font-weight:bold; color:var(--primary)">Custo Frete (Ida e Volta): <span id="resFrete">R$ 0,00</span></div>
             </div>
         </div>
-
         <div class="section-title">Pagamento</div>
         <div class="form-group">
             <select id="parcelasSelect" onchange="calcular()">
@@ -925,7 +1081,6 @@
                 <option value="4">4x - Taxa 7,99%</option>
             </select>
         </div>
-
         <button class="btn-config" onclick="toggleConfig()">⚙️ Editar Preços e Taxas</button>
         <div id="configInputs" class="hidden">
             <div class="form-group"><label>Margem Lucro (%)</label><input type="number" id="margemLucro" value="200" oninput="calcular()"></div>
@@ -948,7 +1103,6 @@
             <input type="hidden" id="precoAlcool" value="25">
             <input type="hidden" id="fatorAlcool" value="2.0">
         </div>
-
         <div class="result-box">
             <div class="result-sub"><span>Preço Base (s/ taxas):</span><span id="resPrecoBase">R$ 0,00</span></div>
             <hr style="border:0; border-top:1px dashed #ccc; margin:10px 0;">
@@ -984,179 +1138,223 @@
 
 <!-- ===== ESTOQUE ===== -->
 <div id="page-estoque" class="estoque-page hidden" style="padding: 0 12px;">
-
     <div class="estoque-header">
         <h1>📦 ESTOQUE</h1>
         <p>Gerencie seus materiais</p>
     </div>
-
-    <!-- Resumo -->
     <div class="stock-summary">
         <div class="summary-card sc-fil"><span class="num" id="count-fil">0</span><span class="lbl">🧵 Filamentos</span></div>
         <div class="summary-card sc-res"><span class="num" id="count-res">0</span><span class="lbl">🧪 Resinas</span></div>
         <div class="summary-card sc-pin"><span class="num" id="count-pin">0</span><span class="lbl">🎨 Pinturas</span></div>
         <div class="summary-card sc-mat"><span class="num" id="count-mat">0</span><span class="lbl">🔧 Materiais</span></div>
     </div>
-
-    <!-- Tabs de categoria -->
     <div class="estoque-tabs">
         <button class="estoque-tab fil active" onclick="switchEstoqueTab('fil', this)">🧵 Filamento</button>
         <button class="estoque-tab res" onclick="switchEstoqueTab('res', this)">🧪 Resina</button>
         <button class="estoque-tab pin" onclick="switchEstoqueTab('pin', this)">🎨 Pintura</button>
         <button class="estoque-tab mat" onclick="switchEstoqueTab('mat', this)">🔧 Materiais</button>
     </div>
-
-    <!-- Toggle Visualizar / Cadastrar -->
     <div class="estoque-view-toggle">
         <button class="view-btn active" id="vbtn-ver" onclick="switchView('ver')">👁 Visualizar</button>
         <button class="view-btn" id="vbtn-cadastrar" onclick="switchView('cadastrar')">➕ Cadastrar</button>
     </div>
-
-    <!-- VIEW: Visualizar -->
-    <div id="view-ver">
-        <div id="stock-list-container">
-            <!-- Renderizado via JS -->
-        </div>
-    </div>
-
-    <!-- VIEW: Cadastrar -->
+    <div id="view-ver"><div id="stock-list-container"></div></div>
     <div id="view-cadastrar" class="hidden">
-
-        <!-- FILAMENTO -->
         <div id="form-fil" class="cadastro-form">
             <h3>🧵 Novo Filamento</h3>
-            <div class="form-group">
-                <label>Tipo</label>
-                <select id="fil-tipo">
-                    <option>PLA</option>
-                    <option>ABS</option>
-                    <option>PETG</option>
-                    <option>TPU</option>
-                    <option>TPU Silk</option>
-                    <option>ASA</option>
-                    <option>Outro</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Cor</label>
-                <div class="color-picker-row">
-                    <input type="color" id="fil-cor" value="#16a34a" oninput="updateColorPreview('fil')">
-                    <div class="color-preview" id="fil-cor-preview" style="background:#16a34a;"></div>
-                    <input type="text" id="fil-cor-nome" placeholder="Nome da cor (ex: Verde Militar)" style="flex:1;">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Quantidade em estoque (g)</label>
-                <input type="number" id="fil-qty" placeholder="Ex: 850">
-            </div>
-            <div class="form-group">
-                <label>Observação</label>
-                <textarea id="fil-obs" placeholder="Ex: Rolo quase acabando, pedir mais..." rows="2" style="resize:none;"></textarea>
-            </div>
+            <div class="form-group"><label>Tipo</label><select id="fil-tipo"><option>PLA</option><option>ABS</option><option>PETG</option><option>TPU</option><option>TPU Silk</option><option>ASA</option><option>Outro</option></select></div>
+            <div class="form-group"><label>Cor</label><div class="color-picker-row"><input type="color" id="fil-cor" value="#16a34a" oninput="updateColorPreview('fil')"><div class="color-preview" id="fil-cor-preview" style="background:#16a34a;"></div><input type="text" id="fil-cor-nome" placeholder="Nome da cor (ex: Verde Militar)" style="flex:1;"></div></div>
+            <div class="form-group"><label>Quantidade em estoque (g)</label><input type="number" id="fil-qty" placeholder="Ex: 850"></div>
+            <div class="form-group"><label>Observação</label><textarea id="fil-obs" placeholder="Ex: Rolo quase acabando, pedir mais..." rows="2" style="resize:none;"></textarea></div>
             <button class="btn-add-item btn-add-fil" onclick="addItem('fil')">+ Adicionar ao Estoque</button>
         </div>
-
-        <!-- RESINA -->
         <div id="form-res" class="cadastro-form hidden">
             <h3>🧪 Nova Resina</h3>
-            <div class="form-group">
-                <label>Tipo</label>
-                <select id="res-tipo">
-                    <option>Padrão</option>
-                    <option>Translúcida</option>
-                    <option>Flexível</option>
-                    <option>ABS-Like</option>
-                    <option>Outro</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Marca</label>
-                <input type="text" id="res-marca" placeholder="Ex: Elegoo, Anycubic...">
-            </div>
-            <div class="form-group">
-                <label>Cor</label>
-                <div class="color-picker-row">
-                    <input type="color" id="res-cor" value="#7c3aed" oninput="updateColorPreview('res')">
-                    <div class="color-preview" id="res-cor-preview" style="background:#7c3aed;"></div>
-                    <input type="text" id="res-cor-nome" placeholder="Nome da cor (ex: Cinza)">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Quantidade (ml)</label>
-                <input type="number" id="res-qty" placeholder="Ex: 500">
-            </div>
-            <div class="form-group">
-                <label>Observação</label>
-                <textarea id="res-obs" placeholder="Ex: Aberta em 01/03..." rows="2" style="resize:none;"></textarea>
-            </div>
+            <div class="form-group"><label>Tipo</label><select id="res-tipo"><option>Padrão</option><option>Translúcida</option><option>Flexível</option><option>ABS-Like</option><option>Outro</option></select></div>
+            <div class="form-group"><label>Marca</label><input type="text" id="res-marca" placeholder="Ex: Elegoo, Anycubic..."></div>
+            <div class="form-group"><label>Cor</label><div class="color-picker-row"><input type="color" id="res-cor" value="#7c3aed" oninput="updateColorPreview('res')"><div class="color-preview" id="res-cor-preview" style="background:#7c3aed;"></div><input type="text" id="res-cor-nome" placeholder="Nome da cor (ex: Cinza)"></div></div>
+            <div class="form-group"><label>Quantidade (ml)</label><input type="number" id="res-qty" placeholder="Ex: 500"></div>
+            <div class="form-group"><label>Observação</label><textarea id="res-obs" placeholder="Ex: Aberta em 01/03..." rows="2" style="resize:none;"></textarea></div>
             <button class="btn-add-item btn-add-res" onclick="addItem('res')">+ Adicionar ao Estoque</button>
         </div>
-
-        <!-- PINTURA -->
         <div id="form-pin" class="cadastro-form hidden">
             <h3>🎨 Nova Tinta / Insumo</h3>
-            <div class="form-group">
-                <label>Nome do produto</label>
-                <input type="text" id="pin-nome" placeholder="Ex: Tinta Spray Preto Fosco">
-            </div>
-            <div class="form-group">
-                <label>Cor</label>
-                <div class="color-picker-row">
-                    <input type="color" id="pin-cor" value="#dc2626" oninput="updateColorPreview('pin')">
-                    <div class="color-preview" id="pin-cor-preview" style="background:#dc2626;"></div>
-                    <input type="text" id="pin-cor-nome" placeholder="Nome da cor">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Quantidade</label>
-                <input type="text" id="pin-qty" placeholder="Ex: 2 latas, 300ml...">
-            </div>
-            <div class="form-group">
-                <label>Observação</label>
-                <textarea id="pin-obs" placeholder="Ex: Marca, onde comprar..." rows="2" style="resize:none;"></textarea>
-            </div>
+            <div class="form-group"><label>Nome do produto</label><input type="text" id="pin-nome" placeholder="Ex: Tinta Spray Preto Fosco"></div>
+            <div class="form-group"><label>Cor</label><div class="color-picker-row"><input type="color" id="pin-cor" value="#dc2626" oninput="updateColorPreview('pin')"><div class="color-preview" id="pin-cor-preview" style="background:#dc2626;"></div><input type="text" id="pin-cor-nome" placeholder="Nome da cor"></div></div>
+            <div class="form-group"><label>Quantidade</label><input type="text" id="pin-qty" placeholder="Ex: 2 latas, 300ml..."></div>
+            <div class="form-group"><label>Observação</label><textarea id="pin-obs" placeholder="Ex: Marca, onde comprar..." rows="2" style="resize:none;"></textarea></div>
             <button class="btn-add-item btn-add-pin" onclick="addItem('pin')">+ Adicionar ao Estoque</button>
         </div>
-
-        <!-- MATERIAIS -->
         <div id="form-mat" class="cadastro-form hidden">
             <h3>🔧 Novo Material</h3>
-            <div class="form-group">
-                <label>Nome do item</label>
-                <input type="text" id="mat-nome" placeholder="Ex: Lixa 400, Primer, Resina UV...">
-            </div>
-            <div class="form-group">
-                <label>Cor (se aplicável)</label>
-                <div class="color-picker-row">
-                    <input type="color" id="mat-cor" value="#d97706" oninput="updateColorPreview('mat')">
-                    <div class="color-preview" id="mat-cor-preview" style="background:#d97706;"></div>
-                    <input type="text" id="mat-cor-nome" placeholder="Cor ou N/A">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Quantidade</label>
-                <input type="text" id="mat-qty" placeholder="Ex: 5 folhas, 1 frasco...">
-            </div>
-            <div class="form-group">
-                <label>Observação</label>
-                <textarea id="mat-obs" placeholder="Ex: Onde comprar, validade..." rows="2" style="resize:none;"></textarea>
-            </div>
+            <div class="form-group"><label>Nome do item</label><input type="text" id="mat-nome" placeholder="Ex: Lixa 400, Primer, Resina UV..."></div>
+            <div class="form-group"><label>Cor (se aplicável)</label><div class="color-picker-row"><input type="color" id="mat-cor" value="#d97706" oninput="updateColorPreview('mat')"><div class="color-preview" id="mat-cor-preview" style="background:#d97706;"></div><input type="text" id="mat-cor-nome" placeholder="Cor ou N/A"></div></div>
+            <div class="form-group"><label>Quantidade</label><input type="text" id="mat-qty" placeholder="Ex: 5 folhas, 1 frasco..."></div>
+            <div class="form-group"><label>Observação</label><textarea id="mat-obs" placeholder="Ex: Onde comprar, validade..." rows="2" style="resize:none;"></textarea></div>
             <button class="btn-add-item btn-add-mat" onclick="addItem('mat')">+ Adicionar ao Estoque</button>
         </div>
+    </div>
+</div>
 
+<!-- ===== URGENTE PAGE ===== -->
+<div id="page-urgente" class="urgente-page hidden">
+    <div class="urgente-header">
+        <h1>🚨 IMPRESSÃO URGENTE</h1>
+        <p>Calcule onde cortar o modelo para retomar a impressão</p>
+    </div>
+    <div class="urgente-card">
+        <h3>📐 Dados da peça</h3>
+        <div class="input-row">
+            <div class="input-group"><label>Altura total da peça</label><input type="number" id="urg-altura-total" placeholder="Ex: 120"><div class="input-hint">Altura completa do modelo</div></div>
+            <div class="input-group"><label>Unidade</label><select id="urg-unidade"><option value="mm">mm</option><option value="cm">cm</option></select></div>
+        </div>
+        <div class="input-group"><label>Peso total estimado (g)</label><input type="number" id="urg-peso-total" placeholder="Ex: 85"><div class="input-hint">Visto no Bambu Studio antes de imprimir</div></div>
+    </div>
+    <div class="urgente-card">
+        <h3>⏸️ Dados quando parou</h3>
+        <div class="input-group"><label>% do material usado quando parou</label><input type="number" id="urg-pct-material" placeholder="Ex: 62" min="1" max="99"><div class="input-hint">Porcentagem que o Bambu Studio mostrava de material consumido</div></div>
+    </div>
+    <div class="urgente-card">
+        <h3>⚙️ Ajuste de precisão</h3>
+        <div class="input-group"><label>Margem de segurança (mm)</label><input type="number" id="urg-margem" placeholder="Ex: 0.4" value="0.4" step="0.1" min="0"><div class="input-hint">Sobreposição extra para garantir aderência entre as partes (recomendado: 0.2 a 0.8mm)</div></div>
+    </div>
+    <button class="btn-calcular-urgente" onclick="calcularUrgente()">⚡ CALCULAR ALTURA DE CORTE</button>
+    <div class="urgente-resultado" id="urgente-resultado">
+        <div class="resultado-principal">
+            <div class="label">Cortar o modelo em</div>
+            <div><span class="valor" id="urg-res-corte">—</span><span class="unidade">mm</span></div>
+            <div class="sublabel">Insira esse valor no campo "Cut" do Bambu Studio</div>
+        </div>
+        <div class="resultado-grid">
+            <div class="res-mini"><div class="rm-label">Altura onde parou</div><div class="rm-val" id="urg-res-pausa">—</div></div>
+            <div class="res-mini"><div class="rm-label">Altura que falta</div><div class="rm-val" id="urg-res-falta">—</div></div>
+            <div class="res-mini"><div class="rm-label">Peso restante est.</div><div class="rm-val" id="urg-res-peso">—</div></div>
+            <div class="res-mini"><div class="rm-label">Diâmetro filamento</div><div class="rm-val">1.75 mm</div></div>
+        </div>
+        <div class="instrucoes">
+            <h4>📋 Passo a passo no Bambu Studio</h4>
+            <div class="passo"><div class="passo-num">1</div><div id="urg-instr-corte">Calcule primeiro para ver a instrução.</div></div>
+            <div class="passo"><div class="passo-num">2</div><div>Selecione <strong>apenas a parte superior</strong> do corte e exporte como novo arquivo STL.</div></div>
+            <div class="passo"><div class="passo-num">3</div><div>Fatie o novo arquivo normalmente. O peso estimado restante é mostrado acima para conferir.</div></div>
+            <div class="passo"><div class="passo-num">4</div><div>Coloque a peça impressa de volta na mesa exatamente na mesma posição e imprima a parte de cima sobre ela.</div></div>
+        </div>
+        <div class="alerta-margem" id="urg-alerta-margem">
+            <span>⚠️</span>
+            <span>Você definiu margem 0. Recomendamos pelo menos <strong>0.2mm</strong> de sobreposição para garantir que as partes colem bem na junção.</span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MODAL: NOVA TAREFA ===== -->
+<div id="modal-new-task" class="modal-overlay hidden">
+    <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <div class="modal-header">
+            <div>
+                <div class="modal-title">Nova Tarefa</div>
+                <div class="modal-client">Preencha os dados do pedido</div>
+            </div>
+            <button class="modal-close" onclick="closeModal('modal-new-task')">✕</button>
+        </div>
+        <div class="new-task-modal">
+            <div style="margin-top:16px;">
+                <div class="modal-section-title">📋 Dados do pedido</div>
+                <div class="form-group"><label>Nome do projeto / peça</label><input type="text" id="new-task-title" placeholder="Ex: Boneco Dragon Ball"></div>
+                <div class="form-group"><label>Cliente</label><input type="text" id="new-task-client" placeholder="Ex: João Silva"></div>
+                <div class="form-group"><label>Coluna inicial</label>
+                    <select id="new-task-status">
+                        <option value="cotacao">Em Cotação</option>
+                        <option value="afazer">A Fazer</option>
+                        <option value="fazendo">Fazendo</option>
+                        <option value="feito">Feito</option>
+                    </select>
+                </div>
+                <button class="btn-add-item btn-add-fil" onclick="createTask()" style="margin-top:8px;">✅ Criar Tarefa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MODAL: TAREFA DETALHE ===== -->
+<div id="modal-task-detail" class="modal-overlay hidden">
+    <div class="modal-sheet">
+        <div class="modal-handle"></div>
+        <div class="modal-header">
+            <div>
+                <div class="modal-title" id="detail-title">—</div>
+                <div class="modal-client" id="detail-client">—</div>
+            </div>
+            <button class="modal-close" onclick="closeModal('modal-task-detail')">✕</button>
+        </div>
+        <div class="modal-body">
+            <!-- Status mover -->
+            <div class="modal-section-title">📍 Status</div>
+            <div class="status-mover" id="status-mover-btns">
+                <button class="status-btn" data-status="cotacao" onclick="moveTaskTo('cotacao')">🟣 Cotação</button>
+                <button class="status-btn" data-status="afazer" onclick="moveTaskTo('afazer')">🟡 A Fazer</button>
+                <button class="status-btn" data-status="fazendo" onclick="moveTaskTo('fazendo')">🔵 Fazendo</button>
+                <button class="status-btn" data-status="feito" onclick="moveTaskTo('feito')">🟢 Feito</button>
+            </div>
+
+            <!-- Upload + IA -->
+            <div class="modal-section-title" style="margin-top:20px;">🤖 Checklist IA</div>
+            <div id="upload-area-wrap">
+                <div class="upload-area" onclick="document.getElementById('img-upload-input').click()">
+                    <div class="emoji">📷</div>
+                    <p>Clique para enviar uma <strong>foto do modelo</strong><br>A IA vai sugerir as etapas de impressão</p>
+                </div>
+                <input type="file" id="img-upload-input" accept="image/*" style="display:none;" onchange="onImageSelected(event)">
+            </div>
+            <div id="img-preview-wrap" class="hidden">
+                <img id="img-preview" class="upload-preview" src="" alt="preview">
+                <button onclick="clearImage()" style="font-size:0.8em; color:#6b7280; background:none; border:none; cursor:pointer; padding:0; margin-bottom:6px;">🗑 Remover imagem</button>
+            </div>
+            <button class="btn-ia" id="btn-gerar-ia" onclick="gerarChecklistIA()">✨ Gerar Checklist com IA</button>
+            <div class="ia-loading hidden" id="ia-loading">
+                <div class="ia-spinner"></div>
+                <p>IA analisando o modelo e gerando etapas...</p>
+            </div>
+
+            <!-- Checklist por peça -->
+            <div class="modal-section-title" style="margin-top:20px;">🧩 Peças do Projeto</div>
+            <div id="checklist-container">
+                <!-- Renderizado via JS -->
+            </div>
+
+            <!-- Adicionar peça manual -->
+            <div class="add-peca-row">
+                <input type="text" id="new-peca-input" placeholder="Nome da peça (ex: Braço Direito)">
+                <button onclick="addPecaManual()">+ Peça</button>
+            </div>
+
+            <!-- Progresso geral -->
+            <div id="progress-section" style="margin-top:16px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <span style="font-size:0.8em; font-weight:700; color:#374151;">Progresso Geral</span>
+                    <span id="progress-label" style="font-size:0.8em; font-weight:800; color:#16a34a;">0 / 0</span>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
+                </div>
+            </div>
+
+            <!-- Excluir tarefa -->
+            <button onclick="deleteCurrentTask()" style="margin-top:28px; width:100%; padding:12px; background:#fee2e2; color:#dc2626; border:none; border-radius:12px; font-weight:700; font-size:0.9em; cursor:pointer; font-family:'Inter',sans-serif;">🗑 Excluir Tarefa</button>
+        </div>
     </div>
 </div>
 
 <script>
 // =================== NAVEGAÇÃO ===================
 function showPage(pageId) {
-    ['home','orcamento','escala','estoque','urgente'].forEach(p => {
+    ['home','tarefas','orcamento','escala','estoque','urgente'].forEach(p => {
         document.getElementById('page-' + p).classList.add('hidden');
         document.getElementById('btn-' + p).classList.remove('active');
     });
     document.getElementById('page-' + pageId).classList.remove('hidden');
     document.getElementById('btn-' + pageId).classList.add('active');
     if (pageId === 'estoque') renderEstoque();
+    if (pageId === 'tarefas') renderKanban();
 }
 
 // =================== ESCALA ===================
@@ -1192,7 +1390,6 @@ const defaults = {
     filamento: { watts:100, tarifa:2.3, lucro:200, theme:{primary:'#16a34a', resBg:'#f0fdf4', resBorder:'#bbf7d0'} },
     resina: { watts:250, tarifa:4.3, lucro:150, theme:{primary:'#4b5563', resBg:'#f3f4f6', resBorder:'#d1d5db'} }
 };
-
 function switchTab(mode, e) {
     currentMode = mode;
     const config = defaults[mode];
@@ -1205,53 +1402,40 @@ function switchTab(mode, e) {
     document.getElementById('watts').value = config.watts;
     document.getElementById('tarifaEnergia').value = config.tarifa;
     document.getElementById('margemLucro').value = config.lucro;
-    if (mode === 'resina') {
-        document.getElementById('areaFilamentos').classList.add('hidden');
-        document.getElementById('areaResina').classList.remove('hidden');
-    } else {
-        document.getElementById('areaFilamentos').classList.remove('hidden');
-        document.getElementById('areaResina').classList.add('hidden');
-    }
+    if (mode === 'resina') { document.getElementById('areaFilamentos').classList.add('hidden'); document.getElementById('areaResina').classList.remove('hidden'); }
+    else { document.getElementById('areaFilamentos').classList.remove('hidden'); document.getElementById('areaResina').classList.add('hidden'); }
     calcular();
 }
-
 function toggleInputFilamento(tipo) {
     const checkbox = document.getElementById('check_' + tipo);
     const wrapper = document.getElementById('input_' + tipo + '_wrapper');
     const input = document.getElementById('peso_' + tipo);
-    if (checkbox.checked) { wrapper.classList.add('open'); }
-    else { wrapper.classList.remove('open'); input.value = ""; }
+    if (checkbox.checked) { wrapper.classList.add('open'); } else { wrapper.classList.remove('open'); input.value = ""; }
     calcular();
 }
 function toggleTranslucida() {
     isTranslucidaActive = !isTranslucidaActive;
-    const btn = document.getElementById('btnTranslucida');
-    const area = document.getElementById('inputTranslucida');
-    const input = document.getElementById('pesoTranslucida');
+    const btn = document.getElementById('btnTranslucida'), area = document.getElementById('inputTranslucida'), input = document.getElementById('pesoTranslucida');
     if (isTranslucidaActive) { btn.classList.add('active'); btn.innerText = "- Remover Resina Translúcida"; area.classList.remove('hidden'); }
     else { btn.classList.remove('active'); btn.innerText = "+ Incluir Resina Translúcida"; area.classList.add('hidden'); input.value = ""; }
     calcular();
 }
 function toggle3d() {
     is3dActive = !is3dActive;
-    const btn = document.getElementById('btn3d');
-    const area = document.getElementById('input3d');
-    const input = document.getElementById('custoModelo3d');
+    const btn = document.getElementById('btn3d'), area = document.getElementById('input3d'), input = document.getElementById('custoModelo3d');
     if (is3dActive) { btn.classList.add('active'); btn.innerText = "- Remover Modelo 3D"; area.classList.remove('hidden'); }
     else { btn.classList.remove('active'); btn.innerText = "+ Incluir Modelo 3D (Compra)"; area.classList.add('hidden'); input.value = ""; }
     calcular();
 }
 function toggleFrete() {
     isFreteActive = !isFreteActive;
-    const btn = document.getElementById('btnFrete');
-    const area = document.getElementById('areaFrete');
+    const btn = document.getElementById('btnFrete'), area = document.getElementById('areaFrete');
     if (isFreteActive) { btn.classList.add('active'); area.classList.remove('hidden'); }
     else { btn.classList.remove('active'); area.classList.add('hidden'); document.getElementById('distanciaKm').value = ""; }
     calcular();
 }
 function togglePintura() {
-    const check = document.getElementById('comPintura');
-    const inputs = document.getElementById('pinturaInputs');
+    const check = document.getElementById('comPintura'), inputs = document.getElementById('pinturaInputs');
     if (check.checked) { inputs.classList.remove('hidden'); }
     else { inputs.classList.add('hidden'); document.getElementById('custoTinta').value = 0; document.getElementById('maoDeObra').value = 0; }
     calcular();
@@ -1267,8 +1451,7 @@ async function calcularDistanciaAutomatica() {
     const endereco = document.getElementById('enderecoCliente').value;
     const btn = document.getElementById('btnAutoCalc');
     if (!endereco) { alert("Digite o endereço completo do cliente."); return; }
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span> Calculando...';
+    btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Calculando...';
     try {
         const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(endereco)}&limit=1`);
         const geoData = await geoRes.json();
@@ -1281,11 +1464,7 @@ async function calcularDistanciaAutomatica() {
         calcular();
         btn.innerHTML = `✅ Distância: ${distanciaKm} km`;
         setTimeout(() => { btn.disabled = false; btn.innerHTML = '🔄 Calcular Distância Automática'; }, 3000);
-    } catch (error) {
-        alert("Erro: " + error.message);
-        btn.disabled = false;
-        btn.innerHTML = '🔄 Calcular Distância Automática';
-    }
+    } catch (error) { alert("Erro: " + error.message); btn.disabled = false; btn.innerHTML = '🔄 Calcular Distância Automática'; }
 }
 function formatCurrency(val) { return val.toLocaleString('pt-BR', {style:'currency', currency:'BRL'}); }
 function calcular() {
@@ -1301,7 +1480,7 @@ function calcular() {
     const custoModelo3d = parseFloat(document.getElementById('custoModelo3d').value) || 0;
     let custoMaterialTotal = 0, pesoTotalCalc = 0, resinType = "Resina";
     if (currentMode === 'filamento') {
-        [{ id:'padrao', precoId:'precoKg' },{ id:'petg', precoId:'precoPetg' },{ id:'tpu', precoId:'precoTpu' },{ id:'silk', precoId:'precoTpuSilk' }].forEach(tipo => {
+        [{id:'padrao',precoId:'precoKg'},{id:'petg',precoId:'precoPetg'},{id:'tpu',precoId:'precoTpu'},{id:'silk',precoId:'precoTpuSilk'}].forEach(tipo => {
             if (document.getElementById('check_' + tipo.id).checked) {
                 const peso = parseFloat(document.getElementById('peso_' + tipo.id).value) || 0;
                 const preco = parseFloat(document.getElementById(tipo.precoId).value) || 0;
@@ -1313,14 +1492,14 @@ function calcular() {
         const pesoStd = parseFloat(document.getElementById('pesoResina').value) || 0;
         custoMaterialTotal += (pesoStd / 1000) * parseFloat(document.getElementById('precoResinaKg').value);
         pesoTotalCalc += pesoStd;
-        let temStd = pesoStd > 0, temTrans = false;
+        let temTrans = false;
         if (isTranslucidaActive) {
             const pesoTrans = parseFloat(document.getElementById('pesoTranslucida').value) || 0;
             custoMaterialTotal += (pesoTrans / 1000) * parseFloat(document.getElementById('precoResinaTranslucida').value);
             pesoTotalCalc += pesoTrans;
             if (pesoTrans > 0) temTrans = true;
         }
-        if (temStd && temTrans) resinType = "Resina + Translúcida";
+        if (pesoStd > 0 && temTrans) resinType = "Resina + Translúcida";
         else if (temTrans) resinType = "Resina Translúcida";
     }
     const custoEnergia = ((watts * tempoH) / 1000) * tarifa;
@@ -1356,139 +1535,87 @@ function enviarWhatsapp() {
     let textoParcelado = whatsappData.numParcelas === 1 ? `*À Vista no Cartão:* ${formatCurrency(whatsappData.parceladoTotal)}` : `*Parcelado:* ${whatsappData.numParcelas}x de ${formatCurrency(whatsappData.parcelaValor)}\n(Total: ${formatCurrency(whatsappData.parceladoTotal)})`;
     let textoFrete = whatsappData.frete > 0 ? `*Frete (${whatsappData.veiculo}):* ${formatCurrency(whatsappData.frete)}\n` : "";
     let texto = `*Orçamento Trivertido*\n\n*Nome:* ${nome}\n*Projeto:* ${projeto}\n*Material:* ${currentMode === 'filamento' ? 'Filamento' : whatsappData.tipoResina}\n*Peso Total:* ${pesoTexto}\n*Tamanho:* ${tamanho}\n--------------------------------\n${textoFrete}*À Vista (Pix):* ${formatCurrency(whatsappData.avista)}\nOpção: Integral ou 50% entrada + restante na entrega.\n--------------------------------\n${textoParcelado}`;
+    
+    // Adicionar ao kanban na coluna "cotação"
+    const titleOrc = projeto || nome;
+    addTaskFromOrcamento(nome, titleOrc);
+    
     window.open(`https://wa.me/5519996054671?text=${encodeURIComponent(texto)}`, '_blank');
 }
 
 // =================== ESTOQUE ===================
 let currentEstoqueTab = 'fil';
 let currentView = 'ver';
-
 function getStock() {
     try { return JSON.parse(localStorage.getItem('trivertido_stock') || '{"fil":[],"res":[],"pin":[],"mat":[]}'); }
     catch { return { fil:[], res:[], pin:[], mat:[] }; }
 }
 function saveStock(data) { localStorage.setItem('trivertido_stock', JSON.stringify(data)); }
-
 function switchEstoqueTab(tab, el) {
     currentEstoqueTab = tab;
     document.querySelectorAll('.estoque-tab').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
     renderEstoque();
     if (currentView === 'cadastrar') {
-        ['fil','res','pin','mat'].forEach(t => {
-            const f = document.getElementById('form-' + t);
-            if (f) f.classList.toggle('hidden', t !== tab);
-        });
+        ['fil','res','pin','mat'].forEach(t => { const f = document.getElementById('form-' + t); if (f) f.classList.toggle('hidden', t !== tab); });
     }
 }
-
 function switchView(view) {
     currentView = view;
     document.getElementById('vbtn-ver').classList.toggle('active', view === 'ver');
     document.getElementById('vbtn-cadastrar').classList.toggle('active', view === 'cadastrar');
     document.getElementById('view-ver').classList.toggle('hidden', view !== 'ver');
     document.getElementById('view-cadastrar').classList.toggle('hidden', view !== 'cadastrar');
-    if (view === 'cadastrar') {
-        ['fil','res','pin','mat'].forEach(t => {
-            const f = document.getElementById('form-' + t);
-            if (f) f.classList.toggle('hidden', t !== currentEstoqueTab);
-        });
-    }
+    if (view === 'cadastrar') { ['fil','res','pin','mat'].forEach(t => { const f = document.getElementById('form-' + t); if (f) f.classList.toggle('hidden', t !== currentEstoqueTab); }); }
 }
-
 function updateColorPreview(cat) {
     const val = document.getElementById(cat + '-cor').value;
     document.getElementById(cat + '-cor-preview').style.background = val;
 }
-
 function addItem(cat) {
     const stock = getStock();
     let item = { id: Date.now(), cor: '', corNome: '', qty: '', obs: '' };
-
     if (cat === 'fil') {
-        item.tipo = document.getElementById('fil-tipo').value;
-        item.cor = document.getElementById('fil-cor').value;
-        item.corNome = document.getElementById('fil-cor-nome').value || 'Sem nome';
-        item.qty = document.getElementById('fil-qty').value;
-        item.obs = document.getElementById('fil-obs').value;
+        item.tipo = document.getElementById('fil-tipo').value; item.cor = document.getElementById('fil-cor').value;
+        item.corNome = document.getElementById('fil-cor-nome').value || 'Sem nome'; item.qty = document.getElementById('fil-qty').value; item.obs = document.getElementById('fil-obs').value;
         if (!item.qty) { alert('Informe a quantidade!'); return; }
-        // Reset
-        document.getElementById('fil-cor-nome').value = '';
-        document.getElementById('fil-qty').value = '';
-        document.getElementById('fil-obs').value = '';
+        document.getElementById('fil-cor-nome').value = ''; document.getElementById('fil-qty').value = ''; document.getElementById('fil-obs').value = '';
     } else if (cat === 'res') {
-        item.tipo = document.getElementById('res-tipo').value;
-        item.marca = document.getElementById('res-marca').value || '-';
-        item.cor = document.getElementById('res-cor').value;
-        item.corNome = document.getElementById('res-cor-nome').value || 'Sem nome';
-        item.qty = document.getElementById('res-qty').value;
-        item.obs = document.getElementById('res-obs').value;
+        item.tipo = document.getElementById('res-tipo').value; item.marca = document.getElementById('res-marca').value || '-';
+        item.cor = document.getElementById('res-cor').value; item.corNome = document.getElementById('res-cor-nome').value || 'Sem nome';
+        item.qty = document.getElementById('res-qty').value; item.obs = document.getElementById('res-obs').value;
         if (!item.qty) { alert('Informe a quantidade!'); return; }
-        document.getElementById('res-marca').value = '';
-        document.getElementById('res-cor-nome').value = '';
-        document.getElementById('res-qty').value = '';
-        document.getElementById('res-obs').value = '';
+        document.getElementById('res-marca').value = ''; document.getElementById('res-cor-nome').value = ''; document.getElementById('res-qty').value = ''; document.getElementById('res-obs').value = '';
     } else if (cat === 'pin') {
-        item.nome = document.getElementById('pin-nome').value;
-        item.cor = document.getElementById('pin-cor').value;
-        item.corNome = document.getElementById('pin-cor-nome').value || 'Sem nome';
-        item.qty = document.getElementById('pin-qty').value;
-        item.obs = document.getElementById('pin-obs').value;
+        item.nome = document.getElementById('pin-nome').value; item.cor = document.getElementById('pin-cor').value;
+        item.corNome = document.getElementById('pin-cor-nome').value || 'Sem nome'; item.qty = document.getElementById('pin-qty').value; item.obs = document.getElementById('pin-obs').value;
         if (!item.nome) { alert('Informe o nome do produto!'); return; }
-        document.getElementById('pin-nome').value = '';
-        document.getElementById('pin-cor-nome').value = '';
-        document.getElementById('pin-qty').value = '';
-        document.getElementById('pin-obs').value = '';
+        document.getElementById('pin-nome').value = ''; document.getElementById('pin-cor-nome').value = ''; document.getElementById('pin-qty').value = ''; document.getElementById('pin-obs').value = '';
     } else if (cat === 'mat') {
-        item.nome = document.getElementById('mat-nome').value;
-        item.cor = document.getElementById('mat-cor').value;
-        item.corNome = document.getElementById('mat-cor-nome').value || '-';
-        item.qty = document.getElementById('mat-qty').value;
-        item.obs = document.getElementById('mat-obs').value;
+        item.nome = document.getElementById('mat-nome').value; item.cor = document.getElementById('mat-cor').value;
+        item.corNome = document.getElementById('mat-cor-nome').value || '-'; item.qty = document.getElementById('mat-qty').value; item.obs = document.getElementById('mat-obs').value;
         if (!item.nome) { alert('Informe o nome do item!'); return; }
-        document.getElementById('mat-nome').value = '';
-        document.getElementById('mat-cor-nome').value = '';
-        document.getElementById('mat-qty').value = '';
-        document.getElementById('mat-obs').value = '';
+        document.getElementById('mat-nome').value = ''; document.getElementById('mat-cor-nome').value = ''; document.getElementById('mat-qty').value = ''; document.getElementById('mat-obs').value = '';
     }
-
-    stock[cat].push(item);
-    saveStock(stock);
-    updateSummaryCounts(stock);
-    switchView('ver');
-    renderEstoque();
+    stock[cat].push(item); saveStock(stock); updateSummaryCounts(stock); switchView('ver'); renderEstoque();
 }
-
 function deleteItem(cat, id) {
-    const stock = getStock();
-    stock[cat] = stock[cat].filter(i => i.id !== id);
-    saveStock(stock);
-    updateSummaryCounts(stock);
-    renderEstoque();
+    const stock = getStock(); stock[cat] = stock[cat].filter(i => i.id !== id); saveStock(stock); updateSummaryCounts(stock); renderEstoque();
 }
-
 function updateSummaryCounts(stock) {
     document.getElementById('count-fil').innerText = stock.fil.length;
     document.getElementById('count-res').innerText = stock.res.length;
     document.getElementById('count-pin').innerText = stock.pin.length;
     document.getElementById('count-mat').innerText = stock.mat.length;
 }
-
 const catLabels = { fil:'Filamento', res:'Resina', pin:'Pintura', mat:'Material' };
 const catBadge = { fil:'badge-fil', res:'badge-res', pin:'badge-pin', mat:'badge-mat' };
 const catColors = { fil:'#16a34a', res:'#7c3aed', pin:'#dc2626', mat:'#d97706' };
-
 function renderEstoque() {
-    const stock = getStock();
-    updateSummaryCounts(stock);
+    const stock = getStock(); updateSummaryCounts(stock);
     const items = stock[currentEstoqueTab];
     const container = document.getElementById('stock-list-container');
-
-    if (items.length === 0) {
-        container.innerHTML = `<div class="empty-state"><div class="emoji">📭</div><p>Nenhum item cadastrado ainda.<br>Clique em <strong>Cadastrar</strong> para adicionar.</p></div>`;
-        return;
-    }
-
+    if (items.length === 0) { container.innerHTML = `<div class="empty-state"><div class="emoji">📭</div><p>Nenhum item cadastrado ainda.<br>Clique em <strong>Cadastrar</strong> para adicionar.</p></div>`; return; }
     let html = '<div class="stock-grid">';
     items.forEach((item, idx) => {
         const name = item.tipo || item.nome || '-';
@@ -1498,26 +1625,11 @@ function renderEstoque() {
         const cor = item.cor || catColors[currentEstoqueTab];
         const obs = item.obs || '';
         const lowStock = currentEstoqueTab === 'fil' && parseFloat(qty) < 200;
-
-        html += `
-        <div class="stock-card" style="animation-delay:${idx * 0.05}s">
-            <button class="stock-delete-btn" onclick="deleteItem('${currentEstoqueTab}', ${item.id})">✕</button>
-            <div class="stock-card-top">
-                <div class="stock-card-color" style="background:${cor};"></div>
-                <div>
-                    <div class="cat-badge ${catBadge[currentEstoqueTab]}">${catLabels[currentEstoqueTab]}</div>
-                    <div class="stock-card-name">${name}</div>
-                    ${sub ? `<div class="stock-card-sub">${sub}</div>` : ''}
-                </div>
-            </div>
-            <div class="stock-card-qty" style="color:${cor}">${qty}${unit ? ' ' : ''}<span>${unit}</span></div>
-            ${obs ? `<div class="stock-card-obs">${obs}</div>` : ''}
-            ${lowStock ? `<div class="low-stock">⚠️ Baixo</div>` : ''}
-        </div>`;
+        html += `<div class="stock-card" style="animation-delay:${idx * 0.05}s"><button class="stock-delete-btn" onclick="deleteItem('${currentEstoqueTab}', ${item.id})">✕</button><div class="stock-card-top"><div class="stock-card-color" style="background:${cor};"></div><div><div class="cat-badge ${catBadge[currentEstoqueTab]}">${catLabels[currentEstoqueTab]}</div><div class="stock-card-name">${name}</div>${sub ? `<div class="stock-card-sub">${sub}</div>` : ''}</div></div><div class="stock-card-qty" style="color:${cor}">${qty}${unit ? ' ' : ''}<span>${unit}</span></div>${obs ? `<div class="stock-card-obs">${obs}</div>` : ''}${lowStock ? `<div class="low-stock">⚠️ Baixo</div>` : ''}</div>`;
     });
-    html += '</div>';
-    container.innerHTML = html;
+    html += '</div>'; container.innerHTML = html;
 }
+
 // =================== URGENTE ===================
 function calcularUrgente() {
     const alturaTotal = parseFloat(document.getElementById('urg-altura-total').value);
@@ -1525,152 +1637,455 @@ function calcularUrgente() {
     const pesoTotal = parseFloat(document.getElementById('urg-peso-total').value);
     const margemExtra = parseFloat(document.getElementById('urg-margem').value) || 0;
     const alturaUnit = document.getElementById('urg-unidade').value;
-
-    if (!alturaTotal || !pctMaterial || !pesoTotal) {
-        alert('Preencha todos os campos obrigatórios!');
-        return;
-    }
-    if (pctMaterial <= 0 || pctMaterial >= 100) {
-        alert('A porcentagem deve ser entre 1 e 99%.');
-        return;
-    }
-
-    // % do material usado = % da impressão concluída em altura
+    if (!alturaTotal || !pctMaterial || !pesoTotal) { alert('Preencha todos os campos obrigatórios!'); return; }
+    if (pctMaterial <= 0 || pctMaterial >= 100) { alert('A porcentagem deve ser entre 1 e 99%.'); return; }
     const pctConcluida = pctMaterial / 100;
-
-    // Altura onde parou
     let alturaPausa = alturaTotal * pctConcluida;
-
-    // Converter para mm se necessário
     let alturaTotalMm = alturaUnit === 'cm' ? alturaTotal * 10 : alturaTotal;
     let alturaPausaMm = alturaUnit === 'cm' ? alturaPausa * 10 : alturaPausa;
-
-    // Altura de corte = altura onde parou + margem de segurança
     const alturaCorte = alturaPausaMm + margemExtra;
     const alturaFaltando = alturaTotalMm - alturaPausaMm;
-
-    // Peso restante estimado
     const pesoRestante = pesoTotal * (1 - pctConcluida);
-
-    // Mostrar resultado
     const res = document.getElementById('urgente-resultado');
     document.getElementById('urg-res-corte').innerText = alturaCorte.toFixed(1);
     document.getElementById('urg-res-pausa').innerText = alturaPausaMm.toFixed(1) + ' mm';
     document.getElementById('urg-res-falta').innerText = alturaFaltando.toFixed(1) + ' mm';
     document.getElementById('urg-res-peso').innerText = pesoRestante.toFixed(1) + ' g';
-
-    // Instrução dinâmica de corte
-    const instrCorte = document.getElementById('urg-instr-corte');
-    instrCorte.innerText = `No Bambu Studio, abra o modelo original → Cut → insira ${alturaCorte.toFixed(1)} mm como altura de corte → mantenha apenas a parte superior.`;
-
-    // Alerta de margem
-    const alertaMargem = document.getElementById('urg-alerta-margem');
-    if (margemExtra === 0) {
-        alertaMargem.style.display = 'flex';
-    } else {
-        alertaMargem.style.display = 'none';
-    }
-
+    document.getElementById('urg-instr-corte').innerText = `No Bambu Studio, abra o modelo original → Cut → insira ${alturaCorte.toFixed(1)} mm como altura de corte → mantenha apenas a parte superior.`;
+    document.getElementById('urg-alerta-margem').style.display = margemExtra === 0 ? 'flex' : 'none';
     res.classList.add('show');
     res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+// =================== KANBAN ===================
+
+const ETAPAS_PECA = [
+    { label: '🖨️ Imprimir', done: false },
+    { label: '✂️ Remover suportes', done: false },
+    { label: '🧼 Lavar', done: false },
+    { label: '💡 Cura UV', done: false },
+    { label: '🪨 Primer', done: false },
+    { label: '🎨 Pintar', done: false },
+];
+
+const ETAPAS_FINAIS = [
+    { label: '📦 Embalar', done: false },
+    { label: '🚚 Entregar ao cliente', done: false },
+];
+
+let currentTaskId = null;
+let currentImageBase64 = null;
+
+function getTasks() {
+    try { return JSON.parse(localStorage.getItem('trivertido_tasks') || '[]'); }
+    catch { return []; }
+}
+function saveTasks(tasks) { localStorage.setItem('trivertido_tasks', JSON.stringify(tasks)); }
+
+/* Contar total de steps numa tarefa */
+function countSteps(task) {
+    let total = 0, done = 0;
+    (task.pecas || []).forEach(p => {
+        p.steps.forEach(s => { total++; if (s.done) done++; });
+    });
+    (task.etapasFinais || []).forEach(s => { total++; if (s.done) done++; });
+    return { total, done };
+}
+
+function renderKanban() {
+    const tasks = getTasks();
+    const cols = {
+        cotacao: { title: '🟣 Em Cotação', cls: 'col-cotacao' },
+        afazer:  { title: '🟡 A Fazer',    cls: 'col-afazer' },
+        fazendo: { title: '🔵 Fazendo',    cls: 'col-fazendo' },
+        feito:   { title: '🟢 Feito',      cls: 'col-feito' },
+    };
+    const board = document.getElementById('kanban-board');
+    let html = '';
+    Object.entries(cols).forEach(([key, col]) => {
+        const colTasks = tasks.filter(t => t.status === key);
+        html += `<div class="kanban-col ${col.cls}">
+            <div class="kanban-col-header">
+                <span class="kanban-col-title">${col.title}</span>
+                <span class="kanban-col-count">${colTasks.length}</span>
+            </div>`;
+        if (colTasks.length === 0) {
+            html += `<div style="text-align:center;padding:20px 10px;color:#d1d5db;font-size:0.8em;">Nenhuma tarefa</div>`;
+        } else {
+            colTasks.forEach(task => {
+                const { total, done } = countSteps(task);
+                const pecaCount = (task.pecas || []).length;
+                html += `<div class="kanban-card" onclick="openTaskDetail(${task.id})">
+                    <button class="kanban-card-del" onclick="event.stopPropagation(); deleteTask(${task.id})">✕</button>
+                    <div class="kanban-card-title">${task.title}</div>
+                    <div class="kanban-card-client">👤 ${task.client}</div>
+                    <div class="kanban-card-footer">
+                        <span class="kanban-card-progress ${total > 0 ? 'has-tasks' : ''}">
+                            ${pecaCount > 0 ? `🧩 ${pecaCount} peça${pecaCount > 1 ? 's' : ''}` : '📋 Sem peças'}
+                            ${total > 0 ? ` · ✅ ${done}/${total}` : ''}
+                        </span>
+                    </div>
+                </div>`;
+            });
+        }
+        html += `</div>`;
+    });
+    board.innerHTML = html;
+}
+
+function openNewTaskModal() {
+    document.getElementById('new-task-title').value = '';
+    document.getElementById('new-task-client').value = '';
+    document.getElementById('new-task-status').value = 'cotacao';
+    document.getElementById('modal-new-task').classList.remove('hidden');
+}
+
+function createTask() {
+    const title = document.getElementById('new-task-title').value.trim();
+    const client = document.getElementById('new-task-client').value.trim();
+    const status = document.getElementById('new-task-status').value;
+    if (!title) { alert('Informe o nome do projeto!'); return; }
+    const tasks = getTasks();
+    tasks.push({
+        id: Date.now(),
+        title,
+        client: client || 'Sem cliente',
+        status,
+        pecas: [],
+        etapasFinais: JSON.parse(JSON.stringify(ETAPAS_FINAIS)),
+        image: null,
+        createdAt: new Date().toISOString()
+    });
+    saveTasks(tasks);
+    closeModal('modal-new-task');
+    renderKanban();
+}
+
+function addTaskFromOrcamento(clientName, projectName) {
+    const tasks = getTasks();
+    tasks.push({
+        id: Date.now(),
+        title: projectName || 'Orçamento',
+        client: clientName || 'Cliente',
+        status: 'cotacao',
+        pecas: [],
+        etapasFinais: JSON.parse(JSON.stringify(ETAPAS_FINAIS)),
+        image: null,
+        createdAt: new Date().toISOString()
+    });
+    saveTasks(tasks);
+}
+
+function deleteTask(id) {
+    if (!confirm('Excluir esta tarefa?')) return;
+    saveTasks(getTasks().filter(t => t.id !== id));
+    renderKanban();
+}
+
+/* ---- Abrir detalhe ---- */
+function openTaskDetail(id) {
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === id);
+    if (!task) return;
+    currentTaskId = id;
+    currentImageBase64 = task.image || null;
+
+    document.getElementById('detail-title').innerText = task.title;
+    document.getElementById('detail-client').innerText = '👤 ' + task.client;
+
+    // Status buttons
+    document.querySelectorAll('.status-btn').forEach(btn => {
+        btn.className = 'status-btn';
+        if (btn.dataset.status === task.status) btn.classList.add('active-' + task.status);
+    });
+
+    // Image
+    if (task.image) {
+        document.getElementById('upload-area-wrap').classList.add('hidden');
+        document.getElementById('img-preview-wrap').classList.remove('hidden');
+        document.getElementById('img-preview').src = task.image;
+    } else {
+        document.getElementById('upload-area-wrap').classList.remove('hidden');
+        document.getElementById('img-preview-wrap').classList.add('hidden');
+        document.getElementById('img-preview').src = '';
+    }
+
+    renderChecklist(task);
+    document.getElementById('new-peca-input').value = '';
+    document.getElementById('modal-task-detail').classList.remove('hidden');
+}
+
+/* ---- Renderizar checklist por peça ---- */
+function renderChecklist(task) {
+    const container = document.getElementById('checklist-container');
+    const pecas = task.pecas || [];
+    const etapasFinais = task.etapasFinais || [];
+
+    let html = '';
+
+    if (pecas.length === 0) {
+        html += `<div style="text-align:center;padding:20px 8px;color:#9ca3af;font-size:0.85em;background:#f9fafb;border-radius:12px;border:1.5px dashed #e5e7eb;">
+            <div style="font-size:1.8em;margin-bottom:6px;">🧩</div>
+            <p style="margin:0;">Nenhuma peça ainda.<br>Use a <strong>IA</strong> ou adicione manualmente abaixo.</p>
+        </div>`;
+    } else {
+        pecas.forEach((peca, pi) => {
+            const donePeca = peca.steps.filter(s => s.done).length;
+            const totalPeca = peca.steps.length;
+            const allDone = donePeca === totalPeca;
+            html += `
+            <div class="peca-bloco ${allDone ? 'all-done' : ''}" id="peca-bloco-${pi}">
+                <div class="peca-header" onclick="togglePecaBloco(${pi})">
+                    <span class="peca-icon">🧩</span>
+                    <span class="peca-name">${peca.nome}</span>
+                    <span class="peca-progress-pill">${donePeca}/${totalPeca}</span>
+                    <button class="peca-del-btn" onclick="event.stopPropagation(); deletePeca(${pi})">✕</button>
+                    <span class="peca-chevron open" id="chevron-${pi}">▼</span>
+                </div>
+                <div class="peca-steps open" id="steps-${pi}">
+                    ${peca.steps.map((step, si) => `
+                    <div class="step-item ${step.done ? 'done' : ''}">
+                        <input type="checkbox" class="step-check" ${step.done ? 'checked' : ''}
+                            onchange="toggleStep(${pi}, ${si})">
+                        <span class="step-label">${step.label}</span>
+                    </div>`).join('')}
+                </div>
+            </div>`;
+        });
+    }
+
+    // Etapas finais
+    if (pecas.length > 0 || etapasFinais.length > 0) {
+        html += `<div class="final-steps-section">
+            <div class="final-steps-title">📦 Finalização do Pedido</div>
+            <div class="final-steps-body">
+                ${etapasFinais.map((step, fi) => `
+                <div class="final-step-item ${step.done ? 'done' : ''}">
+                    <input type="checkbox" class="step-check" ${step.done ? 'checked' : ''}
+                        onchange="toggleFinalStep(${fi})">
+                    <span class="step-label">${step.label}</span>
+                </div>`).join('')}
+            </div>
+        </div>`;
+    }
+
+    container.innerHTML = html;
+    updateProgress(task);
+}
+
+function togglePecaBloco(pi) {
+    const steps = document.getElementById('steps-' + pi);
+    const chevron = document.getElementById('chevron-' + pi);
+    const isOpen = steps.classList.contains('open');
+    steps.classList.toggle('open', !isOpen);
+    chevron.classList.toggle('open', !isOpen);
+}
+
+function toggleStep(pi, si) {
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === currentTaskId);
+    if (!task) return;
+    task.pecas[pi].steps[si].done = !task.pecas[pi].steps[si].done;
+    saveTasks(tasks);
+    renderChecklist(task);
+    renderKanban();
+}
+
+function toggleFinalStep(fi) {
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === currentTaskId);
+    if (!task) return;
+    if (!task.etapasFinais) task.etapasFinais = JSON.parse(JSON.stringify(ETAPAS_FINAIS));
+    task.etapasFinais[fi].done = !task.etapasFinais[fi].done;
+    saveTasks(tasks);
+    renderChecklist(task);
+    renderKanban();
+}
+
+function deletePeca(pi) {
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === currentTaskId);
+    if (!task) return;
+    task.pecas.splice(pi, 1);
+    saveTasks(tasks);
+    renderChecklist(task);
+    renderKanban();
+}
+
+function addPecaManual() {
+    const input = document.getElementById('new-peca-input');
+    const nome = input.value.trim();
+    if (!nome) return;
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === currentTaskId);
+    if (!task) return;
+    if (!task.pecas) task.pecas = [];
+    task.pecas.push({ nome, steps: JSON.parse(JSON.stringify(ETAPAS_PECA)) });
+    saveTasks(tasks);
+    renderChecklist(task);
+    renderKanban();
+    input.value = '';
+}
+
+function updateProgress(task) {
+    const { total, done } = countSteps(task);
+    document.getElementById('progress-label').innerText = `${done} / ${total}`;
+    document.getElementById('progress-bar').style.width = total > 0 ? `${(done / total) * 100}%` : '0%';
+}
+
+function moveTaskTo(status) {
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === currentTaskId);
+    if (!task) return;
+    task.status = status;
+    saveTasks(tasks);
+    document.querySelectorAll('.status-btn').forEach(btn => {
+        btn.className = 'status-btn';
+        if (btn.dataset.status === status) btn.classList.add('active-' + status);
+    });
+    renderKanban();
+}
+
+function deleteCurrentTask() {
+    if (!confirm('Excluir esta tarefa permanentemente?')) return;
+    saveTasks(getTasks().filter(t => t.id !== currentTaskId));
+    closeModal('modal-task-detail');
+    renderKanban();
+}
+
+function onImageSelected(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        const base64 = e.target.result;
+        currentImageBase64 = base64;
+        document.getElementById('upload-area-wrap').classList.add('hidden');
+        document.getElementById('img-preview-wrap').classList.remove('hidden');
+        document.getElementById('img-preview').src = base64;
+        const tasks = getTasks();
+        const task = tasks.find(t => t.id === currentTaskId);
+        if (task) { task.image = base64; saveTasks(tasks); }
+    };
+    reader.readAsDataURL(file);
+}
+
+function clearImage() {
+    currentImageBase64 = null;
+    document.getElementById('img-upload-input').value = '';
+    document.getElementById('upload-area-wrap').classList.remove('hidden');
+    document.getElementById('img-preview-wrap').classList.add('hidden');
+    document.getElementById('img-preview').src = '';
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === currentTaskId);
+    if (task) { task.image = null; saveTasks(tasks); }
+}
+
+async function gerarChecklistIA() {
+    const tasks = getTasks();
+    const task = tasks.find(t => t.id === currentTaskId);
+    if (!task) return;
+
+    const btn = document.getElementById('btn-gerar-ia');
+    const loading = document.getElementById('ia-loading');
+    btn.disabled = true;
+    loading.classList.remove('hidden');
+
+    const hasImage = !!currentImageBase64;
+
+    try {
+        let messages;
+        const promptBase = `Você é um assistente especializado em impressão 3D para a empresa Trivertido.
+Analise e identifique CADA PEÇA/ARQUIVO separado visível nesta imagem (nomes de arquivos ou objetos 3D distintos).
+Para cada peça encontrada, gere um objeto com o nome da peça.
+Retorne APENAS JSON válido neste formato exato:
+{
+  "pecas": [
+    { "nome": "Cabeça" },
+    { "nome": "Braço Direito" },
+    { "nome": "Torso" }
+  ]
+}
+Use nomes curtos e claros. Máximo 20 peças. Sem texto extra, apenas o JSON.`;
+
+        const promptSemImagem = `Você é um assistente especializado em impressão 3D para a empresa Trivertido.
+O projeto se chama "${task.title}".
+Com base no nome do projeto, sugira as possíveis peças/partes que compõem esse modelo.
+Retorne APENAS JSON válido neste formato exato:
+{
+  "pecas": [
+    { "nome": "Cabeça" },
+    { "nome": "Corpo" }
+  ]
+}
+Use nomes curtos e claros. Máximo 10 peças. Sem texto extra, apenas o JSON.`;
+
+        if (hasImage) {
+            const base64Data = currentImageBase64.split(',')[1];
+            const mediaType = currentImageBase64.split(';')[0].split(':')[1];
+            messages = [{
+                role: "user",
+                content: [
+                    { type: "image", source: { type: "base64", media_type: mediaType, data: base64Data } },
+                    { type: "text", text: promptBase }
+                ]
+            }];
+        } else {
+            messages = [{ role: "user", content: promptSemImagem }];
+        }
+
+        const response = await fetch("https://api.anthropic.com/v1/messages", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, messages })
+        });
+
+        const data = await response.json();
+        const text = data.content[0].text;
+
+        let parsed;
+        try {
+            const clean = text.replace(/```json|```/g, '').trim();
+            parsed = JSON.parse(clean);
+        } catch { throw new Error("IA retornou formato inválido"); }
+
+        if (!parsed.pecas || !Array.isArray(parsed.pecas)) throw new Error("Formato inválido");
+
+        // Substituir peças (mantém etapas finais)
+        task.pecas = parsed.pecas.map(p => ({
+            nome: p.nome,
+            steps: JSON.parse(JSON.stringify(ETAPAS_PECA))
+        }));
+        if (!task.etapasFinais) task.etapasFinais = JSON.parse(JSON.stringify(ETAPAS_FINAIS));
+        saveTasks(tasks);
+        renderChecklist(task);
+        renderKanban();
+
+    } catch (err) {
+        alert('Erro ao gerar checklist: ' + err.message);
+    } finally {
+        btn.disabled = false;
+        loading.classList.add('hidden');
+    }
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+    if (id === 'modal-task-detail') currentTaskId = null;
+}
+
+// Fechar modal clicando fora
+document.addEventListener('click', (e) => {
+    ['modal-new-task', 'modal-task-detail'].forEach(id => {
+        const el = document.getElementById(id);
+        if (e.target === el) closeModal(id);
+    });
+});
+
+// Enter na peça manual
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && document.activeElement.id === 'new-peca-input') addPecaManual();
+});
 </script>
-
-<!-- ===== URGENTE PAGE ===== -->
-<div id="page-urgente" class="urgente-page hidden">
-
-    <div class="urgente-header">
-        <h1>🚨 IMPRESSÃO URGENTE</h1>
-        <p>Calcule onde cortar o modelo para retomar a impressão</p>
-    </div>
-
-    <div class="urgente-card">
-        <h3>📐 Dados da peça</h3>
-        <div class="input-row">
-            <div class="input-group">
-                <label>Altura total da peça</label>
-                <input type="number" id="urg-altura-total" placeholder="Ex: 120">
-                <div class="input-hint">Altura completa do modelo</div>
-            </div>
-            <div class="input-group">
-                <label>Unidade</label>
-                <select id="urg-unidade">
-                    <option value="mm">mm</option>
-                    <option value="cm">cm</option>
-                </select>
-            </div>
-        </div>
-        <div class="input-group">
-            <label>Peso total estimado (g)</label>
-            <input type="number" id="urg-peso-total" placeholder="Ex: 85">
-            <div class="input-hint">Visto no Bambu Studio antes de imprimir</div>
-        </div>
-    </div>
-
-    <div class="urgente-card">
-        <h3>⏸️ Dados quando parou</h3>
-        <div class="input-group">
-            <label>% do material usado quando parou</label>
-            <input type="number" id="urg-pct-material" placeholder="Ex: 62" min="1" max="99">
-            <div class="input-hint">Porcentagem que o Bambu Studio mostrava de material consumido</div>
-        </div>
-    </div>
-
-    <div class="urgente-card">
-        <h3>⚙️ Ajuste de precisão</h3>
-        <div class="input-group">
-            <label>Margem de segurança (mm)</label>
-            <input type="number" id="urg-margem" placeholder="Ex: 0.4" value="0.4" step="0.1" min="0">
-            <div class="input-hint">Sobreposição extra para garantir aderência entre as partes (recomendado: 0.2 a 0.8mm)</div>
-        </div>
-    </div>
-
-    <button class="btn-calcular-urgente" onclick="calcularUrgente()">⚡ CALCULAR ALTURA DE CORTE</button>
-
-    <!-- RESULTADO -->
-    <div class="urgente-resultado" id="urgente-resultado">
-        <div class="resultado-principal">
-            <div class="label">Cortar o modelo em</div>
-            <div>
-                <span class="valor" id="urg-res-corte">—</span>
-                <span class="unidade">mm</span>
-            </div>
-            <div class="sublabel">Insira esse valor no campo "Cut" do Bambu Studio</div>
-        </div>
-
-        <div class="resultado-grid">
-            <div class="res-mini">
-                <div class="rm-label">Altura onde parou</div>
-                <div class="rm-val" id="urg-res-pausa">—</div>
-            </div>
-            <div class="res-mini">
-                <div class="rm-label">Altura que falta</div>
-                <div class="rm-val" id="urg-res-falta">—</div>
-            </div>
-            <div class="res-mini">
-                <div class="rm-label">Peso restante est.</div>
-                <div class="rm-val" id="urg-res-peso">—</div>
-            </div>
-            <div class="res-mini">
-                <div class="rm-label">Diâmetro filamento</div>
-                <div class="rm-val">1.75 mm</div>
-            </div>
-        </div>
-
-        <div class="instrucoes">
-            <h4>📋 Passo a passo no Bambu Studio</h4>
-            <div class="passo"><div class="passo-num">1</div><div id="urg-instr-corte">Calcule primeiro para ver a instrução.</div></div>
-            <div class="passo"><div class="passo-num">2</div><div>Selecione <strong>apenas a parte superior</strong> do corte e exporte como novo arquivo STL.</div></div>
-            <div class="passo"><div class="passo-num">3</div><div>Fatie o novo arquivo normalmente. O peso estimado restante é mostrado acima para conferir.</div></div>
-            <div class="passo"><div class="passo-num">4</div><div>Coloque a peça impressa de volta na mesa exatamente na mesma posição e imprima a parte de cima sobre ela.</div></div>
-        </div>
-
-        <div class="alerta-margem" id="urg-alerta-margem">
-            <span>⚠️</span>
-            <span>Você definiu margem 0. Recomendamos pelo menos <strong>0.2mm</strong> de sobreposição para garantir que as partes colem bem na junção.</span>
-        </div>
-    </div>
-
-</div>
 </body>
 </html>
